@@ -11,12 +11,12 @@ export default function Header() {
         <Image src="/logo.png" alt="JGM Servijson" width={100} height={100} />
       </div>
       <div className="hidden w-full flex-grow md:block md:w-auto lg:items-center">
-        <div className="text-sm lg:flex-grow">
+        <div className="flex gap-6">
           {NavigationData.map((props, index) => (
             <Link
               {...props}
               key={index}
-              className="mr-4 mt-4 block text-blue-900 hover:text-blue-600 lg:mt-0 lg:inline-block"
+              className="text-blue-900 hover:text-blue-600"
             >
               {props.title}
             </Link>
