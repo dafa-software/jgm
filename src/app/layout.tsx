@@ -13,7 +13,7 @@ export const metadata = {
   title: "JGM Serviços",
   description:
     "Atendemos os nossos clientes com qualidade superior ao encontrado no mercado.",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  icons: [{ rel: "icon", url: "/favicon.svg" }],
 };
 
 export default function RootLayout({
