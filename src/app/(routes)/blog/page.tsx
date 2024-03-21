@@ -1,39 +1,55 @@
-import { CreatePost } from "~/app/_components/create-post";
+import Image from "next/image";
 import { api } from "~/trpc/server";
 
 export default async function Blog() {
-  const hello = await api.post.hello({ text: "from tRPC" });
+  const allPosts = await api.post.getAllPosts();
 
   return (
-    <main className="bg-blue-main flex min-h-screen flex-col items-center justify-center text-white">
+    <main className="flex min-h-screen flex-col items-center justify-center bg-blue-main text-white">
       <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
-        <h1 className="text-5xl font-extrabold tracking-tight sm:text-[5rem]">
+        <h1 className="mt-12 text-5xl font-extrabold tracking-tight sm:text-[5rem]">
           JGM
         </h1>
         <div className="flex flex-col items-center gap-2">
-          <p className="text-2xl text-white">
-            {hello ? hello.greeting : "Loading tRPC query..."}
-          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            {allPosts.posts.map((post) => (
+              <div
+                key={post.id}
+                className="w-[30%] overflow-hidden rounded-lg bg-white shadow-lg"
+              >
+                <Image
+                  className="h-56 w-full object-cover object-center"
+                  src={post.image ?? "/logo.png"}
+                  alt={post.title.rendered ?? ""}
+                  width={720}
+                  height={400}
+                />
+                <div className="p-4">
+                  <h2 className="text-xl font-semibold text-gray-800">
+                    {post.title.rendered}
+                  </h2>
+                  <div
+                    className="m-2 text-gray-600"
+                    dangerouslySetInnerHTML={{
+                      __html: post?.content.rendered.substring(0, 160) || "",
+                    }}
+                  ></div>
+                  <div className="mt-4 flex items-center justify-between">
+                    <p className="mt-2 text-gray-500">
+                      Categorias: {post.categories[0]}
+                    </p>
+                    <p className="text-slate-500">
+                      {new Date(post.date).toLocaleDateString()}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <CrudShowcase />
+        {/* <CrudShowcase /> */}
       </div>
     </main>
-  );
-}
-
-async function CrudShowcase() {
-  const latestPost = await api.post.getLatest();
-
-  return (
-    <div className="w-full max-w-xs">
-      {latestPost ? (
-        <p className="truncate">Your most recent post: {latestPost.name}</p>
-      ) : (
-        <p>You have no posts yet.</p>
-      )}
-
-      <CreatePost />
-    </div>
   );
 }
