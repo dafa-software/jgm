@@ -5,6 +5,10 @@
 await import("./src/env.js");
 
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+images: {
+  domains: ['i0.wp.com'],
+},
+};
 
 export default config;
