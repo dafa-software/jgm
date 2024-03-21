@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { z } from "zod";
 
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
+import { getAllPosts, getSinglePost } from "~/services/posts.service";
 
 let post = {
   id: 1,
@@ -29,4 +31,20 @@ export const postRouter = createTRPCRouter({
   getLatest: publicProcedure.query(() => {
     return post;
   }),
+
+  getAllPosts: publicProcedure.query(async () => {
+    const posts = await getAllPosts();
+    return { posts };
+  }),
+
+  getSinglePost: publicProcedure
+    .input(
+      z.object({
+        id: z.number(),
+      }),
+    )
+    .query(async ({ input }) => {
+      const post = await getSinglePost(input.id);
+      return post;
+    }),
 });
