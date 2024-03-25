@@ -11,11 +11,12 @@ export default async function Home() {
         {}
         <div>
           <ServicesCard
-            title={"JGMFLEX"}
-            description={
-              "Diversos serviços por assinatura e opções de planos para você escolher o que melhor te atende. E com os melhores profissionais!"
-            }
-            action1Text={"Share"}
+            title="JGMFLIX"
+            text="Texto personalizado do seu card vai aqui. Você pode escrever o que quiser para descrever seu conteúdo."
+            buttonColor="blue-500"
+            buttonHoverColor="blue-700"
+            buttonTextColor="white"
+            cardColor="bg-black"
           />
         </div>
       </div>
