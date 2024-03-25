@@ -24,15 +24,13 @@ export default function Form({ variant }: { variant: "thin" | "wide" }) {
     },
   });
 
-  console.log(variant); // todo large variant for normal pages
-
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
         createForm.mutate({ name, mail, phone, service, message });
       }}
-      className="flex flex-col gap-6 rounded-md bg-white p-6 md:min-w-[500px]"
+      className={`${variant === "wide" ? "flex flex-col md:grid md:grid-cols-2" : "flex flex-col"} gap-6 rounded-md bg-white p-6 md:min-w-[500px]`}
     >
       <div>
         <label htmlFor="your-ruby" className="block font-bold text-gray-800">
@@ -82,7 +80,7 @@ export default function Form({ variant }: { variant: "thin" | "wide" }) {
           className="w-full rounded-md border bg-gray-100 px-4 py-2 text-black"
         />
       </div>
-      <div>
+      <div className="col-span-2">
         <label htmlFor="your-ruby" className="block font-bold text-gray-800">
           Mensagem
         </label>
@@ -93,24 +91,26 @@ export default function Form({ variant }: { variant: "thin" | "wide" }) {
           className="w-full rounded-md border bg-gray-100 px-4 py-2 text-black"
         />
       </div>
-      <div className="flex flex-col gap-3">
+      <div
+        className={`flex ${variant === "wide" ? "col-span-2 flex-col md:flex-row" : "flex-col"} w-full gap-3 text-white`}
+      >
         <button
           type="submit"
-          className="rounded-md bg-blue-main py-3 font-semibold transition hover:bg-blue-900"
+          className={`${variant === "wide" && "md:w-1/2"} rounded-md bg-blue-main px-6 py-3 font-semibold transition hover:bg-blue-900`}
           disabled={createForm.isPending}
         >
           {createForm.isPending
             ? "Enviando..."
-            : "Receber orçamento via e-mail"}
+            : "Receber esse orçamento via e-mail"}
         </button>
         <button
           type="submit"
-          className="rounded-md bg-green-500 py-3 font-semibold transition hover:bg-blue-900"
+          className={`${variant === "wide" && "md:w-1/2"} rounded-md bg-green-500 px-6 py-3 font-semibold transition hover:bg-green-600`}
           disabled={createForm.isPending}
         >
           {createForm.isPending
             ? "Enviando..."
-            : "Receber orçamento via WhatsApp"}
+            : "Receber esse orçamento via WhatsApp"}
         </button>
       </div>
     </form>

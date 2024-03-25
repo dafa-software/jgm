@@ -1,7 +1,14 @@
 import {
+  BuildingIcon,
+  ClipboardIcon,
+  HouseIcon,
+  MenuBarsIcon,
+  ModernHouseIcon,
   PeopleIcon,
+  PhoneIcon,
   SearchFolderIcon,
   ShieldIcon,
+  ShopIcon,
   StarsIcon,
   ToolIcon,
 } from "~/app/_components/icons";
@@ -110,7 +117,8 @@ export const FooterTextData = [
   { title: "Contato", data: ContactData },
 ];
 
-export const LandingPageWhData = [
+// Landing Pages
+export const LandingPageWhyData = [
   {
     icon: <ToolIcon className="h-7 w-7" color="white" />,
     color: "bg-[#FF6565]",
@@ -140,5 +148,58 @@ export const LandingPageWhData = [
     color: "bg-[#786EFE]",
     title: "Equipe treinada e especializada",
     text: "Temos uma equipe especialista apenas em pós-obra. Oferecemos treinamentos mensais para aprimoramento de técnicas de limpeza e profissionalização.",
+  },
+];
+
+export const LandingPageIconData = [
+  {
+    icon: <HouseIcon className="h-7 w-7" color="white" />,
+    title: "Residências",
+  },
+  {
+    icon: <ModernHouseIcon className="h-7 w-7" color="white" />,
+    title: "Condomínios e Empresas",
+  },
+  {
+    icon: <BuildingIcon className="h-7 w-7" color="white" />,
+    title: "Escritórios",
+  },
+  {
+    icon: <ShopIcon className="h-7 w-7" color="white" />,
+    title: "Shopping e Lojas",
+  },
+  {
+    icon: <ClipboardIcon className="h-7 w-7" color="white" />,
+    title: "Outros",
+  },
+];
+
+export const LandingPageFeedbackData = [
+  {
+    text: "“Amei a experiência de trabalhar com a JGM. Funcionários muito educados e focados na entrega do resultado. Toda limpeza está com a entrega muito além do esperado. Muito obrigada e até todas as próximas.”",
+    person: "Karoline M. de Vasconcelos",
+  },
+  {
+    text: "“A empresa JGM presta serviços de limpeza no meu escritório desde o início de operação”",
+    person: "Karoline M. de Vasconcelos",
+  },
+  {
+    text: "“Excelente atenção e educação. Serviço realizado com sucesso.”",
+    person: "Karoline M. de Vasconcelos",
+  },
+];
+
+export const LandingPageBudgetWithIconData = [
+  {
+    icon: <PhoneIcon className="h-6 w-6" />,
+    text: "Você entra em contato conosco pelo formulário, email ou whatsapp e marcamos uma visita técnica para conhecer o espaço a ser limpo.",
+  },
+  {
+    icon: <MenuBarsIcon className="h-6 w-6" />,
+    text: "Montamos uma proposta personalizada de acordo com o nível de sujidade, equipamentos e materiais necessários e o tempo que será realizada a limpeza.",
+  },
+  {
+    icon: <ClipboardIcon className="h-6 w-6" />,
+    text: "Proposta aceita, enviamos nossos melhores profissionais para prestar um serviço de excelência.",
   },
 ];
