@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import Image from "next/image";
 import { api } from "~/trpc/server";
 
