@@ -4,7 +4,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <main>
       <Header variant="landing-page" />
-      {children}
+      <div className="pt-24">{children}</div>
     </main>
   );
 }
