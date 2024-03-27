@@ -203,3 +203,55 @@ export const LandingPageBudgetWithIconData = [
     text: "Proposta aceita, enviamos nossos melhores profissionais para prestar um serviço de excelência.",
   },
 ];
+
+// home
+
+export const HomeServicesData = [
+  // {
+  //   titleType: "image",
+  //   text: "Diversos serviços por assinatura e opções de planos para você escolher o que melhor te atende. E com os melhores profissionais!",
+  //   href: "/servicos/jgm-flix",
+  // },
+  {
+    titleType: "text",
+    title: "Limpeza Pós-obra",
+    img: "services-pos-obra",
+    text: "Limpeza requerida na finalização de uma obra ou reforma, fazendo a retirada de resquícios e removendo a sujidade do local, com profissionais treinados e de forma segura e detalhada.",
+    href: "/servicos/limpeza-pos-obra",
+  },
+  {
+    titleType: "text",
+    title: "Terceirização de mão de obra",
+    img: "services-tercerizacao",
+    text: "Com uma longa experiência em terceirização de serviços, seguindo todas as normas vigentes, oferecemos soluções empresariais eficientes e inovadoras para todos os segmentos do mercado.",
+    href: "/servicos/mao-de-obra-especializada",
+  },
+  {
+    titleType: "text",
+    title: "Limpeza Comercial e Residencial",
+    img: "services-pos-obra",
+    text: "Oferecemos uma gama abrangente de serviços de limpeza e manutenção, tanto para ambientes comerciais quanto residenciais.",
+    href: "/servicos/limpeza-comercial-e-residencial",
+  },
+  {
+    titleType: "text",
+    title: "Limpeza de Estofados e Carpetes",
+    img: "services-pos-obra",
+    text: "Limpeza de estofados e carpetes com produtos e equipamentos de alta qualidade, que garantem a limpeza profunda e a remoção de manchas.",
+    href: "/servicos/limpeza-de-estofados-e-carpetes",
+  },
+  {
+    titleType: "text",
+    title: "Jardinagem",
+    img: "services-pos-obra",
+    text: "Manutenção de jardins e áreas verdes, com profissionais especializados e equipamentos de qualidade.",
+    href: "/servicos/jardinagem",
+  },
+  {
+    titleType: "text",
+    title: "Limpeza Pós-Incêndio",
+    img: "services-pos-incendio",
+    text: "Limpeza especializada em locais que sofreram incêndio, com profissionais treinados e equipamentos de segurança.",
+    href: "/servicos/limpeza-pos-incendio",
+  },
+];

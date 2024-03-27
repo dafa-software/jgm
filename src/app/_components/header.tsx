@@ -10,7 +10,7 @@ interface HeaderProps {
 
 export default function Header({ variant = "default" }: HeaderProps) {
   return (
-    <nav className="fixed flex w-full flex-wrap items-center justify-between bg-white p-6">
+    <nav className="fixed z-50 flex w-full flex-wrap items-center justify-between bg-white p-7 shadow-md">
       <div className="mr-6 flex flex-shrink-0 items-center text-white">
         <Image src="/logo.png" alt="JGM Servijson" width={100} height={100} />
       </div>

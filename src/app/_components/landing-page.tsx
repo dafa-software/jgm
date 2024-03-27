@@ -18,12 +18,14 @@ import BudgetWithIcon from "~/app/_components/budget-with-icon";
 interface LandingPageProps {
   title: string;
   text: string;
+  backgroundImg: string;
 }
 
 export default function LandingPage(props: LandingPageProps) {
   return (
     <main>
       <HeroCard
+        backgroundImg={props.backgroundImg}
         title={props.title}
         text={props.text}
         contentBottom={
