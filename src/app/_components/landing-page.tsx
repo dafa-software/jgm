@@ -1,7 +1,6 @@
 import { HeroCard } from "~/app/_components/cards/hero";
 import WhyCard from "~/app/_components/cards/why";
 import Container from "~/app/_components/container";
-import Form from "~/app/_components/form";
 import Section from "~/app/_components/section";
 import Title from "~/app/_components/title";
 import {
@@ -14,6 +13,7 @@ import Image from "next/image";
 import IconCard from "~/app/_components/cards/icon";
 import { LandingPageFeedbackCard } from "~/app/_components/cards/lp-feedback";
 import BudgetWithIcon from "~/app/_components/budget-with-icon";
+import LandingPageForm from "./forms/landing-page";
 
 interface LandingPageProps {
   title: string;
@@ -40,7 +40,7 @@ export default function LandingPage(props: LandingPageProps) {
             </div>
           </div>
         }
-        contentRight={<Form variant="thin" />}
+        contentRight={<LandingPageForm variant="thin" />}
       />
       <div className="bg-[#F1F5F9]">
         <Container>
@@ -128,7 +128,7 @@ export default function LandingPage(props: LandingPageProps) {
               </div>
             </Section>
             <Section>
-              <Form variant="wide" />
+              <LandingPageForm variant="wide" />
             </Section>
           </Container>
         </div>

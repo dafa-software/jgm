@@ -5,7 +5,11 @@ import { useState } from "react";
 
 import { api } from "~/trpc/react";
 
-export default function Form({ variant }: { variant: "thin" | "wide" }) {
+export default function LandingPageForm({
+  variant,
+}: {
+  variant: "thin" | "wide";
+}) {
   const router = useRouter();
   const [name, setName] = useState("");
   const [mail, setMail] = useState("");
@@ -13,7 +17,7 @@ export default function Form({ variant }: { variant: "thin" | "wide" }) {
   const [service, setService] = useState("");
   const [message, setMessage] = useState("");
 
-  const createForm = api.form.create.useMutation({
+  const createForm = api.LandingForm.create.useMutation({
     onSuccess: () => {
       router.refresh();
       setName("");
@@ -50,7 +54,7 @@ export default function Form({ variant }: { variant: "thin" | "wide" }) {
         </label>
         <input
           type="email"
-          placeholder="Exemplo: ed@asd.com"
+          placeholder="Exemplo: john@doe.com"
           value={mail}
           onChange={(e) => setMail(e.target.value)}
           className="w-full rounded-md border bg-gray-100 px-4 py-2 text-black"
