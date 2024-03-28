@@ -11,19 +11,20 @@ export interface ServicesCardProps {
 
 export function ServicesCard(props: ServicesCardProps) {
   return (
-    <div className="flex flex-col items-center justify-between rounded-md bg-white text-blue-main shadow-md transition duration-500 hover:scale-105">
-      <div className="flex flex-col gap-6 p-8">
+    <Link
+      href={props.href}
+      className="flex flex-col items-center justify-between rounded-md bg-white text-blue-main shadow-md transition duration-300 hover:scale-95 hover:shadow-xl"
+    >
+      <div className="flex flex-col gap-6 p-6">
         <h2 className="text-center text-xl font-bold">{props.title}</h2>
         <p>{props.text}</p>
       </div>
-
-      <Link
-        href={props.href}
+      <div
         style={{ backgroundImage: `url('/assets/${props.img}.png')` }}
-        className="flex h-48 w-full items-center justify-center rounded-md hover:underline"
+        className="flex h-40 w-full items-center justify-center rounded-md hover:underline"
       >
-        <ArrowIcon className="blue-main h-14 w-14" />
-      </Link>
-    </div>
+        <ArrowIcon className="blue-main h-14 w-14 animate-pulse" />
+      </div>
+    </Link>
   );
 }
