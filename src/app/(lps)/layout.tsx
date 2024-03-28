@@ -5,7 +5,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <main>
       <Header variant="landing-page" />
-      <div className="pt-24">{children}</div>
+      <div className="animate-fade-in-up pt-24">{children}</div>
       <Footer />
     </main>
   );
