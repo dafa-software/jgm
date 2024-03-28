@@ -4,6 +4,7 @@ import Container from "../_components/container";
 import Section from "../_components/section";
 import { HomeServicesData } from "~/data";
 import { ServicesCard } from "../_components/cards/services";
+import Carousel from "../_components/carousel";
 
 export default async function Home() {
   return (
@@ -47,11 +48,13 @@ export default async function Home() {
                 Visualizar todos os serviços →
               </p>
             </div>
-            <div className="grid grid-cols-3 gap-6">
+            <Carousel>
               {HomeServicesData.map((props, index) => (
-                <ServicesCard key={index} {...props} />
+                <div key={index} className="keen-slider__slide flex">
+                  <ServicesCard key={index} {...props} />
+                </div>
               ))}
-            </div>
+            </Carousel>
           </Section>
         </Container>
       </div>
