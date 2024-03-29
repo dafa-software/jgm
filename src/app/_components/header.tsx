@@ -1,8 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { NavigationData } from "~/data";
-import { MailIcon, PhoneIcon, SearchIcon } from "./icons";
 import MobileNavigation from "./mobile-navigation";
+import {
+  EnvelopeIcon,
+  MagnifyingGlassIcon,
+  PhoneIcon,
+} from "@heroicons/react/20/solid";
 
 interface HeaderProps {
   variant?: "default" | "landing-page";
@@ -10,7 +14,7 @@ interface HeaderProps {
 
 export default function Header({ variant = "default" }: HeaderProps) {
   return (
-    <nav className="animate-fade-in-down fixed z-50 flex w-full flex-wrap items-center justify-between bg-white p-7 shadow-md">
+    <nav className="fixed z-50 flex w-full animate-fade-in-down flex-wrap items-center justify-between bg-white p-7 shadow-md">
       <div className="mr-6 flex flex-shrink-0 items-center text-white">
         <Image src="/logo.png" alt="JGM Servijson" width={100} height={100} />
       </div>
@@ -31,7 +35,7 @@ export default function Header({ variant = "default" }: HeaderProps) {
             <p>(21)3073-7064</p>
           </div>
           <div className="flex items-center gap-3">
-            <MailIcon className="h-5 w-5" color="black" />
+            <EnvelopeIcon className="h-5 w-5" color="black" />
             <p>comercial@jgmservicos.com.br</p>
           </div>
         </div>
@@ -52,7 +56,7 @@ export default function Header({ variant = "default" }: HeaderProps) {
           </div>
           <MobileNavigation />
           <div className="hidden md:flex">
-            <SearchIcon className="h-6 w-6" color="black" />
+            <MagnifyingGlassIcon className="h-6 w-6" color="black" />
           </div>
         </>
       )}

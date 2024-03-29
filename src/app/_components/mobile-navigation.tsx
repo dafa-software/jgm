@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { NavigationData } from "~/data";
-import { CloseIcon, MenuIcon } from "./icons";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/20/solid";
 
 export default function MobileNavigation() {
   const pathname = usePathname();
@@ -19,9 +19,9 @@ export default function MobileNavigation() {
       <div className="md:hidden">
         <button onClick={toggleMenu} className="text-white focus:outline-none">
           {isMenuOpen ? (
-            <CloseIcon className="h-8 w-8" color="black" />
+            <XMarkIcon className="h-8 w-8" color="black" />
           ) : (
-            <MenuIcon className="h-8 w-8" color="black" />
+            <Bars3Icon className="h-8 w-8" color="black" />
           )}
         </button>
       </div>

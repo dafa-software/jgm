@@ -1,17 +1,17 @@
 import {
-  BuildingIcon,
-  ClipboardIcon,
-  HouseIcon,
-  MenuBarsIcon,
-  ModernHouseIcon,
-  PeopleIcon,
+  Bars3Icon,
+  BuildingOffice2Icon,
+  BuildingStorefrontIcon,
+  ClipboardDocumentCheckIcon,
+  HomeIcon,
+  HomeModernIcon,
+  MagnifyingGlassIcon,
   PhoneIcon,
-  SearchFolderIcon,
-  ShieldIcon,
-  ShopIcon,
-  StarsIcon,
-  ToolIcon,
-} from "~/app/_components/icons";
+  ShieldCheckIcon,
+  SparklesIcon,
+  UsersIcon,
+  WrenchScrewdriverIcon,
+} from "@heroicons/react/24/outline";
 
 // Header
 export const NavigationData = [
@@ -120,31 +120,31 @@ export const FooterTextData = [
 // Landing Pages
 export const LandingPageWhyData = [
   {
-    icon: <ToolIcon className="h-7 w-7" color="white" />,
+    icon: <WrenchScrewdriverIcon className="h-7 w-7" color="white" />,
     color: "bg-[#FF6565]",
     title: "Levamos todo o material e equipamentos",
     text: "Você não precisa se preocupar com nada! Levamos exatamente tudo o que precisar pra realizar a sua limpeza pós-obra.",
   },
   {
-    icon: <ShieldIcon className="h-7 w-7" color="white" />,
+    icon: <ShieldCheckIcon className="h-7 w-7" color="white" />,
     color: "bg-[#9CDDFF]",
     title: "Seguro contradanos",
     text: "Oferecemos um seguro para proteger nossos clientes caso haja qualquer imprevisto, durante o serviço prestado.",
   },
   {
-    icon: <StarsIcon className="h-7 w-7" color="white" />,
+    icon: <SparklesIcon className="h-7 w-7" color="white" />,
     color: "bg-[#FFBC58]",
     title: "Excelência e Experiência",
     text: "São mais de 17 anos atuando no mercado de limpeza com excelência e profissionalismo, que irão atender todas as suas expectativas!",
   },
   {
-    icon: <SearchFolderIcon className="h-7 w-7" color="white" />,
+    icon: <MagnifyingGlassIcon className="h-7 w-7" color="white" />,
     color: "bg-[#74E091]",
     title: "Monitoramento durante toda a limpeza por um líder",
     text: "Sua limpeza será monitorada por um líder que coordenará toda a equipe para que a limpeza seja no nosso padrão de excelência e termine no prazo estabelecido.",
   },
   {
-    icon: <PeopleIcon className="h-7 w-7" color="white" />,
+    icon: <UsersIcon className="h-7 w-7" color="white" />,
     color: "bg-[#786EFE]",
     title: "Equipe treinada e especializada",
     text: "Temos uma equipe especialista apenas em pós-obra. Oferecemos treinamentos mensais para aprimoramento de técnicas de limpeza e profissionalização.",
@@ -153,39 +153,47 @@ export const LandingPageWhyData = [
 
 export const LandingPageIconData = [
   {
-    icon: <HouseIcon className="h-7 w-7" color="white" />,
+    icon: <HomeIcon className="h-7 w-7" color="white" />,
     title: "Residências",
   },
   {
-    icon: <ModernHouseIcon className="h-7 w-7" color="white" />,
+    icon: <HomeModernIcon className="h-7 w-7" color="white" />,
     title: "Condomínios e Empresas",
   },
   {
-    icon: <BuildingIcon className="h-7 w-7" color="white" />,
+    icon: <BuildingOffice2Icon className="h-7 w-7" color="white" />,
     title: "Escritórios",
   },
   {
-    icon: <ShopIcon className="h-7 w-7" color="white" />,
+    icon: <BuildingStorefrontIcon className="h-7 w-7" color="white" />,
     title: "Shopping e Lojas",
   },
   {
-    icon: <ClipboardIcon className="h-7 w-7" color="white" />,
+    icon: <ClipboardDocumentCheckIcon className="h-7 w-7" color="white" />,
     title: "Outros",
   },
 ];
 
-export const LandingPageFeedbackData = [
+export const FeedbackData = [
   {
-    text: "“Amei a experiência de trabalhar com a JGM. Funcionários muito educados e focados na entrega do resultado. Toda limpeza está com a entrega muito além do esperado. Muito obrigada e até todas as próximas.”",
+    text: "“Amei a experiência de trabalhar com a JGM. Funcionários muito educados e focados na entrega do resultado.”",
     person: "Karoline M. de Vasconcelos",
   },
   {
     text: "“A empresa JGM presta serviços de limpeza no meu escritório desde o início de operação”",
-    person: "Karoline M. de Vasconcelos",
+    person: "Pierre",
   },
   {
     text: "“Excelente atenção e educação. Serviço realizado com sucesso.”",
-    person: "Karoline M. de Vasconcelos",
+    person: "Orliane Rangel",
+  },
+  {
+    text: "Profissionais eficientes e educados!",
+    person: "Carla",
+  },
+  {
+    text: "Pontuais e profissionais, eu adorei! Super recomendo! ",
+    person: "Ana Paula",
   },
 ];
 
@@ -195,11 +203,11 @@ export const LandingPageBudgetWithIconData = [
     text: "Você entra em contato conosco pelo formulário, email ou whatsapp e marcamos uma visita técnica para conhecer o espaço a ser limpo.",
   },
   {
-    icon: <MenuBarsIcon className="h-6 w-6" />,
+    icon: <Bars3Icon className="h-6 w-6" />,
     text: "Montamos uma proposta personalizada de acordo com o nível de sujidade, equipamentos e materiais necessários e o tempo que será realizada a limpeza.",
   },
   {
-    icon: <ClipboardIcon className="h-6 w-6" />,
+    icon: <ClipboardDocumentCheckIcon className="h-6 w-6" />,
     text: "Proposta aceita, enviamos nossos melhores profissionais para prestar um serviço de excelência.",
   },
 ];

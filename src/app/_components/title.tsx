@@ -6,7 +6,7 @@ interface TitleProps {
 
 export default function Title(props: TitleProps) {
   return (
-    <div className="pb-8 text-center">
+    <div className="flex flex-col items-center pb-8">
       <h2
         className={`text-3xl font-bold ${props.variant === "light" ? "text-blue-main" : "text-white"}`}
       >
@@ -14,7 +14,7 @@ export default function Title(props: TitleProps) {
       </h2>
       {props.text && (
         <p
-          className={`text-xl ${props.variant === "light" ? "text-gray-600" : "text-gray-50"}`}
+          className={`text-center text-xl md:w-[60%] ${props.variant === "light" ? "text-gray-600" : "text-gray-50"}`}
         >
           {props.text}
         </p>

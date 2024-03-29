@@ -2,9 +2,12 @@ import Link from "next/link";
 import { HeroCard } from "../_components/cards/hero";
 import Container from "../_components/container";
 import Section from "../_components/section";
-import { HomeServicesData } from "~/data";
+import { FeedbackData, HomeServicesData } from "~/data";
 import { ServicesCard } from "../_components/cards/services";
 import Carousel from "../_components/carousel";
+import { PlayCircleIcon } from "@heroicons/react/16/solid";
+import Title from "../_components/title";
+import FeedbackCard from "../_components/cards/feedback";
 
 export default async function Home() {
   return (
@@ -30,7 +33,7 @@ export default async function Home() {
           </div>
         }
       />
-      <div className="bg-blue-main">
+      <section className="bg-blue-main">
         <Container>
           <Section>
             <div className="flex flex-col justify-between gap-3 pb-8 md:flex-row md:items-end">
@@ -57,7 +60,39 @@ export default async function Home() {
             </Carousel>
           </Section>
         </Container>
-      </div>
+      </section>
+      <section className="flex items-center justify-center gap-2 bg-[#FFEDD5] p-4 text-blue-main">
+        <PlayCircleIcon className="h-6 w-6" />
+        <p>
+          Interessado em saber como nossas soluções funcionam para você? Assista
+          ao nosso{" "}
+          <Link
+            target="_blank"
+            className="underline"
+            href="https://www.instagram.com/reel/C3qCEZCA89V/?hl=en"
+          >
+            vídeo de apresentação.
+          </Link>
+        </p>
+      </section>
+      <section className="bg-white">
+        <Container>
+          <Section>
+            <Title
+              variant="light"
+              title="Depoimentos"
+              text="Veja o que nossos clientes têm a dizer! Confira os depoimentos mais recentes que recebemos sobre nossos produtos e serviços."
+            />
+            <Carousel>
+              {FeedbackData.map((props, index) => (
+                <div key={index} className="keen-slider__slide flex">
+                  <FeedbackCard key={index} {...props} />
+                </div>
+              ))}
+            </Carousel>
+          </Section>
+        </Container>
+      </section>
     </main>
   );
 }

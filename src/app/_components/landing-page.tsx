@@ -4,8 +4,8 @@ import Container from "~/app/_components/container";
 import Section from "~/app/_components/section";
 import Title from "~/app/_components/title";
 import {
+  FeedbackData,
   LandingPageBudgetWithIconData,
-  LandingPageFeedbackData,
   LandingPageIconData,
   LandingPageWhyData,
 } from "~/data";
@@ -107,7 +107,7 @@ export default function LandingPage(props: LandingPageProps) {
                   satisfeitos com os nossos serviços.
                 </h3>
                 <div className="flex flex-col gap-3">
-                  {LandingPageFeedbackData.map((props, index) => (
+                  {FeedbackData.slice(0, 3).map((props, index) => (
                     <LandingPageFeedbackCard key={index} {...props} />
                   ))}
                 </div>

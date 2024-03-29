@@ -1,5 +1,5 @@
+import { ChevronDoubleRightIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
-import { ArrowIcon } from "../icons";
 
 export interface ServicesCardProps {
   titleType: string;
@@ -23,7 +23,7 @@ export function ServicesCard(props: ServicesCardProps) {
         style={{ backgroundImage: `url('/assets/${props.img}.png')` }}
         className="flex h-40 w-full items-center justify-center rounded-md hover:underline"
       >
-        <ArrowIcon className="blue-main h-14 w-14 animate-pulse" />
+        <ChevronDoubleRightIcon className="blue-main h-14 w-14 animate-pulse" />
       </div>
     </Link>
   );
