@@ -13,9 +13,11 @@ export default function ServicesPage() {
             title="Nossos serviços"
             text="Oferecemos uma gama abrangente de serviços de limpeza e manutenção, tanto para ambientes comerciais quanto residenciais."
           />
-          <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
+          <div className="flex flex-wrap justify-center gap-4">
             {HomeServicesData.map((service, index) => (
-              <ServicesCard key={index} {...service} />
+              <div key={index} className="flex overflow-hidden md:w-[30%]">
+                <ServicesCard key={index} {...service} />
+              </div>
             ))}
           </div>
         </Section>

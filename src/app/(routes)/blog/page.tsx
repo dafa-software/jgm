@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import Image from "next/image";
 import Container from "~/app/_components/container";
 import Section from "~/app/_components/section";
@@ -18,7 +17,7 @@ export default async function Blog() {
               {allPosts.posts.map((post) => (
                 <div
                   key={post.id}
-                  className="w-[30%] overflow-hidden rounded-lg bg-white shadow-lg"
+                  className="overflow-hidden rounded-lg bg-white shadow-lg md:w-[30%]"
                 >
                   <Image
                     className="h-56 w-full object-cover object-center"

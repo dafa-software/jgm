@@ -45,9 +45,11 @@ export default function LandingPage(props: LandingPageProps) {
       <div className="bg-[#F1F5F9]">
         <Container>
           <Section>
-            <div className={`grid grid-cols-1 gap-12 md:grid-cols-3`}>
+            <div className="flex flex-wrap justify-center gap-6">
               {LandingPageWhyData.map((props, index) => (
-                <WhyCard key={index} {...props} />
+                <div key={index} className="flex overflow-hidden md:w-[30%]">
+                  <WhyCard key={index} {...props} />
+                </div>
               ))}
             </div>
           </Section>
