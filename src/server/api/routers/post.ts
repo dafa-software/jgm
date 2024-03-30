@@ -36,6 +36,17 @@ export const postRouter = createTRPCRouter({
     return { posts };
   }),
 
+  getSomePosts: publicProcedure
+    .input(
+      z.object({
+        limit: z.number().default(10),
+      }),
+    )
+    .query(async ({ input }) => {
+      const posts = await getAllPosts();
+      return { posts: posts.slice(0, input.limit) };
+    }),
+
   getSinglePost: publicProcedure
     .input(
       z.object({
