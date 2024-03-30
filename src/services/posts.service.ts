@@ -1,4 +1,4 @@
-import { type BlogPosts, type BlogPost } from "~/data/interfaces";
+import { type BlogPost, type BlogPosts } from "~/app/types";
 import { env } from "~/env.js";
 
 export async function getAllPosts(): Promise<BlogPosts> {

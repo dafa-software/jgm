@@ -2,7 +2,13 @@ import Link from "next/link";
 import { HeroCard } from "../_components/cards/hero";
 import Container from "../_components/container";
 import Section from "../_components/section";
-import { FeedbackData, HomeServicesData } from "~/data";
+import {
+  FeedbackData,
+  HomeLogoData,
+  HomePersonData,
+  HomeServicesData,
+  HomeWhyData,
+} from "~/data";
 import { ServicesCard } from "../_components/cards/services";
 import Carousel from "../_components/carousel";
 import { PlayCircleIcon } from "@heroicons/react/16/solid";
@@ -10,6 +16,10 @@ import Title from "../_components/title";
 import FeedbackCard from "../_components/cards/feedback";
 import { api } from "~/trpc/server";
 import Image from "next/image";
+import { Suspense } from "react";
+import SuspenseLoader from "../_components/suspense-loader";
+import BudgetWithIcon from "../_components/budget-with-icon";
+import { PersonCard } from "../_components/cards/person";
 
 export default async function Home() {
   return (
@@ -103,24 +113,89 @@ export default async function Home() {
               title="Recentes no Blog"
               text="Alguns dos nossos posts mais recentes em nosso blog, sempre com novas informações."
             />
-            <Blog />
+            <Suspense fallback={<SuspenseLoader />}>
+              <Blog />
+            </Suspense>
           </Section>
         </Container>
       </section>
-      {/* <section className="bg-white">
+      <section className="bg-white">
         <Container>
           <Section>
-            <h2>Porque escolher a JGM Serviços</h2>
-            <p>
-              A JGM Serviços surge como resposta à frustração com serviços
-              terceirizados, oferecendo soluções satisfatórias para pessoas e
-              empresas. Com atendimento personalizado, profissionais capacitados
-              e equipamentos de qualidade, facilitamos a vida dos clientes para
-              que possam focar no que realmente importa.
-            </p>
+            <div className="flex flex-col gap-12">
+              <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
+                <div className="flex flex-col gap-3 text-blue-main md:w-1/2">
+                  <h2 className="text-3xl font-semibold">
+                    Porque escolher a JGM Serviços
+                  </h2>
+                  <p>
+                    A JGM Serviços surge como resposta à frustração com serviços
+                    terceirizados, oferecendo soluções satisfatórias para
+                    pessoas e empresas. Com atendimento personalizado,
+                    profissionais capacitados e equipamentos de qualidade,
+                    facilitamos a vida dos clientes para que possam focar no que
+                    realmente importa.
+                  </p>
+                </div>
+                <Link
+                  href="/contato"
+                  className="rounded-md bg-blue-main px-8 py-4 font-bold text-white shadow-sm transition-all duration-300 ease-in-out hover:cursor-pointer hover:bg-blue-700"
+                >
+                  Entre em Contato →
+                </Link>
+              </div>
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+                {HomeWhyData.map((props, index) => (
+                  <BudgetWithIcon key={index} {...props} />
+                ))}
+              </div>
+              <div className="grid grid-cols-2 items-center justify-center gap-2 border-y p-6 md:flex md:flex-row">
+                {HomeLogoData.map((props, index) => (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    key={index}
+                    src={props.src}
+                    alt={props.alt}
+                    className="h-20 w-fit"
+                  />
+                ))}
+              </div>
+              <div className="flex flex-col justify-around gap-3 text-xl font-bold text-blue-main md:flex-row md:items-center">
+                <h3>
+                  <span className="text-3xl text-blue-500">+90</span>{" "}
+                  Funcionarios
+                </h3>
+                <h3>
+                  <span className="text-3xl text-blue-500">+10</span> de anos
+                  experiência
+                </h3>
+                <h3>
+                  <span className="text-3xl text-blue-500">+1000</span> Clientes
+                  satisfeitos
+                </h3>
+              </div>
+            </div>
           </Section>
         </Container>
-      </section> */}
+      </section>
+      <section className="bg-[#F1F5F9]">
+        <Container>
+          <Section>
+            <Title
+              variant="light"
+              title="Alguns dos Nossos Clientes"
+              text="Confira o Reconhecimento dos Nossos Clientes Renomados! celebridades, influenciadores e pessoas de prestígio."
+            />
+            <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+              {HomePersonData.map((props, index) => (
+                <div key={index} className="flex">
+                  <PersonCard key={index} {...props} />
+                </div>
+              ))}
+            </div>
+          </Section>
+        </Container>
+      </section>
     </main>
   );
 }

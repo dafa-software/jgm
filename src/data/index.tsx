@@ -1,3 +1,4 @@
+import { EyeIcon, FlagIcon, HeartIcon } from "@heroicons/react/20/solid";
 import {
   Bars3Icon,
   BuildingOffice2Icon,
@@ -269,5 +270,70 @@ export const HomeServicesData = [
     titleType: "image",
     text: "Diversos serviços por assinatura e opções de planos para você escolher o que melhor te atende. E com os melhores profissionais!",
     href: "/servicos/jgm-flix",
+  },
+];
+
+export const HomeWhyData = [
+  {
+    icon: <FlagIcon className="h-9 w-9 fill-green-300" />,
+    text: "Trazer inovação e eficiência na prestação de serviços, promovendo economia e excelência para os clientes. Além disso, busca transformar a realidade dos colaboradores, oferecendo oportunidades de crescimento e desenvolvimento profissional.",
+  },
+  {
+    icon: <EyeIcon className="h-9 w-9 fill-cyan-200" />,
+    text: "Ser referência nacional em técnica, compliance e relacionamento corporativo, buscando revolucionar o setor de prestação de serviços no Brasil e alterar a percepção dos consumidores sobre terceirização.",
+  },
+  {
+    icon: <HeartIcon className="h-9 w-9 fill-red-300" />,
+    text: "Humildade, paciência, determinação, resiliência, empatia e confiança.",
+  },
+];
+
+export const HomeLogoData = [
+  {
+    src: "/logos/firjan.png",
+    alt: "Firjan",
+  },
+  {
+    src: "/logos/anatel.png",
+    alt: "Anatel",
+  },
+  {
+    src: "/logos/msg.png",
+    alt: "MSG",
+  },
+  {
+    src: "/logos/anp.png",
+    alt: "Anp",
+  },
+  {
+    src: "/logos/ufrj.png",
+    alt: "ufrj",
+  },
+  {
+    src: "/logos/museu.png",
+    alt: "Museu de Astronomia",
+  },
+];
+
+export const HomePersonData = [
+  {
+    image: "/assets/person1.png",
+    person: "Bella Campos",
+    occupation: "Atriz",
+  },
+  {
+    image: "/assets/person2.png",
+    person: "Evelyn Regly",
+    occupation: "Influencer e Youtuber",
+  },
+  {
+    image: "/assets/person3.png",
+    person: "Rafael Zulu",
+    occupation: "Ator e Empresário",
+  },
+  {
+    image: "/assets/person4.png",
+    person: "Pri Pessanha",
+    occupation: "Influencer",
   },
 ];
