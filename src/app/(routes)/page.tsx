@@ -113,9 +113,9 @@ export default async function Home() {
               title="Recentes no Blog"
               text="Alguns dos nossos posts mais recentes em nosso blog, sempre com novas informações."
             />
-            <Suspense fallback={<SuspenseLoader />}>
+            {/* <Suspense fallback={<SuspenseLoader />}>
               <Blog />
-            </Suspense>
+            </Suspense> */}
           </Section>
         </Container>
       </section>

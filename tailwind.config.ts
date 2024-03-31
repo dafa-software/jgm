@@ -14,6 +14,7 @@ export default {
       animation: {
         "fade-in-up": "fade-in-up 0.6s ease-in-out",
         "fade-in-down": "fade-in-down 0.6s ease-in-out",
+        "menu-fade": "fadeOut 0.1s ease-in-out",
       },
       keyframes: {
         "fade-in-up": {
@@ -35,6 +36,10 @@ export default {
             opacity: "1",
             transform: "translateY(0)",
           },
+        },
+        fadeOut: {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
         },
       },
     },
