@@ -13,7 +13,7 @@ interface FooterBodyProps {
 
 export default function Footer() {
   return (
-    <footer className="flex justify-center border-t border-gray-200 border-opacity-80 bg-gradient-to-r from-blue-main to-blue-main px-6 py-24 text-white">
+    <footer className="flex justify-center border-t border-gray-200 border-opacity-80 bg-blue-main  bg-[url(/assets/bg-wave.svg)] bg-center bg-no-repeat px-6 py-24 text-white">
       <div className="container flex max-w-6xl flex-col gap-10">
         <div className="flex flex-col justify-between gap-10 md:flex-row">
           {FooterTextData.map((data) => (

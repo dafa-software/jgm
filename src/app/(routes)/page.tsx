@@ -45,7 +45,7 @@ export default async function Home() {
           </div>
         }
       />
-      <section className="bg-blue-main">
+      <section className="bg-blue-main bg-[url(/assets/bg-wave.svg)] bg-cover bg-center bg-no-repeat">
         <Container>
           <Section>
             <div className="flex flex-col justify-between gap-3 pb-8 md:flex-row md:items-end">
@@ -105,7 +105,7 @@ export default async function Home() {
           </Section>
         </Container>
       </section>
-      <section className="bg-[#F1F5F9]">
+      <section className="bg-[#F1F5F9] bg-[url(/assets/bg-squares.svg)] bg-cover bg-center bg-no-repeat">
         <Container>
           <Section>
             <Title
@@ -113,9 +113,9 @@ export default async function Home() {
               title="Recentes no Blog"
               text="Alguns dos nossos posts mais recentes em nosso blog, sempre com novas informações."
             />
-            {/* <Suspense fallback={<SuspenseLoader />}>
+            <Suspense fallback={<SuspenseLoader />}>
               <Blog />
-            </Suspense> */}
+            </Suspense>
           </Section>
         </Container>
       </section>

@@ -8,7 +8,7 @@ export default async function Blog() {
   const allPosts = await api.post.getAllPosts();
 
   return (
-    <main className="bg-blue-main">
+    <main className="bg-blue-main bg-[url(/assets/bg-wave.svg)] bg-cover bg-center bg-no-repeat">
       <Container>
         <Section>
           <Title title="Blog" text="Confira nossas últimas postagens" />

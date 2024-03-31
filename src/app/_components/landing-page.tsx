@@ -42,7 +42,7 @@ export default function LandingPage(props: LandingPageProps) {
         }
         contentRight={<LandingPageForm variant="thin" />}
       />
-      <div className="bg-[#F1F5F9]">
+      <div className="bg-[#F1F5F9] bg-[url(/assets/bg-squares.svg)] bg-cover bg-center bg-no-repeat">
         <Container>
           <Section>
             <div className="flex flex-wrap justify-center gap-6">
@@ -83,7 +83,7 @@ export default function LandingPage(props: LandingPageProps) {
           </Section>
         </Container>
       </div>
-      <div className="bg-blue-main">
+      <div className="bg-blue-main bg-[url(/assets/bg-wave.svg)] bg-cover bg-center bg-no-repeat">
         <Container>
           <Section>
             <Title
