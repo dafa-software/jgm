@@ -118,6 +118,29 @@ export const FooterTextData = [
   { title: "Contato", data: ContactData },
 ];
 
+export const FooterIconData = [
+  {
+    src: "/logos/facebook.svg",
+    alt: "Facebook",
+    href: "https://pt-br.facebook.com/jgmservicos/",
+  },
+  {
+    src: "/logos/instagram.svg",
+    alt: "Instagram",
+    href: "https://www.instagram.com/jgmservico/",
+  },
+  {
+    src: "/logos/linkedin.svg",
+    alt: "LinkedIn",
+    href: "https://www.linkedin.com/company/jgm-servi%C3%A7os/?originalSubdomain=br",
+  },
+  {
+    src: "/logos/whatsapp.svg",
+    alt: "WhatsApp",
+    href: "https://api.whatsapp.com/send?phone=21964127226",
+  },
+];
+
 // Landing Pages
 export const LandingPageWhyData = [
   {

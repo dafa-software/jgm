@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { FooterTextData } from "~/data";
+import Image from "next/image";
+import { FooterIconData, FooterTextData } from "~/data";
 
 interface DataProps {
   title: string;
@@ -13,7 +14,7 @@ interface FooterBodyProps {
 
 export default function Footer() {
   return (
-    <footer className="flex justify-center border-t border-gray-200 border-opacity-80 bg-blue-main  bg-[url(/assets/bg-wave.svg)] bg-center bg-no-repeat px-6 py-24 text-white">
+    <footer className="flex justify-center border-t border-gray-200 border-opacity-80 bg-blue-main bg-[url(/assets/bg-sound.svg)] bg-cover bg-center bg-no-repeat px-6 py-24 text-white">
       <div className="container flex max-w-6xl flex-col gap-10">
         <div className="flex flex-col justify-between gap-10 md:flex-row">
           {FooterTextData.map((data) => (
@@ -21,9 +22,18 @@ export default function Footer() {
           ))}
         </div>
         <div className="w-full border border-white" />
-        <p className="text-sm">
-          Copyright © 2024. Todos os direitos reservados.
-        </p>
+        <div className="flex flex-col justify-between md:flex-row">
+          <p className="text-sm">
+            Copyright © 2024. Todos os direitos reservados.
+          </p>
+          <div className="flex gap-6">
+            {FooterIconData.map((props, index) => (
+              <Link key={index} {...props} className="hover:text-cyan-200">
+                <Image width={20} height={20} src={props.src} alt={props.alt} />
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
     </footer>
   );

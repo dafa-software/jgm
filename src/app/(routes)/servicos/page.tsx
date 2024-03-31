@@ -6,7 +6,7 @@ import { HomeServicesData } from "~/data";
 
 export default function ServicesPage() {
   return (
-    <main className="bg-blue-main">
+    <main className="bg-blue-main bg-[url(/assets/bg-wave.svg)] bg-center bg-no-repeat">
       <Container>
         <Section>
           <Title
