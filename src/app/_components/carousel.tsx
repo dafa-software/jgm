@@ -47,7 +47,7 @@ export default function Carousel(props: { children: React.ReactNode }) {
         viewBox="0 0 24 24"
         onClick={props.onClick}
         xmlns="http://www.w3.org/2000/svg"
-        className={`absolute top-1/2 h-12 w-12 translate-y-1/2 cursor-pointer rounded-full fill-cyan-400 p-3 opacity-40 transition-transform duration-100 ease-in-out hover:scale-110 ${props.left ? "left-2" : "left-auto right-2"}`}
+        className={`absolute top-1/2 h-12 w-12 translate-y-1/2 cursor-pointer rounded-full fill-cyan-200 p-3 transition-transform duration-100 ease-in-out hover:scale-110 ${props.left ? "left-2" : "left-auto right-2"}`}
       >
         {props.left ? (
           <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
@@ -63,7 +63,7 @@ export default function Carousel(props: { children: React.ReactNode }) {
       <div className="relative">
         <div
           ref={sliderRef}
-          className="keen-slider mx-auto max-w-xs md:max-w-md lg:max-w-5xl xl:max-w-6xl"
+          className="keen-slider mx-auto max-w-xs md:max-w-md lg:max-w-4xl xl:max-w-[1000px]"
         >
           {props.children}
         </div>

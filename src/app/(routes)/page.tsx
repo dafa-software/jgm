@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { HeroCard } from "../_components/cards/hero";
 import Container from "../_components/container";
 import Section from "../_components/section";
@@ -31,13 +32,13 @@ export default async function Home() {
           <div className="flex flex-row gap-3">
             <Link
               href="https://wa.me/5521977378854"
-              className="rounded-md bg-blue-main px-8 py-4 font-bold shadow-sm"
+              className="rounded-md bg-blue-main px-8 py-4 font-bold shadow-sm transition duration-300 ease-in-out hover:cursor-pointer hover:bg-blue-700"
             >
               Solicite um orçamento →
             </Link>
             <Link
               href="https://wa.me/5521977378854"
-              className="rounded-md border-2 border-white px-8 py-4 font-bold shadow-sm"
+              className="rounded-md border-2 border-white px-8 py-4 font-bold shadow-sm transition duration-300 ease-in-out hover:cursor-pointer hover:bg-white hover:text-blue-main"
             >
               Trabalhe Conosco →
             </Link>
@@ -47,7 +48,7 @@ export default async function Home() {
       <section className="bg-blue-main bg-[url(/assets/bg-wave.svg)] bg-cover bg-center bg-no-repeat">
         <Container>
           <Section>
-            <div className="flex flex-col justify-between gap-3 pb-8 md:flex-row md:items-end">
+            <div className="flex flex-col justify-between gap-3 pb-8 md:flex-row md:items-end md:px-14">
               <div className="flex flex-col gap-3 md:w-1/2">
                 <h2 className="text-2xl font-bold  text-white">
                   Nossos serviços
@@ -115,7 +116,7 @@ export default async function Home() {
               title="Recentes no Blog"
               text="Alguns dos nossos posts mais recentes em nosso blog, sempre com novas informações."
             />
-            <Suspense
+            {/* <Suspense
               fallback={
                 <div className="flex flex-col gap-6 md:flex-row">
                   {[1, 2, 3].map((_, index) => (
@@ -125,7 +126,7 @@ export default async function Home() {
               }
             >
               <BlogCard type="some" />
-            </Suspense>
+            </Suspense> */}
           </Section>
         </Container>
       </section>
@@ -161,11 +162,12 @@ export default async function Home() {
               </div>
               <div className="grid grid-cols-2 items-center justify-center gap-2 border-y p-3 md:flex md:flex-row">
                 {HomeLogoData.map((props, index) => (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
+                  <Image
                     key={index}
                     src={props.src}
                     alt={props.alt}
+                    width={100}
+                    height={100}
                     className="h-24 w-fit md:h-16 lg:h-20"
                   />
                 ))}

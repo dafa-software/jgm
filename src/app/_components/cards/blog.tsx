@@ -16,7 +16,7 @@ export default async function BlogCard({ type }: { type: "some" | "all" }) {
         {posts?.posts.map((post) => (
           <div
             key={post.id}
-            className="overflow-hidden rounded-lg bg-white shadow-md md:w-[32%]"
+            className="overflow-hidden rounded-lg bg-white shadow-md transition duration-300 hover:scale-105 hover:shadow-lg md:w-[32%]"
           >
             <Image
               className="h-56 w-full object-cover object-center"
