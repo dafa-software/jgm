@@ -86,7 +86,7 @@ export default function Header({ variant = "default" }: HeaderProps) {
         ) : (
           <>
             <div className="hidden w-full flex-grow md:w-auto lg:block lg:items-center">
-              <div className="flex gap-3">
+              <div className="flex gap-3 xl:gap-6">
                 {NavigationData.map((props, index) => (
                   <Link
                     {...props}

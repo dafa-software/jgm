@@ -14,12 +14,11 @@ import Carousel from "../_components/carousel";
 import { PlayCircleIcon } from "@heroicons/react/16/solid";
 import Title from "../_components/title";
 import FeedbackCard from "../_components/cards/feedback";
-import { api } from "~/trpc/server";
-import Image from "next/image";
 import { Suspense } from "react";
 import SuspenseLoader from "../_components/suspense-loader";
 import BudgetWithIcon from "../_components/budget-with-icon";
 import { PersonCard } from "../_components/cards/person";
+import BlogCard from "../_components/cards/blog";
 
 export default async function Home() {
   return (
@@ -59,9 +58,12 @@ export default async function Home() {
                   residenciais.
                 </p>
               </div>
-              <p className="text-cyan-200 hover:cursor-pointer hover:underline">
+              <Link
+                href="/servicos"
+                className="text-cyan-200 hover:cursor-pointer hover:underline"
+              >
                 Visualizar todos os serviços →
-              </p>
+              </Link>
             </div>
             <Carousel>
               {HomeServicesData.map((props, index) => (
@@ -113,8 +115,16 @@ export default async function Home() {
               title="Recentes no Blog"
               text="Alguns dos nossos posts mais recentes em nosso blog, sempre com novas informações."
             />
-            <Suspense fallback={<SuspenseLoader />}>
-              <Blog />
+            <Suspense
+              fallback={
+                <div className="flex flex-col gap-6 md:flex-row">
+                  {[1, 2, 3].map((_, index) => (
+                    <SuspenseLoader key={index} />
+                  ))}
+                </div>
+              }
+            >
+              <BlogCard type="some" />
             </Suspense>
           </Section>
         </Container>
@@ -197,49 +207,5 @@ export default async function Home() {
         </Container>
       </section>
     </main>
-  );
-}
-
-async function Blog() {
-  const posts = await api.post.getSomePosts({ limit: 3 });
-
-  return (
-    <div className="flex flex-col items-center gap-2">
-      <div className="flex flex-wrap justify-center gap-4">
-        {posts.posts.map((post) => (
-          <div
-            key={post.id}
-            className="overflow-hidden rounded-lg bg-white shadow-md md:w-[30%]"
-          >
-            <Image
-              className="h-56 w-full object-cover object-center"
-              src={post.image ?? "/logo.png"}
-              alt={post.title.rendered ?? ""}
-              width={720}
-              height={400}
-            />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold text-gray-800">
-                {post.title.rendered}
-              </h2>
-              <div
-                className="m-2 text-gray-600"
-                dangerouslySetInnerHTML={{
-                  __html: post?.content.rendered.substring(0, 160) || "",
-                }}
-              ></div>
-              <div className="mt-4 flex items-center justify-between">
-                <p className="mt-2 text-gray-500">
-                  Categorias: {post.categories[0]}
-                </p>
-                <p className="text-slate-500">
-                  {new Date(post.date).toLocaleDateString()}
-                </p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
   );
 }
