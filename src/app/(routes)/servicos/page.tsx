@@ -6,7 +6,7 @@ import { HomeServicesData } from "~/data";
 
 export default function ServicesPage() {
   return (
-    <main className="bg-blue-main bg-[url(/assets/bg-wave.svg)] bg-center bg-no-repeat">
+    <main className="bg-blue-main bg-[url(/assets/bg-wave.svg)] bg-cover bg-center bg-no-repeat">
       <Container>
         <Section>
           <Title
@@ -15,7 +15,7 @@ export default function ServicesPage() {
           />
           <div className="flex flex-wrap justify-center gap-4">
             {HomeServicesData.map((service, index) => (
-              <div key={index} className="flex overflow-hidden md:w-[30%]">
+              <div key={index} className="flex overflow-hidden md:w-[23%]">
                 <ServicesCard key={index} {...service} />
               </div>
             ))}

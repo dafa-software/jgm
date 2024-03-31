@@ -44,29 +44,37 @@ export const NavigationData = [
 
 // Footer
 export const ServicesData = [
+  // {
+  //   title: "JGM Flix",
+  //   href: "servicos/jgm-flix",
+  // },
   {
     title: "Jardinagem",
     href: "servicos/jardinagem",
   },
   {
     title: "Limpeza Pós-Obra",
-    href: "servicos/limpeza-pos-obra",
+    href: "servicos/pos-obra",
   },
   {
     title: "Limpeza Pós-Incêndio",
-    href: "servicos/limpeza-pos-incendio",
+    href: "servicos/pos-incendio",
   },
   {
     title: "Mão de Obra Especializada",
-    href: "servicos/mao-de-obra-especializada",
+    href: "servicos/mao-de-obra",
+  },
+  {
+    title: "Terceirização de Mão de Obra",
+    href: "servicos/tercerizacao",
   },
   {
     title: "Limpeza Comercial e Residencial",
-    href: "servicos/limpeza-comercial-e-residencial",
+    href: "servicos/comercial-e-residencial",
   },
   {
     title: "Limpeza de Estofados e Carpetes",
-    href: "servicos/limpeza-de-estofados-e-carpetes",
+    href: "servicos/estofados-e-carpetes",
   },
 ];
 
@@ -288,12 +296,12 @@ export const HomeServicesData = [
     text: "Limpeza especializada em locais que sofreram incêndio, com profissionais treinados e equipamentos de segurança.",
     href: "/servicos/pos-incendio",
   },
-  {
-    title: "JGM Flix",
-    titleType: "image",
-    text: "Diversos serviços por assinatura e opções de planos para você escolher o que melhor te atende. E com os melhores profissionais!",
-    href: "/servicos/jgm-flix",
-  },
+  // {
+  //   title: "JGM Flix",
+  //   titleType: "image",
+  //   text: "Diversos serviços por assinatura e opções de planos para você escolher o que melhor te atende. E com os melhores profissionais!",
+  //   href: "/servicos/jgm-flix",
+  // },
 ];
 
 export const HomeWhyData = [

@@ -7,12 +7,12 @@ import { NavigationData } from "~/data";
 import {
   EllipsisVerticalIcon,
   EnvelopeIcon,
-  MagnifyingGlassIcon,
   PhoneIcon,
   XMarkIcon,
 } from "@heroicons/react/20/solid";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import SearchInput from "./search";
 
 interface HeaderProps {
   variant?: "default" | "landing-page";
@@ -85,8 +85,8 @@ export default function Header({ variant = "default" }: HeaderProps) {
           </div>
         ) : (
           <>
-            <div className="hidden w-full flex-grow md:block md:w-auto lg:items-center">
-              <div className="flex gap-6">
+            <div className="hidden w-full flex-grow md:w-auto lg:block lg:items-center">
+              <div className="flex gap-3">
                 {NavigationData.map((props, index) => (
                   <Link
                     {...props}
@@ -98,8 +98,8 @@ export default function Header({ variant = "default" }: HeaderProps) {
                 ))}
               </div>
             </div>
-            <div className="hidden md:flex">
-              <MagnifyingGlassIcon className="h-6 w-6" color="black" />
+            <div className="hidden lg:flex">
+              <SearchInput />
             </div>
             <div className="col-span-3 ml-auto self-center lg:hidden ">
               <button

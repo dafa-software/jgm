@@ -22,7 +22,7 @@ export default function Footer() {
           ))}
         </div>
         <div className="w-full border border-white" />
-        <div className="flex flex-col justify-between md:flex-row">
+        <div className="flex flex-col-reverse items-center justify-between gap-6 md:flex-row">
           <p className="text-sm">
             Copyright © 2024. Todos os direitos reservados.
           </p>

@@ -149,14 +149,14 @@ export default async function Home() {
                   <BudgetWithIcon key={index} {...props} />
                 ))}
               </div>
-              <div className="grid grid-cols-2 items-center justify-center gap-2 border-y p-6 md:flex md:flex-row">
+              <div className="grid grid-cols-2 items-center justify-center gap-2 border-y p-3 md:flex md:flex-row">
                 {HomeLogoData.map((props, index) => (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
                     key={index}
                     src={props.src}
                     alt={props.alt}
-                    className="h-20 w-fit"
+                    className="h-24 w-fit md:h-16 lg:h-20"
                   />
                 ))}
               </div>
