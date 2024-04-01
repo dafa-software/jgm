@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import { NavigationData, ServicesData } from "~/data";
+import { HomeSearchData, ServicesData } from "~/data";
 import Link from "next/link";
 
 export default function SearchInput() {
-  const searchData = [NavigationData, ServicesData];
+  const searchData = [HomeSearchData, ServicesData];
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredResults, setFilteredResults] = useState<
     { title: string; href: string }[]

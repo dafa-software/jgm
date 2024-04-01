@@ -340,6 +340,45 @@ export const HomeServicesData = [
   // },
 ];
 
+export const HomeSearchData = [
+  {
+    title: "Home",
+    href: "/",
+  },
+  {
+    title: "Serviços",
+    href: "/servicos",
+  },
+  {
+    title: "Blog",
+    href: "/blog",
+  },
+  {
+    title: "Trabalhe Conosco",
+    href: "/trabalhe-conosco",
+  },
+  {
+    title: "Contato",
+    href: "/contato",
+  },
+  {
+    title: "Contracheques",
+    href: "https://jgmservicos.com.br/sistema/colaboradores/login.php",
+  },
+  {
+    title: "Bimer",
+    href: "http://p2-jgm.snmssp.com:8082/#/",
+  },
+  {
+    title: "Termos de Uso",
+    href: "https://jgmservicos.com.br/termos-de-uso/",
+  },
+  {
+    title: "Política de Privacidade",
+    href: "https://jgmservicos.com.br/politica-de-privacidade/",
+  },
+];
+
 export const HomeWhyData = [
   {
     icon: <FlagIcon className="h-9 w-9 fill-green-300" />,
