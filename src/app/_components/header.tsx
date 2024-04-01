@@ -39,7 +39,7 @@ export default function Header({ variant = "default" }: HeaderProps) {
         className={`fixed left-0 top-0 z-50 h-full w-full backdrop-blur-sm backdrop-brightness-75 ${mobileMenuOpen ? "visible" : "hidden"} animate-menu-fade lg:hidden`}
       >
         <nav className="fixed z-50 h-full w-full shadow-xl">
-          <div className="min-w-1/4 sticky right-3 top-3 ml-auto h-auto w-[70%] rounded-lg bg-white p-5 sm:w-[40%]">
+          <div className="min-w-1/4 sticky right-3 top-3 ml-auto h-auto w-[94%] rounded-lg bg-white p-5 sm:w-[40%]">
             <button
               type="button"
               onClick={toggleMobileMenu}

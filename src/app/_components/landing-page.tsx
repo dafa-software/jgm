@@ -45,7 +45,7 @@ export default function LandingPage(props: LandingPageProps) {
       <div className="bg-[#F1F5F9] bg-[url(/assets/bg-squares.svg)] bg-cover bg-center bg-no-repeat">
         <Container>
           <Section>
-            <div className="flex flex-wrap justify-center gap-6">
+            <div className="flex flex-wrap justify-center gap-12 md:gap-6">
               {LandingPageWhyData.map((props, index) => (
                 <div key={index} className="flex overflow-hidden md:w-[30%]">
                   <WhyCard key={index} {...props} />
@@ -90,7 +90,7 @@ export default function LandingPage(props: LandingPageProps) {
               title="Áreas de Atuação"
               text="A JGM atua em diversos seguimentos. "
             />
-            <div className="flex flex-col gap-6 md:flex-row md:gap-20">
+            <div className="flex flex-col gap-16 md:flex-row md:gap-20">
               {LandingPageIconData.map((props, index) => (
                 <IconCard key={index} {...props} />
               ))}

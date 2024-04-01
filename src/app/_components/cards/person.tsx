@@ -8,7 +8,7 @@ interface PersonCardProps {
 
 export function PersonCard(props: PersonCardProps) {
   return (
-    <div className="flex flex-col rounded-md bg-white shadow-sm transition duration-300 ease-in-out hover:scale-105">
+    <div className="m-2 flex flex-col rounded-md bg-white shadow-sm transition duration-300 ease-in-out hover:scale-105">
       <Image
         className="h-56 w-full rounded-t-md object-cover object-center"
         src={props.image}

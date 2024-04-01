@@ -6,7 +6,7 @@ interface TitleProps {
 
 export default function Title(props: TitleProps) {
   return (
-    <div className="flex flex-col items-center pb-8">
+    <div className="flex flex-col items-center gap-2 pb-8 text-center">
       <h2
         className={`text-3xl font-bold ${props.variant === "light" ? "text-blue-main" : "text-white"}`}
       >
