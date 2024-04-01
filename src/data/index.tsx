@@ -72,11 +72,11 @@ export const CompanyData = [
 export const LegalData = [
   {
     title: "Termos de Uso",
-    href: "/termos-de-uso",
+    href: "https://jgmservicos.com.br/termos-de-uso/",
   },
   {
     title: "Política de Privacidade",
-    href: "/politica-de-privacidade",
+    href: "https://jgmservicos.com.br/politica-de-privacidade/",
   },
 ];
 
@@ -127,7 +127,7 @@ export const NavigationData = {
     href: "/",
     text: "Home",
   },
-  Servicos: [
+  Serviços: [
     {
       href: "/servicos/pos-obra",
       text: "Limpeza Pós-obra",
@@ -173,10 +173,16 @@ export const NavigationData = {
     href: "/contato",
     text: "Contato",
   },
-  AreaDoColaborador: {
-    href: "/area-do-colaborador",
-    text: "Área do Colaborador",
-  },
+  "Área do Colaborador": [
+    {
+      href: "https://jgmservicos.com.br/sistema/colaboradores/login.php",
+      text: "Contracheques",
+    },
+    {
+      href: "http://p2-jgm.snmssp.com:8082/#/",
+      text: "Bimer",
+    },
+  ],
 };
 
 // Landing Pages

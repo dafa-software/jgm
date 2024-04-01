@@ -10,7 +10,7 @@ import {
   PhoneIcon,
   XMarkIcon,
 } from "@heroicons/react/20/solid";
-import { useState } from "react";
+import { type SetStateAction, useState } from "react";
 import { usePathname } from "next/navigation";
 import SearchInput from "./search";
 
@@ -23,37 +23,72 @@ export default function Header({ variant = "default" }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
 
-  const [showSubMenu, setShowSubMenu] = useState(null);
+  const [showSubMenu, setShowSubMenu] = useState<string | null>(null);
+
+  const toggleSubMenu = (key: SetStateAction<string | null>) => {
+    if (showSubMenu === key) {
+      setShowSubMenu(null);
+    } else {
+      setShowSubMenu(key);
+    }
+  };
 
   return (
     <>
       <div
-        onClick={toggleMobileMenu}
         className={`fixed left-0 top-0 z-50 h-full w-full backdrop-blur-sm backdrop-brightness-75 ${mobileMenuOpen ? "visible" : "hidden"} animate-menu-fade lg:hidden`}
       >
         <nav className="fixed z-50 h-full w-full shadow-xl">
           <div className="min-w-1/4 sticky right-3 top-3 ml-auto h-auto w-[70%] rounded-lg bg-white p-5 sm:w-[40%]">
             <button
               type="button"
-              className="absolute right-0 top-0 m-5 flex h-12 w-12 items-center justify-center rounded-lg bg-gray-100 p-1.5"
               onClick={toggleMobileMenu}
+              className="absolute right-0 top-0 z-50 m-5 flex h-12 w-12 items-center justify-center rounded-lg bg-gray-100 p-1.5"
             >
               <span className="sr-only">Close menu</span>
               <XMarkIcon className="h-6 w-6" />
             </button>
             <div className="flow-root">
-              <div className="my-6 divide-gray-400/20">
-                {/* <div className="ml-2 space-y-2 ">
-                  {NavigationData.map((props, index) => (
-                    <Link
-                      key={index}
-                      href={props.href}
-                      className={`mx-3 block w-[90%] px-3 py-1 leading-7 ${pathname === props.href ? "font-bold text-blue-700" : "font-semibold text-blue-main"}`}
-                    >
-                      {props.title}
-                    </Link>
-                  ))}
-                </div> */}
+              <div className="ml-2 space-y-2">
+                {Object.entries(NavigationData).map(([key, value], index) => (
+                  <div key={index} className="relative">
+                    {Array.isArray(value) ? (
+                      <div className="group">
+                        <button
+                          type="button"
+                          onClick={() => toggleSubMenu(key)}
+                          className={`px-3 py-1 leading-7 ${pathname === value[0]?.href ? "font-bold text-blue-700" : "font-semibold text-blue-main"}`}
+                        >
+                          {key}{" "}
+                          <span className="text-xs">
+                            {showSubMenu === key ? "▲" : "▼"}
+                          </span>
+                        </button>
+                        {showSubMenu === key && (
+                          <div className="w-fulls mt-1 flex flex-col gap-3 pl-5">
+                            {value.map((item, index) => (
+                              <Link
+                                key={index}
+                                href={item.href}
+                                onClick={toggleMobileMenu}
+                                className={`text-nowrap hover:text-cyan-700 ${pathname === item.href ? "font-semibold text-blue-700" : "text-blue-main"}`}
+                              >
+                                {item.text}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      <Link
+                        href={value.href}
+                        className={`block w-full px-3 py-1 leading-7 ${pathname === value.href ? "font-bold text-blue-700" : "font-semibold text-blue-main"}`}
+                      >
+                        {value.text}
+                      </Link>
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -88,12 +123,12 @@ export default function Header({ variant = "default" }: HeaderProps) {
         ) : (
           <>
             <div className="hidden w-full flex-grow items-center text-blue-main md:w-auto lg:block">
-              <div className="flex gap-3">
+              <div className="flex gap-3 xl:gap-6">
                 {Object.entries(NavigationData).map(([key, value]) => (
                   <div key={key} className="relative">
                     {Array.isArray(value) ? (
                       <div className="group">
-                        <Link href="/servicos">
+                        <Link href="#">
                           {key} <span className="text-xs">▼</span>
                         </Link>
                         <div className="absolute z-50 hidden gap-3 rounded-md border bg-white p-4 shadow-md group-hover:block">
@@ -102,6 +137,7 @@ export default function Header({ variant = "default" }: HeaderProps) {
                               <Link
                                 key={index}
                                 href={item.href}
+                                onClick={toggleMobileMenu}
                                 className={`text-nowrap hover:text-cyan-700 ${pathname === item.href ? "font-semibold text-blue-700" : "text-blue-main"}`}
                               >
                                 {item.text}
