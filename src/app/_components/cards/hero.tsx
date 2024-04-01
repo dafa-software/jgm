@@ -1,4 +1,5 @@
 import "~/styles/globals.css";
+import Image from "next/image";
 import Container from "../container";
 
 interface HeroCardProps {
@@ -12,8 +13,7 @@ interface HeroCardProps {
 export function HeroCard(props: HeroCardProps) {
   return (
     <div
-      style={{ backgroundImage: `url('/assets/${props.backgroundImg}.png')` }}
-      className={`flex items-center justify-center bg-black bg-cover bg-center bg-no-repeat text-white md:min-h-[500px]`}
+      className={`flex items-center justify-center bg-cover bg-center bg-no-repeat text-white md:min-h-[500px]`}
     >
       <Container>
         <div className="flex flex-col gap-12 p-6 md:flex-row">
@@ -29,6 +29,13 @@ export function HeroCard(props: HeroCardProps) {
           )}
         </div>
       </Container>
+      <Image
+        src={`/assets/${props.backgroundImg}.png`}
+        alt="Wave"
+        width={1920}
+        height={1080}
+        className="absolute left-0 top-0 -z-50 h-full w-full bg-black object-cover"
+      />
     </div>
   );
 }
