@@ -116,7 +116,7 @@ export default async function Home() {
               title="Recentes no Blog"
               text="Alguns dos nossos posts mais recentes em nosso blog, sempre com novas informações."
             />
-            {/* <Suspense
+            <Suspense
               fallback={
                 <div className="flex flex-col gap-6 md:flex-row">
                   {[1, 2, 3].map((_, index) => (
@@ -126,7 +126,7 @@ export default async function Home() {
               }
             >
               <BlogCard type="some" />
-            </Suspense> */}
+            </Suspense>
           </Section>
         </Container>
       </section>
