@@ -14,34 +14,6 @@ import {
   WrenchScrewdriverIcon,
 } from "@heroicons/react/24/outline";
 
-// Header
-export const NavigationData = [
-  {
-    title: "Home",
-    href: "/",
-  },
-  {
-    title: "Serviços",
-    href: "/servicos",
-  },
-  {
-    title: "Blog",
-    href: "/blog",
-  },
-  {
-    title: "Trabalhe Conosco",
-    href: "/trabalhe-conosco",
-  },
-  {
-    title: "Contato",
-    href: "/contato",
-  },
-  {
-    title: "Área do Colaborador",
-    href: "/area-do-colaborador",
-  },
-];
-
 // Footer
 export const ServicesData = [
   // {
@@ -50,7 +22,7 @@ export const ServicesData = [
   // },
   {
     title: "Jardinagem",
-    href: "servicos/jardinagem",
+    href: "servicos/manutencao-de-jardim",
   },
   {
     title: "Limpeza Pós-Obra",
@@ -148,6 +120,64 @@ export const FooterIconData = [
     href: "https://api.whatsapp.com/send?phone=21964127226",
   },
 ];
+
+// Header
+export const NavigationData = {
+  Home: {
+    href: "/",
+    text: "Home",
+  },
+  Servicos: [
+    {
+      href: "/servicos/pos-obra",
+      text: "Limpeza Pós-obra",
+    },
+    {
+      href: "/servicos/tercerizacao",
+      text: "Terceirização de mão de obra",
+    },
+    {
+      href: "/servicos/comercial-e-residencial",
+      text: "Limpeza Comercial e Residencial",
+    },
+    {
+      href: "/servicos/mao-de-obra",
+      text: "Mão de Obra Especializada",
+    },
+    {
+      href: "/servicos/estofados-e-carpetes",
+      text: "Limpeza de Estofados e Carpetes",
+    },
+    {
+      href: "/servicos/manutencao-de-jardim",
+      text: "Jardinagem",
+    },
+    {
+      href: "/servicos/pos-incendio",
+      text: "Limpeza Pós-Incêndio",
+    },
+    // {
+    //   href: "/servicos/jgm-flix",
+    //   text: "JGM Flix",
+    // },
+  ],
+  Blog: {
+    href: "/blog",
+    text: "Blog",
+  },
+  TrabalheConosco: {
+    href: "/trabalhe-conosco",
+    text: "Trabalhe Conosco",
+  },
+  Contato: {
+    href: "/contato",
+    text: "Contato",
+  },
+  AreaDoColaborador: {
+    href: "/area-do-colaborador",
+    text: "Área do Colaborador",
+  },
+};
 
 // Landing Pages
 export const LandingPageWhyData = [

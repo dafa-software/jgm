@@ -23,6 +23,8 @@ export default function Header({ variant = "default" }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
 
+  const [showSubMenu, setShowSubMenu] = useState(null);
+
   return (
     <>
       <div
@@ -41,7 +43,7 @@ export default function Header({ variant = "default" }: HeaderProps) {
             </button>
             <div className="flow-root">
               <div className="my-6 divide-gray-400/20">
-                <div className="ml-2 space-y-2 ">
+                {/* <div className="ml-2 space-y-2 ">
                   {NavigationData.map((props, index) => (
                     <Link
                       key={index}
@@ -51,7 +53,7 @@ export default function Header({ variant = "default" }: HeaderProps) {
                       {props.title}
                     </Link>
                   ))}
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -85,16 +87,38 @@ export default function Header({ variant = "default" }: HeaderProps) {
           </div>
         ) : (
           <>
-            <div className="hidden w-full flex-grow md:w-auto lg:block lg:items-center">
-              <div className="flex gap-3 xl:gap-6">
-                {NavigationData.map((props, index) => (
-                  <Link
-                    {...props}
-                    key={index}
-                    className={`hover:text-cyan-700 ${pathname === props.href ? "font-semibold text-blue-700" : "text-blue-main"}`}
-                  >
-                    {props.title}
-                  </Link>
+            <div className="hidden w-full flex-grow items-center text-blue-main md:w-auto lg:block">
+              <div className="flex gap-3">
+                {Object.entries(NavigationData).map(([key, value]) => (
+                  <div key={key} className="relative">
+                    {Array.isArray(value) ? (
+                      <div className="group">
+                        <Link href="/servicos">
+                          {key} <span className="text-xs">▼</span>
+                        </Link>
+                        <div className="absolute z-50 hidden gap-3 rounded-md border bg-white p-4 shadow-md group-hover:block">
+                          <div className="flex flex-col gap-3">
+                            {value.map((item, index) => (
+                              <Link
+                                key={index}
+                                href={item.href}
+                                className={`text-nowrap hover:text-cyan-700 ${pathname === item.href ? "font-semibold text-blue-700" : "text-blue-main"}`}
+                              >
+                                {item.text}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <Link
+                        href={value.href}
+                        className={`hover:text-cyan-700 ${pathname === value.href ? "font-semibold text-blue-700" : "text-blue-main"}`}
+                      >
+                        {value.text}
+                      </Link>
+                    )}
+                  </div>
                 ))}
               </div>
             </div>
