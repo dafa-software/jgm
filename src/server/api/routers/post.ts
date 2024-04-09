@@ -55,6 +55,6 @@ export const postRouter = createTRPCRouter({
     )
     .query(async ({ input }) => {
       const post = await getSinglePost(input.id);
-      return post;
+      return { post };
     }),
 });

@@ -13,7 +13,7 @@ interface HeroCardProps {
 export function HeroCard(props: HeroCardProps) {
   return (
     <div
-      className={`flex items-center justify-center bg-cover bg-center bg-no-repeat text-white md:min-h-[500px]`}
+      className={`flex items-center justify-center bg-cover bg-center bg-no-repeat text-white md:min-h-[800px]`}
     >
       <Container>
         <div className="flex flex-col gap-12 p-6 md:flex-row">

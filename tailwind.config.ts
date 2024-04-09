@@ -10,6 +10,7 @@ export default {
       },
       colors: {
         "blue-main": "#082F49",
+        "red-main": "#A45A52",
       },
       animation: {
         "fade-in-up": "fade-in-up 0.6s ease-in-out",

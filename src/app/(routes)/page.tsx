@@ -20,6 +20,7 @@ import SuspenseLoader from "../_components/suspense-loader";
 import BudgetWithIcon from "../_components/budget-with-icon";
 import { PersonCard } from "../_components/cards/person";
 import BlogCard from "../_components/cards/blog";
+import BigNumbers from "../_components/cards/big-numbers";
 
 export default async function Home() {
   return (
@@ -32,12 +33,12 @@ export default async function Home() {
           <div className="flex flex-col gap-3 md:flex-row">
             <Link
               href="https://wa.me/5521977378854"
-              className="rounded-md bg-blue-main px-8 py-4 font-bold shadow-sm transition duration-300 ease-in-out hover:cursor-pointer hover:bg-blue-700"
+              className="rounded-md bg-blue-800 px-8 py-4 font-bold shadow-sm transition duration-300 ease-in-out hover:cursor-pointer hover:bg-blue-500"
             >
               Solicite um orçamento →
             </Link>
             <Link
-              href="https://wa.me/5521977378854"
+              href="https://grupojgm.vagas.solides.com.br/"
               className="rounded-md border-2 border-white px-8 py-4 font-bold shadow-sm transition duration-300 ease-in-out hover:cursor-pointer hover:bg-white hover:text-blue-main"
             >
               Trabalhe Conosco →
@@ -90,46 +91,7 @@ export default async function Home() {
           </Link>
         </p>
       </section>
-      <section className="bg-white">
-        <Container>
-          <Section>
-            <Title
-              variant="light"
-              title="Depoimentos"
-              text="Veja o que nossos clientes têm a dizer! Confira os depoimentos mais recentes que recebemos sobre nossos produtos e serviços."
-            />
-            <Carousel>
-              {FeedbackData.map((props, index) => (
-                <div key={index} className="keen-slider__slide flex">
-                  <FeedbackCard key={index} {...props} />
-                </div>
-              ))}
-            </Carousel>
-          </Section>
-        </Container>
-      </section>
-      <section className="bg-[#F1F5F9] bg-[url(/assets/bg-squares.svg)] bg-cover bg-center bg-no-repeat">
-        <Container>
-          <Section>
-            <Title
-              variant="light"
-              title="Recentes no Blog"
-              text="Alguns dos nossos posts mais recentes em nosso blog, sempre com novas informações."
-            />
-            <Suspense
-              fallback={
-                <div className="flex flex-col gap-6 md:flex-row">
-                  {[1, 2, 3].map((_, index) => (
-                    <SuspenseLoader key={index} />
-                  ))}
-                </div>
-              }
-            >
-              <BlogCard type="some" />
-            </Suspense>
-          </Section>
-        </Container>
-      </section>
+
       <section className="bg-white">
         <Container>
           <Section>
@@ -173,18 +135,30 @@ export default async function Home() {
                 ))}
               </div>
               <div className="flex flex-col justify-around gap-3 text-xl font-bold text-blue-main md:flex-row md:items-center">
-                <h3>
-                  <span className="text-3xl text-blue-500">+90</span>{" "}
-                  Funcionarios
-                </h3>
-                <h3>
-                  <span className="text-3xl text-blue-500">+10</span> de anos
-                  experiência
-                </h3>
-                <h3>
-                  <span className="text-3xl text-blue-500">+1000</span> Clientes
-                  satisfeitos
-                </h3>
+                <BigNumbers
+                  title={"Funcionarios"}
+                  number={90}
+                  variant={"primary"}
+                  kind="number"
+                  className="text-4xl text-blue-500"
+                />
+
+                <BigNumbers
+                  title={`de anos
+                  experiência`}
+                  number={10}
+                  variant={"primary"}
+                  kind="number"
+                  className="text-4xl text-blue-500"
+                />
+
+                <BigNumbers
+                  title={"Clientes satisfeitos"}
+                  number={1000}
+                  variant={"primary"}
+                  kind="number"
+                  className="text-4xl text-blue-500"
+                />
               </div>
             </div>
           </Section>
@@ -207,6 +181,46 @@ export default async function Home() {
                 ))}
               </div>
             </div>
+          </Section>
+        </Container>
+      </section>
+      <section className="bg-white">
+        <Container>
+          <Section>
+            <Title
+              variant="light"
+              title="Depoimentos"
+              text="Veja o que nossos clientes têm a dizer! Confira os depoimentos mais recentes que recebemos sobre nossos produtos e serviços."
+            />
+            <Carousel>
+              {FeedbackData.map((props, index) => (
+                <div key={index} className="keen-slider__slide flex">
+                  <FeedbackCard key={index} {...props} />
+                </div>
+              ))}
+            </Carousel>
+          </Section>
+        </Container>
+      </section>
+      <section className="bg-[#F1F5F9] bg-[url(/assets/bg-squares.svg)] bg-cover bg-center bg-no-repeat">
+        <Container>
+          <Section>
+            <Title
+              variant="light"
+              title="Recentes no Blog"
+              text="Alguns dos nossos posts mais recentes em nosso blog, sempre com novas informações."
+            />
+            <Suspense
+              fallback={
+                <div className="flex flex-col gap-6 md:flex-row">
+                  {[1, 2, 3].map((_, index) => (
+                    <SuspenseLoader key={index} />
+                  ))}
+                </div>
+              }
+            >
+              <BlogCard type="some" />
+            </Suspense>
           </Section>
         </Container>
       </section>

@@ -20,9 +20,17 @@ export async function getAllPosts(): Promise<BlogPosts> {
 }
 
 export async function getSinglePost(id: number): Promise<BlogPost> {
-  const response = await fetch(
-    `${env.WP_POSTS_URL}/?&_status=publish&per_page=50&include=${id}`,
-  );
+  const response = await fetch(`${env.WP_POSTS_URL}/${id}`);
+
   const data = (await response.json()) as BlogPost;
+
+  const imageRegex = /<img.*?src=['"](.*?)['"]/;
+  if (data.content) {
+    const imageMatch = imageRegex.exec(data.content.rendered.toString());
+    if (imageMatch) {
+      data.image = imageMatch[1];
+    }
+  }
+
   return data;
 }

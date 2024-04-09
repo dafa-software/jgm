@@ -61,7 +61,7 @@ export const CompanyData = [
   },
   {
     title: "Trabalhe Conosco",
-    href: "/trabalhe-conosco",
+    href: "https://grupojgm.vagas.solides.com.br/",
   },
   {
     title: "Área do Colaborador",
@@ -166,7 +166,7 @@ export const NavigationData = {
     text: "Blog",
   },
   TrabalheConosco: {
-    href: "/trabalhe-conosco",
+    href: "https://grupojgm.vagas.solides.com.br/",
     text: "Trabalhe Conosco",
   },
   Contato: {
@@ -355,7 +355,7 @@ export const HomeSearchData = [
   },
   {
     title: "Trabalhe Conosco",
-    href: "/trabalhe-conosco",
+    href: "https://grupojgm.vagas.solides.com.br/",
   },
   {
     title: "Contato",

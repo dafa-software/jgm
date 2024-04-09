@@ -4,7 +4,7 @@ import Header from "../_components/header";
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <main>
-      <Header variant="default" />
+      <Header variant="transparent" />
       <div className="animate-fade-in-up">{children}</div>
       <Footer />
     </main>

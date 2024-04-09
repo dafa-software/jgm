@@ -10,17 +10,18 @@ import {
   PhoneIcon,
   XMarkIcon,
 } from "@heroicons/react/20/solid";
-import { type SetStateAction, useState } from "react";
+import { type SetStateAction, useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import SearchInput from "./search";
 
 interface HeaderProps {
-  variant?: "default" | "landing-page";
+  variant?: "default" | "landing-page" | "transparent";
 }
 
 export default function Header({ variant = "default" }: HeaderProps) {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [header, setHeader] = useState(false);
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
 
   const [showSubMenu, setShowSubMenu] = useState<string | null>(null);
@@ -33,10 +34,21 @@ export default function Header({ variant = "default" }: HeaderProps) {
     }
   };
 
+  useEffect(() => {
+    const scrollYPos = () => {
+      window.scrollY > 10 ? setHeader(true) : setHeader(false);
+    };
+
+    window.addEventListener("scroll", scrollYPos);
+
+    return () => window.removeEventListener("scroll", scrollYPos);
+  }, []);
+
   return (
     <>
       <div
-        className={`fixed left-0 top-0 z-50 h-full w-full backdrop-blur-sm backdrop-brightness-75 ${mobileMenuOpen ? "visible" : "hidden"} animate-menu-fade lg:hidden`}
+        className={`fixed left-0 top-0 z-50 h-full w-full backdrop-blur-sm backdrop-brightness-75 ${mobileMenuOpen ? "visible" : "hidden"} animate-menu-fade lg:hidden
+        `}
       >
         <nav className="fixed z-50 h-full w-full shadow-xl">
           <div className="min-w-1/4 sticky right-3 top-3 ml-auto h-auto w-[94%] rounded-lg bg-white p-5 sm:w-[40%]">
@@ -57,7 +69,11 @@ export default function Header({ variant = "default" }: HeaderProps) {
                         <button
                           type="button"
                           onClick={() => toggleSubMenu(key)}
-                          className={`px-3 py-1 leading-7 ${pathname === value[0]?.href ? "font-bold text-blue-700" : "font-semibold text-blue-main"}`}
+                          className={`px-3 py-1 leading-7 ${
+                            pathname === value[0]?.href
+                              ? "font-bold text-blue-700"
+                              : "font-semibold text-blue-main"
+                          }`}
                         >
                           {key}{" "}
                           <span className="text-xs">
@@ -71,7 +87,11 @@ export default function Header({ variant = "default" }: HeaderProps) {
                                 key={index}
                                 href={item.href}
                                 onClick={toggleMobileMenu}
-                                className={`text-nowrap hover:text-cyan-700 ${pathname === item.href ? "font-semibold text-blue-700" : "text-blue-main"}`}
+                                className={`text-nowrap hover:text-cyan-700 ${
+                                  pathname === item.href
+                                    ? "font-semibold text-blue-700"
+                                    : "text-blue-main"
+                                }`}
                               >
                                 {item.text}
                               </Link>
@@ -95,35 +115,68 @@ export default function Header({ variant = "default" }: HeaderProps) {
         </nav>
       </div>
 
-      <header className="sticky top-0 z-40 flex w-full flex-none animate-fade-in-down flex-wrap items-center justify-between bg-white p-6 shadow-md transition-colors duration-500">
-        <div className="mr-6 flex flex-shrink-0 items-center text-white">
-          <Image src="/logo.png" alt="JGM Servijson" width={100} height={100} />
-        </div>
+      <header
+        className={`sticky top-0 z-40 flex w-full flex-none animate-fade-in-down flex-wrap items-center justify-between ${
+          variant === "transparent"
+            ? "bg-trasparent"
+            : variant === "landing-page"
+              ? "bg-white"
+              : "bg-trasparent"
+        } p-6 shadow-md transition-colors duration-500 ${
+          header ? "bg-white py-4 shadow-lg " : "bg-trasparent py-4"
+        }`}
+      >
         {variant === "landing-page" ? (
-          <div className="hidden gap-12 md:flex">
-            <div className="flex items-center gap-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="bi bi-whatsapp h-5 w-5"
-                viewBox="0 0 16 16"
-              >
-                <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
-              </svg>
-              <p>(21)96412-7226</p>
+          <>
+            <div className="mr-16 flex flex-shrink-0 items-center text-white">
+              <Link href="/">
+                <Image
+                  src={`${header ? "/JGM_Azul.webp" : "/JGM_Branco.png"}`}
+                  alt="JGM Servicos"
+                  width={100}
+                  height={100}
+                />
+              </Link>
             </div>
-            <div className="flex items-center gap-3">
-              <PhoneIcon className="h-5 w-5" color="black" />
-              <p>(21)3073-7064</p>
+            <div className="hidden gap-12 md:flex">
+              <div className="flex items-center gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="bi bi-whatsapp h-5 w-5"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+                </svg>
+                <p>(21)96412-7226</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <PhoneIcon className="h-5 w-5" color="black" />
+                <p>(21)3073-7064</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <EnvelopeIcon className="h-5 w-5" color="black" />
+                <p>comercial@jgmservicos.com.br</p>
+              </div>
             </div>
-            <div className="flex items-center gap-3">
-              <EnvelopeIcon className="h-5 w-5" color="black" />
-              <p>comercial@jgmservicos.com.br</p>
-            </div>
-          </div>
+          </>
         ) : (
           <>
-            <div className="hidden w-full flex-grow items-center text-blue-main md:w-auto lg:block">
-              <div className="flex gap-3 xl:gap-6">
+            <div className="mr-14 flex flex-shrink-0 items-center text-white">
+              <Link href="/">
+                <Image
+                  src={`${header ? "/JGM_Azul.webp" : "/JGM_Branco.png"}`}
+                  alt="JGM Servicos"
+                  width={100}
+                  height={100}
+                />
+              </Link>
+            </div>
+            <div
+              className={`ml-10 hidden w-full flex-grow items-center md:w-auto lg:block ${
+                header ? "text-black" : " text-white"
+              }`}
+            >
+              <div className="flex gap-10">
                 {Object.entries(NavigationData).map(([key, value]) => (
                   <div key={key} className="relative">
                     {Array.isArray(value) ? (
@@ -138,7 +191,13 @@ export default function Header({ variant = "default" }: HeaderProps) {
                                 key={index}
                                 href={item.href}
                                 onClick={toggleMobileMenu}
-                                className={`text-nowrap hover:text-cyan-700 ${pathname === item.href ? "font-semibold text-blue-700" : "text-blue-main"}`}
+                                className={`text-nowrap hover:text-blue-500 ${
+                                  header
+                                    ? pathname === item.href
+                                      ? "font-bold text-blue-700"
+                                      : "text-blue-main"
+                                    : "text-blue-main"
+                                }`}
                               >
                                 {item.text}
                               </Link>
@@ -149,7 +208,13 @@ export default function Header({ variant = "default" }: HeaderProps) {
                     ) : (
                       <Link
                         href={value.href}
-                        className={`hover:text-cyan-700 ${pathname === value.href ? "font-semibold text-blue-700" : "text-blue-main"}`}
+                        className={`hover:text-blue-500 ${
+                          header
+                            ? pathname === value.href
+                              ? "font-bold text-blue-700"
+                              : "text-blue-main"
+                            : "text-white"
+                        }`}
                       >
                         {value.text}
                       </Link>

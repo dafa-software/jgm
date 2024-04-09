@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { api } from "~/trpc/server";
 
 export default async function BlogCard({ type }: { type: "some" | "all" }) {
@@ -14,9 +15,10 @@ export default async function BlogCard({ type }: { type: "some" | "all" }) {
     <div className="flex flex-col items-center gap-2">
       <div className="flex flex-wrap justify-center gap-4">
         {posts?.posts.map((post) => (
-          <div
+          <Link
             key={post.id}
             className="overflow-hidden rounded-lg bg-white shadow-md transition duration-300 hover:scale-105 hover:shadow-lg md:w-[32%]"
+            href={`/blog/${post.slug}?id=${post.id}`}
           >
             <Image
               className="h-56 w-full object-cover object-center"
@@ -44,7 +46,7 @@ export default async function BlogCard({ type }: { type: "some" | "all" }) {
                 </p>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
