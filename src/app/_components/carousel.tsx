@@ -15,7 +15,7 @@ export default function Carousel(props: { children: React.ReactNode }) {
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     slides: {
-      perView: isMobile ? 1 : 3,
+      perView: isMobile ? 1 : 4,
       spacing: 10,
     },
     slideChanged(slider) {

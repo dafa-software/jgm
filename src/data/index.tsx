@@ -303,7 +303,7 @@ export const HomeServicesData = [
   {
     titleType: "text",
     title: "Limpeza Comercial e Residencial",
-    img: "card-comercial-e-residencial",
+    img: "novos-cards/card-comercial-e-residencial",
     text: "Oferecemos uma gama abrangente de serviços de limpeza e manutenção, tanto para ambientes comerciais quanto residenciais.",
     href: "/servicos/comercial-e-residencial",
   },
