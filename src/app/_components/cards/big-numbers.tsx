@@ -1,6 +1,7 @@
 "use client";
 
 import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
 
 interface BigNumbersProps {
   title: string;
@@ -11,9 +12,11 @@ interface BigNumbersProps {
 }
 
 const BigNumbers = (props: BigNumbersProps) => {
+  const [ref, inView] = useInView({ threshold: 1 });
   return (
     <div
       className={` flex w-full items-center justify-center gap-1 ${props.variant === "primary" ? "h-24 flex-col p-3 transition duration-300" : "flex-col p-6 shadow-sm"} `}
+      ref={ref}
     >
       <div className="flex flex-col items-center gap-1">
         {props.number && (
@@ -21,12 +24,14 @@ const BigNumbers = (props: BigNumbersProps) => {
             className={`${props.className && props.className} shadow-2xl hover:scale-125`}
           >
             {props.kind === "number" ? "+" : "%"}
-            <CountUp
-              end={props.number ? props.number : 0}
-              delay={0.7}
-              duration={5}
-              decimal=""
-            />
+            {inView && (
+              <CountUp
+                end={props.number ? props.number : 0}
+                delay={0.7}
+                duration={5}
+                decimal=""
+              />
+            )}
           </div>
         )}
       </div>

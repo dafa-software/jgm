@@ -20,7 +20,7 @@ export function HeroCard(props: HeroCardProps) {
           <div
             className={`flex flex-col justify-center gap-3 ${!props.contentRight && "md:w-2/3"}`}
           >
-            <h1 className="text-4xl font-bold">{props.title}</h1>
+            <h1 className="text-3xl font-bold">{props.title}</h1>
             <p className="text-2xl">{props.text}</p>
             {props.contentBottom && <>{props.contentBottom}</>}
           </div>

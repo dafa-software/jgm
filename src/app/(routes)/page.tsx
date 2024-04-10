@@ -21,7 +21,6 @@ import BudgetWithIcon from "../_components/budget-with-icon";
 import { PersonCard } from "../_components/cards/person";
 import BlogCard from "../_components/cards/blog";
 import BigNumbers from "../_components/cards/big-numbers";
-import { Button } from "../_components/ui/moving-border";
 import Whatsapp from "../_components/whatsapp";
 
 export default async function Home() {
@@ -35,7 +34,7 @@ export default async function Home() {
           <div className="flex flex-col gap-4 py-8 md:flex-row">
             <Link
               href="https://wa.me/5521977378854"
-              className="duration-400 transform rounded-md bg-blue-900 px-8 py-4 font-bold  tracking-widest text-black shadow-sm transition  duration-300 ease-in-out  hover:-translate-y-1 hover:scale-105 hover:cursor-pointer hover:bg-blue-600 dark:text-white"
+              className="duration-400 transform rounded-md bg-sky-500 px-8 py-4 font-bold  tracking-widest text-white shadow-sm transition  duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:cursor-pointer hover:bg-blue-600 hover:text-white"
             >
               Solicite um orçamento →
             </Link>
@@ -54,7 +53,7 @@ export default async function Home() {
           <Section>
             <div className="flex flex-col justify-between gap-3 pb-8 md:flex-row md:items-end md:px-14">
               <div className="flex flex-col gap-3 md:w-1/2">
-                <h2 className="text-4xl font-bold  text-blue-main">
+                <h2 className="text-3xl font-bold  text-blue-main">
                   Nossos serviços
                 </h2>
                 <p className="text-xl text-blue-main">
@@ -101,7 +100,7 @@ export default async function Home() {
             <div className="flex flex-col gap-12 ">
               <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
                 <div className="flex flex-col gap-3 text-white md:w-1/2">
-                  <h2 className="text-nowrap text-4xl font-semibold">
+                  <h2 className="text-nowrap text-3xl font-semibold">
                     Porque escolher a JGM Serviços
                   </h2>
                   <p className="text-lg text-white">
