@@ -7,7 +7,7 @@ import Title from "~/app/_components/title";
 
 export default async function Blog() {
   return (
-    <main className="bg-blue-main bg-[url(/assets/bg-wave.svg)] bg-cover bg-center bg-no-repeat">
+    <main className="bg-blue-main bg-[url(/assets/bg-wave.svg)] bg-cover bg-center bg-no-repeat py-10">
       <Container>
         <Section>
           <Title title="Blog" text="Confira nossas últimas postagens" />

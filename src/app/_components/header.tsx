@@ -116,27 +116,23 @@ export default function Header({ variant = "default" }: HeaderProps) {
       </div>
 
       <header
-        className={`sticky top-0 z-40 flex w-full flex-none animate-fade-in-down flex-wrap items-center justify-between ${
-          variant === "transparent"
-            ? "bg-trasparent"
-            : variant === "landing-page"
-              ? "bg-white"
-              : "bg-trasparent"
-        } p-6 shadow-md transition-colors duration-500 ${
-          header ? "bg-white py-4 shadow-lg " : "bg-trasparent py-4"
-        }`}
+        className={`fixed top-0 z-40 flex w-full flex-none animate-fade-in-down flex-wrap items-center justify-between py-4 ${
+          header || variant === "landing-page"
+            ? " bg-white shadow-md"
+            : " bg-transparent"
+        }
+        ${variant === "landing-page" && "bg-white"}
+         p-6 shadow-md transition-colors duration-500 `}
       >
         {variant === "landing-page" ? (
           <>
             <div className="mr-16 flex flex-shrink-0 items-center text-white">
-              <Link href="/">
-                <Image
-                  src={`${header ? "/JGM_Azul.webp" : "/JGM_Branco.png"}`}
-                  alt="JGM Servicos"
-                  width={100}
-                  height={100}
-                />
-              </Link>
+              <Image
+                src={`/JGM_Azul.webp`}
+                alt="JGM Servicos"
+                width={100}
+                height={100}
+              />
             </div>
             <div className="hidden gap-12 md:flex">
               <div className="flex items-center gap-3">

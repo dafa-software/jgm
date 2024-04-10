@@ -29,7 +29,7 @@ export default function Footer() {
           <div className="flex gap-6">
             {FooterIconData.map((props, index) => (
               <Link key={index} {...props} className="hover:text-cyan-200">
-                <Image width={20} height={20} src={props.src} alt={props.alt} />
+                <Image width={32} height={32} src={props.src} alt={props.alt} />
               </Link>
             ))}
           </div>

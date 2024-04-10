@@ -34,15 +34,16 @@ export default async function BlogCard({ type }: { type: "some" | "all" }) {
               <div
                 className="m-2 text-gray-600"
                 dangerouslySetInnerHTML={{
-                  __html: post?.content.rendered.substring(0, 160) || "",
+                  __html:
+                    `${post?.content.rendered.substring(0, 160)} ...` || "",
                 }}
               />
-              <div className="mt-4 flex items-center justify-between">
-                <p className="mt-2 text-gray-500">
-                  Categorias: {post.categories[0]}
-                </p>
-                <p className="text-slate-500">
+              <div className="mt-4 flex items-center justify-between gap-2">
+                <p className="text-right text-xs text-slate-500">
                   {new Date(post.date).toLocaleDateString()}
+                </p>
+                <p className="cursor-pointer text-right text-sm text-sky-500">
+                  Ver mais ...
                 </p>
               </div>
             </div>

@@ -28,7 +28,7 @@ export default function SearchInput() {
       <input
         type="text"
         placeholder="Procurar..."
-        className="rounded-md border border-gray-300 px-4 py-2 focus:outline-none"
+        className="rounded-md border border-gray-300 px-8 py-2 focus:outline-none"
         value={searchQuery}
         onChange={(e) => {
           setSearchQuery(e.target.value);

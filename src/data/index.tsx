@@ -63,10 +63,10 @@ export const CompanyData = [
     title: "Trabalhe Conosco",
     href: "https://grupojgm.vagas.solides.com.br/",
   },
-  {
-    title: "Área do Colaborador",
-    href: "/area-do-colaborador",
-  },
+  // {
+  //   title: "Área do Colaborador",
+  //   href: "/area-do-colaborador",
+  // },
 ];
 
 export const LegalData = [

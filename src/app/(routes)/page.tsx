@@ -21,6 +21,8 @@ import BudgetWithIcon from "../_components/budget-with-icon";
 import { PersonCard } from "../_components/cards/person";
 import BlogCard from "../_components/cards/blog";
 import BigNumbers from "../_components/cards/big-numbers";
+import { Button } from "../_components/ui/moving-border";
+import Whatsapp from "../_components/whatsapp";
 
 export default async function Home() {
   return (
@@ -30,13 +32,14 @@ export default async function Home() {
         title="Excelência em atender você"
         text="A JGM tem como objetivo atender as necessidades de nossos clientes com qualidade superior ao encontrado no mercado. Com equipes frequentemente treinadas."
         contentBottom={
-          <div className="flex flex-col gap-3 md:flex-row">
+          <div className="flex flex-col gap-4 py-8 md:flex-row">
             <Link
               href="https://wa.me/5521977378854"
-              className="rounded-md bg-blue-800 px-8 py-4 font-bold shadow-sm transition duration-300 ease-in-out hover:cursor-pointer hover:bg-blue-500"
+              className="duration-400 transform rounded-md bg-blue-900 bg-transparent px-8 py-4 font-bold  tracking-widest text-black shadow-sm transition  duration-300 ease-in-out  hover:-translate-y-1 hover:scale-105 hover:cursor-pointer hover:bg-blue-600 dark:text-white"
             >
               Solicite um orçamento →
             </Link>
+
             <Link
               href="https://grupojgm.vagas.solides.com.br/"
               className="rounded-md border-2 border-white px-8 py-4 font-bold shadow-sm transition duration-300 ease-in-out hover:cursor-pointer hover:bg-white hover:text-blue-main"
@@ -224,6 +227,7 @@ export default async function Home() {
           </Section>
         </Container>
       </section>
+      <Whatsapp />
     </main>
   );
 }
