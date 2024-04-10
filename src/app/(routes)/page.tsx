@@ -49,15 +49,15 @@ export default async function Home() {
           </div>
         }
       />
-      <section className="bg-blue-main bg-[url(/assets/bg-wave.svg)] bg-cover bg-center bg-no-repeat">
+      <section className="bg-white bg-[url(/assets/bg-wave.svg)] bg-cover bg-center bg-no-repeat">
         <Container>
           <Section>
             <div className="flex flex-col justify-between gap-3 pb-8 md:flex-row md:items-end md:px-14">
               <div className="flex flex-col gap-3 md:w-1/2">
-                <h2 className="text-2xl font-bold  text-white">
+                <h2 className="text-4xl font-bold  text-blue-main">
                   Nossos serviços
                 </h2>
-                <p className="text-lg text-gray-200">
+                <p className="text-xl text-blue-main">
                   Oferecemos uma gama abrangente de serviços de limpeza e
                   manutenção, tanto para ambientes comerciais quanto
                   residenciais.
@@ -65,7 +65,7 @@ export default async function Home() {
               </div>
               <Link
                 href="/servicos"
-                className="text-cyan-200 hover:cursor-pointer hover:underline"
+                className="text-blue-700 hover:cursor-pointer hover:underline"
               >
                 Visualizar todos os serviços →
               </Link>
@@ -95,16 +95,16 @@ export default async function Home() {
         </p>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-blue-main">
         <Container>
           <Section>
-            <div className="flex flex-col gap-12">
+            <div className="flex flex-col gap-12 ">
               <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-                <div className="flex flex-col gap-3 text-blue-main md:w-1/2">
-                  <h2 className="text-3xl font-semibold">
+                <div className="flex flex-col gap-3 text-white md:w-1/2">
+                  <h2 className="text-nowrap text-4xl font-semibold">
                     Porque escolher a JGM Serviços
                   </h2>
-                  <p>
+                  <p className="text-lg text-white">
                     A JGM Serviços surge como resposta à frustração com serviços
                     terceirizados, oferecendo soluções satisfatórias para
                     pessoas e empresas. Com atendimento personalizado,
@@ -115,7 +115,7 @@ export default async function Home() {
                 </div>
                 <Link
                   href="/contato"
-                  className="w-full rounded-md bg-blue-main px-8 py-4 font-bold text-white shadow-sm transition-all duration-300 ease-in-out hover:cursor-pointer hover:bg-blue-700 md:w-fit"
+                  className="rounded-md border-2 border-white px-8 py-4 font-bold text-white shadow-sm transition duration-300 ease-in-out hover:cursor-pointer hover:bg-white hover:text-blue-main"
                 >
                   Entre em Contato →
                 </Link>
@@ -141,26 +141,26 @@ export default async function Home() {
                 <BigNumbers
                   title={"Funcionarios"}
                   number={90}
-                  variant={"primary"}
+                  variant={"secondary"}
                   kind="number"
-                  className="text-4xl text-blue-500"
+                  className="text-4xl text-white"
                 />
 
                 <BigNumbers
                   title={`de anos
                   experiência`}
                   number={10}
-                  variant={"primary"}
+                  variant={"secondary"}
                   kind="number"
-                  className="text-4xl text-blue-500"
+                  className="text-4xl text-white"
                 />
 
                 <BigNumbers
                   title={"Clientes satisfeitos"}
                   number={1000}
-                  variant={"primary"}
+                  variant={"secondary"}
                   kind="number"
-                  className="text-4xl text-blue-500"
+                  className="text-4xl text-white"
                 />
               </div>
             </div>

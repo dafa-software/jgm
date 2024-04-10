@@ -14,10 +14,10 @@ export function ServicesCard(props: ServicesCardProps) {
   return (
     <Link
       href={props.href}
-      className="flex flex-col items-center justify-between rounded-md text-blue-main shadow-md transition duration-300 hover:opacity-90 hover:shadow-xl"
+      className="flex flex-col items-center justify-between rounded-lg border border-slate-200 text-blue-main shadow-md transition duration-300 hover:scale-105 hover:shadow-xl"
     >
-      <div className="flex h-full flex-col gap-6 rounded-t-md bg-white px-6 pt-6">
-        <h2 className="text-center text-xl font-bold">{props.title}</h2>
+      <div className="flex h-full flex-col gap-6 rounded-t-xl bg-slate-50/30 px-6 pt-6">
+        <h2 className="text-center text-2xl font-bold">{props.title}</h2>
         <p>{props.text}</p>
       </div>
       <div className="relative rounded-b-md">
