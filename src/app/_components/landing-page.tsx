@@ -16,12 +16,14 @@ import BudgetWithIcon from "~/app/_components/budget-with-icon";
 import LandingPageForm from "./forms/landing-page";
 
 interface LandingPageProps {
+  slug?: string;
   title: string;
   text: string;
   backgroundImg: string;
 }
 
 export default function LandingPage(props: LandingPageProps) {
+  const slug = props.slug ?? "";
   return (
     <main>
       <HeroCard
@@ -73,10 +75,11 @@ export default function LandingPage(props: LandingPageProps) {
               {[1, 2, 3, 4, 5, 6].map((index) => (
                 <Image
                   key={index}
-                  src={`/assets/lp-staff-${index}.png`}
+                  src={`${props.slug ? `/assets/lp-staff-${slug}${index}.png` : `/assets/lp-staff-${index}.png`}`}
                   alt="Placeholder"
                   width={350}
                   height={350}
+                  className="rounded-lg"
                 />
               ))}
             </div>

@@ -38,7 +38,7 @@ export const ServicesData = [
   },
   {
     title: "Terceirização de Mão de Obra",
-    href: "servicos/tercerizacao",
+    href: "servicos/terceirizacao",
   },
   {
     title: "Limpeza Comercial e Residencial",
@@ -133,7 +133,7 @@ export const NavigationData = {
       text: "Limpeza Pós-obra",
     },
     {
-      href: "/servicos/tercerizacao",
+      href: "/servicos/terceirizacao",
       text: "Terceirização de mão de obra",
     },
     {
@@ -269,14 +269,17 @@ export const LandingPageBudgetWithIconData = [
   {
     icon: <PhoneIcon className="h-6 w-6" />,
     text: "Você entra em contato conosco pelo formulário, email ou whatsapp e marcamos uma visita técnica para conhecer o espaço a ser limpo.",
+    variant: "primary",
   },
   {
     icon: <Bars3Icon className="h-6 w-6" />,
     text: "Montamos uma proposta personalizada de acordo com o nível de sujidade, equipamentos e materiais necessários e o tempo que será realizada a limpeza.",
+    variant: "primary",
   },
   {
     icon: <ClipboardDocumentCheckIcon className="h-6 w-6" />,
     text: "Proposta aceita, enviamos nossos melhores profissionais para prestar um serviço de excelência.",
+    variant: "primary",
   },
 ];
 

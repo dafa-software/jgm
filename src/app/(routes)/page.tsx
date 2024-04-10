@@ -35,7 +35,7 @@ export default async function Home() {
           <div className="flex flex-col gap-4 py-8 md:flex-row">
             <Link
               href="https://wa.me/5521977378854"
-              className="duration-400 transform rounded-md bg-blue-900 bg-transparent px-8 py-4 font-bold  tracking-widest text-black shadow-sm transition  duration-300 ease-in-out  hover:-translate-y-1 hover:scale-105 hover:cursor-pointer hover:bg-blue-600 dark:text-white"
+              className="duration-400 transform rounded-md bg-blue-900 px-8 py-4 font-bold  tracking-widest text-black shadow-sm transition  duration-300 ease-in-out  hover:-translate-y-1 hover:scale-105 hover:cursor-pointer hover:bg-blue-600 dark:text-white"
             >
               Solicite um orçamento →
             </Link>
