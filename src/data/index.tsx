@@ -296,9 +296,9 @@ export const HomeServicesData = [
   {
     titleType: "text",
     title: "Terceirização de mão de obra",
-    img: "card-tercerizacao",
+    img: "card-terceirizacao",
     text: "Com uma longa experiência em terceirização de serviços, seguindo todas as normas vigentes, oferecemos soluções empresariais eficientes e inovadoras para todos os segmentos do mercado.",
-    href: "/servicos/mao-de-obra",
+    href: "/servicos/terceirizacao",
   },
   {
     titleType: "text",
