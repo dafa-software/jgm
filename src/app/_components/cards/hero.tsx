@@ -4,6 +4,7 @@ import "~/styles/globals.css";
 import Container from "../container";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useEffect, useState, useCallback } from "react";
+import { TypewriterEffectSmooth } from "../ui/typewriter-effect";
 
 interface HeroCardProps {
   title: string;
@@ -105,8 +106,24 @@ export function HeroCard(props: HeroCardProps) {
             <div
               className={`flex flex-col justify-center gap-3 py-20 md:py-2 ${!props.contentRight && "md:w-2/3"}`}
             >
-              <h1 className="text-3xl font-bold">
-                {loadedImages[currentIndex]?.subTitle}
+              <h1 className="text-2xl font-bold">
+                <TypewriterEffectSmooth
+                  words={
+                    loadedImages[currentIndex]?.subTitle
+                      .split(" ")
+                      .map((word) => {
+                        return {
+                          text: word,
+                          className: "text-black",
+                        };
+                      }) ?? [
+                      {
+                        text: "",
+                      },
+                    ]
+                  }
+                  key={currentIndex}
+                />
               </h1>
               <p className="text-xl">{props.text}</p>
               {props.contentBottom && <>{props.contentBottom}</>}
