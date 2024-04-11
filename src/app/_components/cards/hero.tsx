@@ -98,7 +98,7 @@ export function HeroCard(props: HeroCardProps) {
 
   return (
     <div
-      className={`clip-rounded-triangle flex items-center justify-center bg-cover bg-clip-content bg-center bg-no-repeat text-white md:min-h-[1000px]`}
+      className={`clip-rounded-triangle flex items-center justify-center border-b-[10px] border-[#F1F5F9] bg-cover bg-clip-content bg-center bg-no-repeat text-white md:min-h-[890px]`}
     >
       <div className="z-50 flex flex-col items-center justify-center">
         <Container>
@@ -106,7 +106,7 @@ export function HeroCard(props: HeroCardProps) {
             <div
               className={`flex flex-col justify-center gap-3 py-20 md:py-2 ${!props.contentRight && "md:w-2/3"}`}
             >
-              <h1 className="text-2xl font-bold">
+              <h1 className="text-xl font-bold">
                 <TypewriterEffectSmooth
                   words={
                     loadedImages[currentIndex]?.subTitle
@@ -125,7 +125,7 @@ export function HeroCard(props: HeroCardProps) {
                   key={currentIndex}
                 />
               </h1>
-              <p className="text-xl">{props.text}</p>
+              <p className="text-base md:text-xl">{props.text}</p>
               {props.contentBottom && <>{props.contentBottom}</>}
             </div>
             {props.contentRight && (

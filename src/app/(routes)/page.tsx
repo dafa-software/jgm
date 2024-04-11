@@ -31,11 +31,11 @@ export default async function Home() {
     },
     {
       src: "/assets/lp-bg-empresa.png",
-      subTitle: "Excelência em atender a sua empresa!",
+      subTitle: "Excelência para sua empresa!",
     },
     {
       src: "/assets/lp-bg-voce.png",
-      subTitle: "Excelência em atender a sua casa!",
+      subTitle: "Excelência para sua casa!",
     },
   ];
 
