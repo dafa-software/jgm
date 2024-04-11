@@ -24,9 +24,28 @@ import BigNumbers from "../_components/cards/big-numbers";
 import Whatsapp from "../_components/whatsapp";
 
 export default async function Home() {
+  const images = [
+    {
+      src: "/assets/lp-bg-image.png",
+      subTitle: "Excelência em atender você!",
+    },
+    {
+      src: "/assets/lp-bg-empresa.png",
+      subTitle: "Excelência em atender a sua empresa!",
+    },
+    {
+      src: "/assets/lp-bg-voce.png",
+      subTitle: "Excelência em atender a sua casa!",
+    },
+  ];
+
   return (
     <main>
+      {/* <ImagesSlider className="h-[800px]" images={images}>
+        <></>
+      </ImagesSlider> */}
       <HeroCard
+        images={images}
         backgroundImg="lp-bg-image"
         title="Excelência em atender você"
         text="A JGM tem como objetivo atender as necessidades de nossos clientes com qualidade superior ao encontrado no mercado. Com equipes frequentemente treinadas."
@@ -56,7 +75,7 @@ export default async function Home() {
                 <h2 className="text-3xl font-bold  text-blue-main">
                   Nossos serviços
                 </h2>
-                <p className="text-xl text-blue-main">
+                <p className="py-4 text-xl text-blue-main">
                   Oferecemos uma gama abrangente de serviços de limpeza e
                   manutenção, tanto para ambientes comerciais quanto
                   residenciais.
