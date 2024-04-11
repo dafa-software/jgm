@@ -13,9 +13,9 @@ export default {
         "red-main": "#A45A52",
       },
       animation: {
-        "fade-in-up": "fade-in-up 0.6s ease-in-out",
-        "fade-in-down": "fade-in-down 0.6s ease-in-out",
-        "menu-fade": "fadeOut 0.1s ease-in-out",
+        "fade-in-up": "fade-in-up 1.5s ease-in-out",
+        "fade-in-down": "fade-in-down 1.5s ease-in-out",
+        "menu-fade": "fadeOut 0.6s ease-in-out",
       },
       keyframes: {
         "fade-in-up": {
