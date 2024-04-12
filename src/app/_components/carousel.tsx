@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
-import { useInView } from "react-intersection-observer";
 
 export default function Carousel(props: {
   children: React.ReactNode;
@@ -15,8 +14,6 @@ export default function Carousel(props: {
   const isMobile =
     typeof window !== "undefined" &&
     window.matchMedia("(max-width: 600px)").matches;
-
-  const [refView, inView] = useInView({ threshold: 1 });
 
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
@@ -81,7 +78,7 @@ export default function Carousel(props: {
         )}
       </div>
       {loaded && instanceRef.current && (
-        <div className="flex justify-center p-3" ref={refView}>
+        <div className="flex justify-center p-3">
           {[
             ...Array(instanceRef.current.track.details.slides.length).keys(),
           ].map((idx) => {

@@ -5,6 +5,7 @@ import Container from "../container";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useEffect, useState, useCallback } from "react";
 import { TypewriterEffectSmooth } from "../ui/typewriter-effect";
+import Image from "next/image";
 
 interface HeroCardProps {
   title: string;
@@ -96,6 +97,8 @@ export function HeroCard(props: HeroCardProps) {
     },
   };
 
+  const textToShow = loadedImages[currentIndex]?.subTitle ?? props.title;
+
   return (
     <div
       className={`clip-rounded-triangle flex items-center justify-center border-b-[10px] border-[#F1F5F9] bg-cover bg-clip-content bg-center bg-no-repeat text-white md:min-h-[890px]`}
@@ -109,14 +112,12 @@ export function HeroCard(props: HeroCardProps) {
               <h1 className="text-xl font-bold">
                 <TypewriterEffectSmooth
                   words={
-                    loadedImages[currentIndex]?.subTitle
-                      .split(" ")
-                      .map((word) => {
-                        return {
-                          text: word,
-                          className: "text-black",
-                        };
-                      }) ?? [
+                    textToShow.split(" ").map((word) => {
+                      return {
+                        text: word,
+                        className: "text-black",
+                      };
+                    }) ?? [
                       {
                         text: "",
                       },
@@ -134,17 +135,27 @@ export function HeroCard(props: HeroCardProps) {
           </div>
         </Container>
       </div>
-      <AnimatePresence>
-        <motion.img
-          key={currentIndex}
-          src={loadedImages[currentIndex]?.src}
-          initial="initial"
-          animate="visible"
-          variants={slideVariants}
-          // className="image absolute inset-0 h-full w-full object-cover object-center"
-          className="absolute left-0 top-0 -z-50 h-full w-full overflow-hidden bg-black bg-no-repeat object-cover opacity-50"
+
+      {props.images ? (
+        <AnimatePresence>
+          <motion.img
+            key={currentIndex}
+            src={loadedImages[currentIndex]?.src}
+            initial="initial"
+            animate="visible"
+            variants={slideVariants}
+            className="absolute left-0 top-0 -z-50 h-full w-full overflow-hidden bg-black bg-no-repeat object-cover opacity-50"
+          />
+        </AnimatePresence>
+      ) : (
+        <Image
+          src={`/assets/${props.backgroundImg}.png`}
+          alt="Wave"
+          width={1920}
+          height={1080}
+          className="absolute left-0 top-0 -z-50 h-full w-full bg-black object-cover"
         />
-      </AnimatePresence>
+      )}
     </div>
   );
 }

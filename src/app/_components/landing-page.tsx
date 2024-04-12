@@ -79,7 +79,7 @@ export default function LandingPage(props: LandingPageProps) {
                   alt="Placeholder"
                   width={350}
                   height={350}
-                  className="rounded-lg"
+                  className=""
                 />
               ))}
             </div>
