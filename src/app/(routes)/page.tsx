@@ -21,7 +21,6 @@ import BudgetWithIcon from "../_components/budget-with-icon";
 import { PersonCard } from "../_components/cards/person";
 import BlogCard from "../_components/cards/blog";
 import BigNumbers from "../_components/cards/big-numbers";
-import Whatsapp from "../_components/whatsapp";
 
 export default async function Home() {
   const images = [
@@ -116,10 +115,10 @@ export default async function Home() {
       <section className="bg-blue-main">
         <Container>
           <Section>
-            <div className="flex flex-col gap-12 ">
+            <div className="m-6 flex flex-col gap-12">
               <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
                 <div className="flex flex-col gap-3 text-white md:w-1/2">
-                  <h2 className="text-nowrap text-3xl font-semibold">
+                  <h2 className="text-3xl font-semibold">
                     Porque escolher a JGM Serviços
                   </h2>
                   <p className="text-lg text-white">
@@ -138,60 +137,65 @@ export default async function Home() {
                   Entre em Contato →
                 </Link>
               </div>
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+              <div className="flex flex-col gap-6">
                 {HomeWhyData.map((props, index) => (
                   <BudgetWithIcon key={index} {...props} />
                 ))}
               </div>
-              <div className="grid grid-cols-2 items-center justify-center gap-2 border-y p-3 md:flex md:flex-row">
-                {HomeLogoData.map((props, index) => (
-                  <Image
-                    key={index}
-                    src={props.src}
-                    alt={props.alt}
-                    width={100}
-                    height={100}
-                    className="h-fit w-full md:w-10/12"
+
+              <div className="flex flex-col items-center justify-between gap-3 md:flex-row">
+                <div className="md:w-1/2">
+                  <Carousel slides={1}>
+                    {images.map((props, index) => (
+                      <div key={index} className="keen-slider__slide">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={props.src}
+                          alt="bg"
+                          className="h-96 w-fit rounded-md object-cover shadow-lg"
+                        />
+                      </div>
+                    ))}
+                  </Carousel>
+                </div>
+                <div className="flex flex-col items-center justify-center gap-3 text-xl font-bold text-blue-main">
+                  <BigNumbers
+                    title={"Funcionarios"}
+                    number={90}
+                    variant={"secondary"}
+                    kind="number"
+                    className="text-4xl text-white"
                   />
-                ))}
-              </div>
-              <div className="flex flex-col justify-around gap-3 text-xl font-bold text-blue-main md:flex-row md:items-center">
-                <BigNumbers
-                  title={"Funcionarios"}
-                  number={90}
-                  variant={"secondary"}
-                  kind="number"
-                  className="text-4xl text-white"
-                />
-
-                <BigNumbers
-                  title={`de anos
+                  <div className="flex h-0.5 w-[80%] rounded-full bg-white"></div>
+                  <BigNumbers
+                    title={`de anos
                   experiência`}
-                  number={10}
-                  variant={"secondary"}
-                  kind="number"
-                  className="text-4xl text-white"
-                />
-
-                <BigNumbers
-                  title={"Clientes satisfeitos"}
-                  number={1000}
-                  variant={"secondary"}
-                  kind="number"
-                  className="text-4xl text-white"
-                />
+                    number={10}
+                    variant={"secondary"}
+                    kind="number"
+                    className="text-4xl text-white"
+                  />
+                  <div className="flex h-0.5 w-[80%] rounded-full bg-white"></div>
+                  <BigNumbers
+                    title={"Clientes satisfeitos"}
+                    number={1000}
+                    variant={"secondary"}
+                    kind="number"
+                    className="text-4xl text-white"
+                  />
+                </div>
               </div>
             </div>
           </Section>
         </Container>
       </section>
-      <section className="bg-[#F1F5F9]">
+      <section className="bg-gradient-to-t from-white to-[#F1F5F9]">
         <Container>
           <Section>
             <Title
               variant="light"
               title="Alguns dos Nossos Clientes"
-              text="Confira o Reconhecimento dos Nossos Clientes Renomados! celebridades, influenciadores e pessoas de prestígio."
+              text="Confira alguns de nossos clientes! "
             />
             <div className="flex justify-center">
               <div className="columns-1 md:columns-4">
@@ -201,6 +205,18 @@ export default async function Home() {
                   </div>
                 ))}
               </div>
+            </div>
+            <div className="mt-6 grid grid-cols-2 items-center justify-center gap-2 border-y p-3 md:flex md:flex-row">
+              {HomeLogoData.map((props, index) => (
+                <Image
+                  key={index}
+                  src={props.src}
+                  alt={props.alt}
+                  width={100}
+                  height={100}
+                  className="h-fit w-full md:w-10/12"
+                />
+              ))}
             </div>
           </Section>
         </Container>
@@ -215,7 +231,7 @@ export default async function Home() {
             />
             <Carousel>
               {FeedbackData.map((props, index) => (
-                <div key={index} className="keen-slider__slide flex">
+                <div key={index} className="keen-slider__slide">
                   <FeedbackCard key={index} {...props} />
                 </div>
               ))}
@@ -245,7 +261,6 @@ export default async function Home() {
           </Section>
         </Container>
       </section>
-      <Whatsapp />
     </main>
   );
 }

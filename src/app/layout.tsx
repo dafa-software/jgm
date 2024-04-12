@@ -3,6 +3,7 @@ import "~/styles/globals.css";
 import { Inter } from "next/font/google";
 
 import { TRPCReactProvider } from "~/trpc/react";
+import Whatsapp from "./_components/whatsapp";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={`font-sans ${inter.variable}`}>
+        <Whatsapp />
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
     </html>

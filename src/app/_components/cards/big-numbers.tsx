@@ -15,10 +15,10 @@ const BigNumbers = (props: BigNumbersProps) => {
   const [ref, inView] = useInView({ threshold: 1 });
   return (
     <div
-      className={` flex w-full items-center justify-center gap-1 ${props.variant === "primary" ? "h-24 flex-col p-3 transition duration-300" : "flex-col p-6 shadow-sm"} `}
+      className={` flex w-full items-center justify-center gap-1 ${props.variant === "primary" ? "h-24 flex-col p-3 transition duration-300" : "flex-row p-6 shadow-sm"} `}
       ref={ref}
     >
-      <div className="flex flex-col items-center gap-1">
+      <div className="flex flex-col items-start gap-1">
         {props.number && (
           <div
             className={`${props.className && props.className} shadow-2xl hover:scale-125`}

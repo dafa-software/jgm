@@ -1,4 +1,3 @@
-import { EyeIcon, FlagIcon, HeartIcon } from "@heroicons/react/20/solid";
 import {
   Bars3Icon,
   BuildingOffice2Icon,
@@ -384,15 +383,15 @@ export const HomeSearchData = [
 
 export const HomeWhyData = [
   {
-    icon: <FlagIcon className="h-9 w-9 fill-green-300" />,
+    icon: "/assets/badge-brain.svg",
     text: "Trazer inovação e eficiência na prestação de serviços, promovendo economia e excelência para os clientes. Além disso, busca transformar a realidade dos colaboradores, oferecendo oportunidades de crescimento e desenvolvimento profissional.",
   },
   {
-    icon: <EyeIcon className="h-9 w-9 fill-cyan-200" />,
+    icon: "/assets/badge-calendar.svg",
     text: "Ser referência nacional em técnica, compliance e relacionamento corporativo, buscando revolucionar o setor de prestação de serviços no Brasil e alterar a percepção dos consumidores sobre terceirização.",
   },
   {
-    icon: <HeartIcon className="h-9 w-9 fill-red-300" />,
+    icon: "/assets/badge-paper.svg",
     text: "Humildade, paciência, determinação, resiliência, empatia e confiança.",
   },
 ];

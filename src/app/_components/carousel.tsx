@@ -5,7 +5,10 @@ import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import { useInView } from "react-intersection-observer";
 
-export default function Carousel(props: { children: React.ReactNode }) {
+export default function Carousel(props: {
+  children: React.ReactNode;
+  slides?: number;
+}) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
 
@@ -18,7 +21,7 @@ export default function Carousel(props: { children: React.ReactNode }) {
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     slides: {
-      perView: isMobile ? 1 : 4,
+      perView: isMobile ? 1 : props.slides ? props.slides : 4,
       spacing: 10,
     },
     slideChanged(slider) {
