@@ -12,7 +12,7 @@ interface BigNumbersProps {
 }
 
 const BigNumbers = (props: BigNumbersProps) => {
-  const [ref, inView] = useInView({ threshold: 1 });
+  const [ref, inView] = useInView({ triggerOnce: true });
   return (
     <div
       className={` flex w-full items-center justify-center gap-1 ${props.variant === "primary" ? "h-24 flex-col p-3 transition duration-300" : "flex-row p-6 shadow-sm"} `}
@@ -27,15 +27,14 @@ const BigNumbers = (props: BigNumbersProps) => {
             {inView && (
               <CountUp
                 end={props.number ? props.number : 0}
-                delay={0.7}
-                duration={5}
-                decimal=""
+                delay={0.5}
+                duration={4}
               />
             )}
           </div>
         )}
-      </div>
-      <p className={`text-nowrap text-3xl text-white`}>{props.title}</p>
+      </div>{" "}
+      <p className={`text-nowrap text-3xl text-white`}> {props.title}</p>
     </div>
   );
 };

@@ -21,6 +21,7 @@ import BudgetWithIcon from "../_components/budget-with-icon";
 import { PersonCard } from "../_components/cards/person";
 import BlogCard from "../_components/cards/blog";
 import BigNumbers from "../_components/cards/big-numbers";
+import AnimatedSubtitle from "../_components/cards/animated-subtitle";
 
 export default async function Home() {
   const images = [
@@ -40,9 +41,6 @@ export default async function Home() {
 
   return (
     <main>
-      {/* <ImagesSlider className="h-[800px]" images={images}>
-        <></>
-      </ImagesSlider> */}
       <HeroCard
         images={images}
         backgroundImg="lp-bg-image"
@@ -117,18 +115,17 @@ export default async function Home() {
           <Section>
             <div className="m-6 flex flex-col gap-12">
               <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-                <div className="flex flex-col gap-3 text-white md:w-1/2">
-                  <h2 className="text-3xl font-semibold">
-                    Porque escolher a JGM Serviços
-                  </h2>
-                  <p className="text-lg text-white">
-                    A JGM Serviços surge como resposta à frustração com serviços
+                <div className="flex flex-col gap-3 text-white md:w-2/3">
+                  <AnimatedSubtitle
+                    text={"Porque escolher a JGM Serviços"}
+                    description="A JGM Serviços surge como resposta à frustração com serviços
                     terceirizados, oferecendo soluções satisfatórias para
                     pessoas e empresas. Com atendimento personalizado,
                     profissionais capacitados e equipamentos de qualidade,
                     facilitamos a vida dos clientes para que possam focar no que
-                    realmente importa.
-                  </p>
+                    realmente importa."
+                    variant="light"
+                  />
                 </div>
                 <Link
                   href="/contato"
@@ -192,10 +189,16 @@ export default async function Home() {
       <section className="bg-gradient-to-t from-white to-[#F1F5F9]">
         <Container>
           <Section>
-            <Title
+            {/* <Title
               variant="light"
               title="Alguns dos Nossos Clientes"
               text="Confira alguns de nossos clientes! "
+            /> */}
+            <AnimatedSubtitle
+              text="Alguns dos Nossos Clientes"
+              description="Confira alguns de nossos clientes!"
+              variant="dark"
+              className="flex flex-col items-center gap-2 pb-8 text-center"
             />
             <div className="flex justify-center">
               <div className="columns-1 md:columns-4">
