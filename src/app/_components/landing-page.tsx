@@ -30,18 +30,6 @@ export default function LandingPage(props: LandingPageProps) {
         backgroundImg={props.backgroundImg}
         title={props.title}
         text={props.text}
-        contentBottom={
-          <div className="flex flex-col gap-6 md:flex-row">
-            <div>
-              <p className="font-bold">WhatsApp</p>
-              <p>(21)97737-8854</p>
-            </div>
-            <div>
-              <p className="font-bold">E-mail</p>
-              <p>comercial@jgmservicos.com.br</p>
-            </div>
-          </div>
-        }
         contentRight={<LandingPageForm variant="thin" />}
       />
       <div className="bg-[#F1F5F9] bg-[url(/assets/bg-squares.svg)] bg-cover bg-center bg-no-repeat">

@@ -25,10 +25,10 @@ import AnimatedSubtitle from "../_components/cards/animated-subtitle";
 
 export default async function Home() {
   const images = [
-    {
-      src: "/assets/lp-bg-image.png",
-      subTitle: "Excelência em atender você!",
-    },
+    // {
+    //   src: "/assets/lp-bg-image.png",
+    //   subTitle: "Excelência em atender você!",
+    // },
     {
       src: "/assets/lp-bg-empresa.png",
       subTitle: "Excelência para sua empresa!",
@@ -158,7 +158,7 @@ export default async function Home() {
                 <div className="flex flex-col items-center justify-center gap-3 text-xl font-bold text-blue-main">
                   <BigNumbers
                     title={"Funcionarios"}
-                    number={90}
+                    number={500}
                     variant={"secondary"}
                     kind="number"
                     className="text-4xl text-white"
@@ -167,7 +167,7 @@ export default async function Home() {
                   <BigNumbers
                     title={`de anos
                   experiência`}
-                    number={10}
+                    number={18}
                     variant={"secondary"}
                     kind="number"
                     className="text-4xl text-white"
@@ -175,7 +175,7 @@ export default async function Home() {
                   <div className="flex h-0.5 w-[80%] rounded-full bg-white"></div>
                   <BigNumbers
                     title={"Clientes satisfeitos"}
-                    number={1000}
+                    number={200}
                     variant={"secondary"}
                     kind="number"
                     className="text-4xl text-white"

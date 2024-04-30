@@ -115,7 +115,7 @@ export function HeroCard(props: HeroCardProps) {
                     textToShow.split(" ").map((word) => {
                       return {
                         text: word,
-                        className: "text-black",
+                        className: "text-white",
                       };
                     }) ?? [
                       {
@@ -148,13 +148,17 @@ export function HeroCard(props: HeroCardProps) {
           />
         </AnimatePresence>
       ) : (
-        <Image
-          src={`/assets/${props.backgroundImg}.png`}
-          alt="Wave"
-          width={1920}
-          height={1080}
-          className="absolute left-0 top-0 -z-50 h-full w-full bg-black object-cover"
-        />
+        <>
+          <Image
+            src={`/assets/${props.backgroundImg}.png`}
+            alt="Wave"
+            width={1280}
+            height={720}
+            className="absolute left-0 top-0 -z-50 h-full w-full bg-black object-cover"
+            priority
+            unoptimized={true}
+          />
+        </>
       )}
     </div>
   );
