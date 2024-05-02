@@ -193,16 +193,10 @@ export const LandingPageWhyData = [
     text: "Você não precisa se preocupar com nada! Levamos exatamente tudo o que precisar pra realizar a sua limpeza pós-obra.",
   },
   {
-    icon: <ShieldCheckIcon className="h-7 w-7" color="white" />,
-    color: "bg-[#9CDDFF]",
-    title: "Seguro contradanos",
-    text: "Oferecemos um seguro para proteger nossos clientes caso haja qualquer imprevisto, durante o serviço prestado.",
-  },
-  {
-    icon: <SparklesIcon className="h-7 w-7" color="white" />,
-    color: "bg-[#FFBC58]",
-    title: "Excelência e Experiência",
-    text: "São mais de 17 anos atuando no mercado de limpeza com excelência e profissionalismo, que irão atender todas as suas expectativas!",
+    icon: <UsersIcon className="h-7 w-7" color="white" />,
+    color: "bg-[#786EFE]",
+    title: "Equipe treinada e especializada",
+    text: "Temos uma equipe especialista apenas em pós-obra. Oferecemos treinamentos mensais para aprimoramento de técnicas de limpeza e profissionalização.",
   },
   {
     icon: <MagnifyingGlassIcon className="h-7 w-7" color="white" />,
@@ -210,11 +204,18 @@ export const LandingPageWhyData = [
     title: "Monitoramento durante toda a limpeza por um líder",
     text: "Sua limpeza será monitorada por um líder que coordenará toda a equipe para que a limpeza seja no nosso padrão de excelência e termine no prazo estabelecido.",
   },
+
   {
-    icon: <UsersIcon className="h-7 w-7" color="white" />,
-    color: "bg-[#786EFE]",
-    title: "Equipe treinada e especializada",
-    text: "Temos uma equipe especialista apenas em pós-obra. Oferecemos treinamentos mensais para aprimoramento de técnicas de limpeza e profissionalização.",
+    icon: <SparklesIcon className="h-7 w-7" color="white" />,
+    color: "bg-[#FFBC58]",
+    title: "Excelência e Experiência",
+    text: "São mais de 17 anos atuando no mercado de limpeza com excelência e profissionalismo, que irão atender todas as suas expectativas!",
+  },
+  {
+    icon: <ShieldCheckIcon className="h-7 w-7" color="white" />,
+    color: "bg-[#9CDDFF]",
+    title: "Seguro contra danos",
+    text: "Oferecemos um seguro para proteger nossos clientes caso haja qualquer imprevisto, durante o serviço prestado.",
   },
 ];
 

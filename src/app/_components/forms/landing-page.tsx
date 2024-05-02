@@ -7,8 +7,10 @@ import { api } from "~/trpc/react";
 
 export default function LandingPageForm({
   variant,
+  title = "Pós obra",
 }: {
   variant: "thin" | "wide";
+  title: string;
 }) {
   const router = useRouter();
   const [name, setName] = useState("");
@@ -78,8 +80,8 @@ export default function LandingPageForm({
         </label>
         <input
           type="text"
-          placeholder="Exemplo: Consultoria"
-          value={service}
+          placeholder={`Exemplo: ${title}`}
+          value={service || title}
           onChange={(e) => setService(e.target.value)}
           className="w-full rounded-md border bg-gray-100 px-4 py-2 text-black"
         />

@@ -1,6 +1,6 @@
 interface TitleProps {
   title: string;
-  text?: string;
+  text?: string | React.ReactNode;
   variant?: "light" | "dark";
 }
 

@@ -30,11 +30,22 @@ export default function LandingPage(props: LandingPageProps) {
         backgroundImg={props.backgroundImg}
         title={props.title}
         text={props.text}
-        contentRight={<LandingPageForm variant="thin" />}
+        contentRight={<LandingPageForm variant="thin" title={props.title} />}
       />
       <div className="bg-[#F1F5F9] bg-[url(/assets/bg-squares.svg)] bg-cover bg-center bg-no-repeat">
         <Container>
           <Section>
+            <Title
+              variant="light"
+              title="Por que contratar a JGM"
+              text={
+                <>
+                  Conheça os <strong>diferenciais</strong> que fazem da JGM a{" "}
+                  <strong>melhor opção</strong> para a sua casa ou o seu
+                  negócio.
+                </>
+              }
+            />
             <div className="flex flex-wrap justify-center gap-12 md:gap-6">
               {LandingPageWhyData.map((props, index) => (
                 <div key={index} className="flex overflow-hidden md:w-[30%]">
@@ -121,7 +132,7 @@ export default function LandingPage(props: LandingPageProps) {
               </div>
             </Section>
             <Section>
-              <LandingPageForm variant="wide" />
+              <LandingPageForm variant="wide" title={props.title} />
             </Section>
           </Container>
         </div>
