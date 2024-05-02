@@ -7,10 +7,10 @@ import { api } from "~/trpc/react";
 
 export default function LandingPageForm({
   variant,
-  title = "Pós obra",
+  title = "Nome do serviço",
 }: {
   variant: "thin" | "wide";
-  title: string;
+  title?: string;
 }) {
   const router = useRouter();
   const [name, setName] = useState("");
