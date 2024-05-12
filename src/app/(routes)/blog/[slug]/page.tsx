@@ -4,6 +4,7 @@ import React from "react";
 import { TracingBeam } from "~/app/_components/ui/tracing-beams";
 import { api } from "~/trpc/react";
 import { useSearchParams } from "next/navigation";
+export const runtime = "edge";
 
 const BlogPage = () => {
   const searchParams = useSearchParams();

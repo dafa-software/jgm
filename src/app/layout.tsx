@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 
 import { TRPCReactProvider } from "~/trpc/react";
 import Whatsapp from "./_components/whatsapp";
+export const runtime = "edge";
 
 const inter = Inter({
   subsets: ["latin"],

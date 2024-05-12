@@ -4,6 +4,7 @@ import Container from "~/app/_components/container";
 import Section from "~/app/_components/section";
 import SuspenseLoader from "~/app/_components/suspense-loader";
 import Title from "~/app/_components/title";
+export const runtime = "edge";
 
 export default async function Blog() {
   return (

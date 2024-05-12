@@ -9,6 +9,7 @@
 import { initTRPC } from "@trpc/server";
 import superjson from "superjson";
 import { ZodError } from "zod";
+export const runtime = "edge";
 
 /**
  * 1. CONTEXT

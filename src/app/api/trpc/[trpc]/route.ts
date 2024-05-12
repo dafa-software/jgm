@@ -4,6 +4,7 @@ import { type NextRequest } from "next/server";
 import { env } from "~/env.js";
 import { appRouter } from "~/server/api/root";
 import { createTRPCContext } from "~/server/api/trpc";
+export const runtime = "edge";
 
 /**
  * This wraps the `createTRPCContext` helper and provides the required context for the tRPC API when
