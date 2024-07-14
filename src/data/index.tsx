@@ -1,16 +1,22 @@
 import {
   Bars3Icon,
+  BeakerIcon,
+  BellIcon,
+  BuildingLibraryIcon,
   BuildingOffice2Icon,
   BuildingStorefrontIcon,
   ClipboardDocumentCheckIcon,
+  ComputerDesktopIcon,
+  CubeIcon,
+  HeartIcon,
   HomeIcon,
   HomeModernIcon,
   MagnifyingGlassIcon,
   PhoneIcon,
+  ScaleIcon,
   ShieldCheckIcon,
   SparklesIcon,
   UsersIcon,
-  WrenchScrewdriverIcon,
 } from "@heroicons/react/24/outline";
 
 // Footer
@@ -71,11 +77,11 @@ export const CompanyData = [
 export const LegalData = [
   {
     title: "Termos de Uso",
-    href: "https://jgmservicos.com.br/termos-de-uso/",
+    href: "/termos-de-uso",
   },
   {
     title: "Política de Privacidade",
-    href: "https://jgmservicos.com.br/politica-de-privacidade/",
+    href: "/politica-privacidade/",
   },
 ];
 
@@ -87,6 +93,10 @@ export const ContactData = [
   {
     title: "(21) 3073-7064",
     href: "tel:+552130737064",
+  },
+  {
+    title: "(21) 96412-7226",
+    href: "tel:+5521964127226",
   },
 ];
 
@@ -132,16 +142,12 @@ export const NavigationData = {
       text: "Limpeza Pós-obra",
     },
     {
+      href: "/servicos/pos-incendio",
+      text: "Limpeza Pós-Incêndio",
+    },
+    {
       href: "/servicos/terceirizacao",
       text: "Terceirização de mão de obra",
-    },
-    {
-      href: "/servicos/comercial-e-residencial",
-      text: "Limpeza Comercial e Residencial",
-    },
-    {
-      href: "/servicos/mao-de-obra",
-      text: "Mão de Obra Especializada",
     },
     {
       href: "/servicos/estofados-e-carpetes",
@@ -152,8 +158,12 @@ export const NavigationData = {
       text: "Jardinagem",
     },
     {
-      href: "/servicos/pos-incendio",
-      text: "Limpeza Pós-Incêndio",
+      href: "/servicos/comercial-e-residencial",
+      text: "Limpeza Comercial e Residencial",
+    },
+    {
+      href: "/servicos/mao-de-obra",
+      text: "Mão de Obra Especializada",
     },
     // {
     //   href: "/servicos/jgm-flix",
@@ -187,35 +197,39 @@ export const NavigationData = {
 // Landing Pages
 export const LandingPageWhyData = [
   {
-    icon: <WrenchScrewdriverIcon className="h-7 w-7" color="white" />,
+    icon: <ComputerDesktopIcon className="h-7 w-7" color="white" />,
+    color: "bg-[#3C0DFA]",
+    title: "Investimento constante em tecnologia",
+  },
+  {
+    icon: <SparklesIcon className="h-7 w-7" color="white" />,
+    color: "bg-[#FFBC58]",
+    title: "Benefícios exclusivos para colaboradores",
+  },
+  {
+    icon: <HeartIcon className="h-7 w-7" color="white" />,
+    color: "bg-[#74E091]",
+    title: "Mais de 18 anos de experiência",
+  },
+  {
+    icon: <ShieldCheckIcon className="h-7 w-7" color="white" />,
+    color: "bg-[#9CDDFF]",
+    title: "Fornecimento de materiais, uniformes e EPI",
+  },
+  {
+    icon: <ScaleIcon className="h-7 w-7" color="white" />,
     color: "bg-[#FF6565]",
-    title: "Levamos todo o material e equipamentos",
-    text: "Você não precisa se preocupar com nada! Levamos exatamente tudo o que precisar pra realizar a sua limpeza pós-obra.",
+    title: "Jurídico preventivo",
+  },
+  {
+    icon: <MagnifyingGlassIcon className="h-7 w-7" color="white" />,
+    color: "bg-[#77C5A1]",
+    title: "Monitoramento durante todo o serviço pela supervisão",
   },
   {
     icon: <UsersIcon className="h-7 w-7" color="white" />,
     color: "bg-[#786EFE]",
     title: "Equipe treinada e especializada",
-    text: "Temos uma equipe especialista apenas em pós-obra. Oferecemos treinamentos mensais para aprimoramento de técnicas de limpeza e profissionalização.",
-  },
-  {
-    icon: <MagnifyingGlassIcon className="h-7 w-7" color="white" />,
-    color: "bg-[#74E091]",
-    title: "Monitoramento durante toda a limpeza por um líder",
-    text: "Sua limpeza será monitorada por um líder que coordenará toda a equipe para que a limpeza seja no nosso padrão de excelência e termine no prazo estabelecido.",
-  },
-
-  {
-    icon: <SparklesIcon className="h-7 w-7" color="white" />,
-    color: "bg-[#FFBC58]",
-    title: "Excelência e Experiência",
-    text: "São mais de 17 anos atuando no mercado de limpeza com excelência e profissionalismo, que irão atender todas as suas expectativas!",
-  },
-  {
-    icon: <ShieldCheckIcon className="h-7 w-7" color="white" />,
-    color: "bg-[#9CDDFF]",
-    title: "Seguro contra danos",
-    text: "Oferecemos um seguro para proteger nossos clientes caso haja qualquer imprevisto, durante o serviço prestado.",
   },
 ];
 
@@ -237,8 +251,20 @@ export const LandingPageIconData = [
     title: "Shopping e Lojas",
   },
   {
-    icon: <ClipboardDocumentCheckIcon className="h-7 w-7" color="white" />,
-    title: "Outros",
+    icon: <BeakerIcon className="h-7 w-7" color="white" />,
+    title: "Hospitais",
+  },
+  {
+    icon: <BellIcon className="h-7 w-7" color="white" />,
+    title: "Igrejas",
+  },
+  {
+    icon: <BuildingLibraryIcon className="h-7 w-7" color="white" />,
+    title: "Escolas",
+  },
+  {
+    icon: <CubeIcon className="h-7 w-7" color="white" />,
+    title: "Indústrias",
   },
 ];
 

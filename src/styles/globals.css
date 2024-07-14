@@ -2,7 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
   .clip-rounded-triangle {
     clip-path: polygon(
       0 0,
@@ -14,9 +18,9 @@
       0 94%
     );
     /* polygon(
-        50% 100%, 
-        0 85%, 
-        100% 85%
-        ) */
+          50% 100%, 
+          0 85%, 
+          100% 85%
+          ) */
   }
 }

@@ -36,7 +36,7 @@ export default function LandingPageForm({
         e.preventDefault();
         createForm.mutate({ name, mail, phone, service, message });
       }}
-      className={`${variant === "wide" ? "flex flex-col md:grid md:grid-cols-2" : "flex flex-col"} gap-6 rounded-md bg-white p-6 md:min-w-[500px]`}
+      className={`${variant === "wide" ? "flex flex-col md:grid md:min-w-[850px] md:grid-cols-2 " : "flex flex-col md:min-w-[500px]"} gap-6 rounded-md bg-white p-6 `}
     >
       <div>
         <label htmlFor="your-ruby" className="block font-bold text-gray-800">

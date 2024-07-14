@@ -3,9 +3,12 @@ import LandingPage from "~/app/_components/landing-page";
 export default function PosObra() {
   return (
     <LandingPage
+      mainTitle="Procurando uma empresa de limpeza pós-obra de qualidade e com profissionais
+    especializados?"
       backgroundImg="services-pos-obra"
       title="Limpeza pós-obra"
-      text="Procurando uma empresa de limpeza pós-obra de qualidade e com profissionais especializados? Conheça a melhor empresa de limpeza pós-obra do Rio de Janeiro!"
+      text="Cuidamos de cada detalhe para que você possa desfrutar do seu novo espaço –
+      Limpeza pós-obra de excelência, feita por profissionais dedicados. Solicite um orçamento"
     />
   );
 }

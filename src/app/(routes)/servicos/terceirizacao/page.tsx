@@ -4,8 +4,11 @@ export default function MaoDeObraEspecializada() {
   return (
     <LandingPage
       backgroundImg="services-mao-de-obra"
+      mainTitle="Maximize o Potencial da Sua Empresa com Nossos Serviços de Terceirização"
       title="Terceirização de mão de obra"
-      text="Com uma longa experiência em terceirização de serviços, seguindo todas as normas vigentes, oferecemos soluções empresariais eficientes e inovadoras para todos os segmentos do mercado."
+      text="Nós cuidamos de cada colaborador para que eles cuidem da sua empresa – Serviços
+      de Terceirização personalizados para atender às suas necessidades específicas,
+      solicite uma cotação."
       slug="terceirizacao"
     />
   );

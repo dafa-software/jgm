@@ -15,7 +15,7 @@ import Carousel from "../_components/carousel";
 import { PlayCircleIcon } from "@heroicons/react/16/solid";
 import Title from "../_components/title";
 import FeedbackCard from "../_components/cards/feedback";
-import { Suspense } from "react";
+import { Fragment, Suspense } from "react";
 import SuspenseLoader from "../_components/suspense-loader";
 import BudgetWithIcon from "../_components/budget-with-icon";
 import { PersonCard } from "../_components/cards/person";
@@ -40,8 +40,9 @@ export default async function Home() {
   ];
 
   return (
-    <main>
+    <Fragment>
       <HeroCard
+        mainTitle="Excelência em servir!"
         images={images}
         backgroundImg="lp-bg-image"
         title="Excelência em atender você"
@@ -113,7 +114,7 @@ export default async function Home() {
       <section className="bg-blue-main">
         <Container>
           <Section>
-            <div className="m-6 flex flex-col gap-12">
+            <div className="mx-8 flex flex-col gap-12 p-2">
               <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
                 <div className="flex flex-col gap-3 text-white md:w-2/3">
                   <AnimatedSubtitle
@@ -264,6 +265,6 @@ export default async function Home() {
           </Section>
         </Container>
       </section>
-    </main>
+    </Fragment>
   );
 }

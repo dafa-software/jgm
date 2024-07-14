@@ -5,6 +5,7 @@ export default function TrabalheConosco() {
   return (
     <main>
       <HeroCard
+        mainTitle="Contate-nos!"
         backgroundImg="lp-bg-image"
         title="Contato"
         text="Preencha o formulário para entrar em contato conosco!"

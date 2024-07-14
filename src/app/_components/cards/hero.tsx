@@ -4,10 +4,11 @@ import "~/styles/globals.css";
 import Container from "../container";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useEffect, useState, useCallback } from "react";
-import { TypewriterEffectSmooth } from "../ui/typewriter-effect";
+
 import Image from "next/image";
 
 interface HeroCardProps {
+  mainTitle: string;
   title: string;
   text: string;
   backgroundImg: string;
@@ -97,7 +98,7 @@ export function HeroCard(props: HeroCardProps) {
     },
   };
 
-  const textToShow = loadedImages[currentIndex]?.subTitle ?? props.title;
+  // const textToShow = loadedImages[currentIndex]?.subTitle ?? props.title;
 
   return (
     <div
@@ -109,8 +110,10 @@ export function HeroCard(props: HeroCardProps) {
             <div
               className={`flex flex-col justify-center gap-3 py-20 md:py-2 ${!props.contentRight && "md:w-2/3"}`}
             >
-              <h1 className="text-xl font-bold">
-                <TypewriterEffectSmooth
+              <h1
+                className={`py-2 text-3xl font-bold ${props.mainTitle?.length >= 25 ? "md:text-5xl" : "md:text-6xl"} `}
+              >
+                {/* <TypewriterEffectSmooth
                   words={
                     textToShow.split(" ").map((word) => {
                       return {
@@ -124,7 +127,8 @@ export function HeroCard(props: HeroCardProps) {
                     ]
                   }
                   key={currentIndex}
-                />
+                /> */}
+                {props.mainTitle}
               </h1>
               <p className="text-base md:text-xl">{props.text}</p>
               {props.contentBottom && <>{props.contentBottom}</>}

@@ -46,83 +46,10 @@ export default function Header({ variant = "default" }: HeaderProps) {
 
   return (
     <>
-      <div
-        className={`fixed left-0 top-0 z-50 h-full w-full backdrop-blur-sm backdrop-brightness-75 ${mobileMenuOpen ? "visible" : "hidden"} animate-menu-fade lg:hidden
-        `}
-      >
-        <nav className="fixed z-50 h-full w-full shadow-xl">
-          <div className="min-w-1/4 sticky right-3 top-3 ml-auto h-auto w-[94%] rounded-lg bg-white p-5 sm:w-[40%]">
-            <button
-              type="button"
-              onClick={toggleMobileMenu}
-              className="absolute right-0 top-0 z-50 m-5 flex h-12 w-12 items-center justify-center rounded-lg bg-gray-100 p-1.5"
-            >
-              <span className="sr-only">Close menu</span>
-              <XMarkIcon className="h-6 w-6" />
-            </button>
-            <div className="flow-root">
-              <div className="ml-2 space-y-2">
-                {Object.entries(NavigationData).map(([key, value], index) => (
-                  <div key={index} className="relative">
-                    {Array.isArray(value) ? (
-                      <div className="group">
-                        <button
-                          type="button"
-                          onClick={() => toggleSubMenu(key)}
-                          className={`px-3 py-1 leading-7 ${
-                            pathname === value[0]?.href
-                              ? "font-bold text-blue-700"
-                              : "font-semibold text-blue-main"
-                          }`}
-                        >
-                          {key}{" "}
-                          <span className="text-xs">
-                            {showSubMenu === key ? "▲" : "▼"}
-                          </span>
-                        </button>
-                        {showSubMenu === key && (
-                          <div className="w-fulls mt-1 flex flex-col gap-3 pl-5">
-                            {value.map((item, index) => (
-                              <Link
-                                key={index}
-                                href={item.href}
-                                onClick={toggleMobileMenu}
-                                className={`text-nowrap hover:text-cyan-700 ${
-                                  pathname === item.href
-                                    ? "font-semibold text-blue-700"
-                                    : "text-blue-main"
-                                }`}
-                              >
-                                {item.text}
-                              </Link>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    ) : (
-                      <Link
-                        href={value.href}
-                        className={`block w-full px-3 py-1 leading-7 ${pathname === value.href ? "font-bold text-blue-700" : "font-semibold text-blue-main"}`}
-                      >
-                        {value.text}
-                      </Link>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </nav>
-      </div>
-
       <header
-        className={`fixed top-0 z-40 flex w-full flex-none animate-fade-in-down flex-wrap items-center justify-between py-4 ${
-          header || variant === "landing-page"
-            ? " bg-white shadow-md"
-            : " bg-transparent"
-        }
-        ${variant === "landing-page" && "bg-white"}
-         p-6 shadow-md transition-colors duration-500 `}
+        className={`fixed top-0 z-40 flex w-full flex-none animate-fade-in-down flex-wrap items-center justify-between bg-white
+        p-6
+         py-4 shadow-md transition-colors duration-500 `}
       >
         {variant === "landing-page" ? (
           <>
@@ -157,20 +84,19 @@ export default function Header({ variant = "default" }: HeaderProps) {
           </>
         ) : (
           <>
-            <div className="mr-14 flex flex-shrink-0 items-center text-white">
-              <Link href="/">
+            <Link href="/">
+              <div className="mr-16 flex flex-shrink-0 items-center text-white">
                 <Image
-                  src={`${header ? "/JGM_Azul.webp" : "/JGM_Branco.png"}`}
+                  src={`/JGM_Azul.webp`}
                   alt="JGM Servicos"
                   width={100}
                   height={100}
                 />
-              </Link>
-            </div>
+              </div>
+            </Link>
+
             <div
-              className={`ml-10 hidden w-full flex-grow items-center md:w-auto lg:block ${
-                header ? "text-black" : " text-white"
-              }`}
+              className={`ml-10 hidden w-full flex-grow items-center text-black md:w-auto lg:block`}
             >
               <div className="flex gap-10">
                 {Object.entries(NavigationData).map(([key, value]) => (
@@ -204,12 +130,10 @@ export default function Header({ variant = "default" }: HeaderProps) {
                     ) : (
                       <Link
                         href={value.href}
-                        className={`hover:text-blue-500 ${
-                          header
-                            ? pathname === value.href
-                              ? "font-bold text-blue-700"
-                              : "text-blue-main"
-                            : "text-white"
+                        className={`text-nowrap hover:text-blue-500 ${
+                          pathname === value.href
+                            ? "font-bold text-blue-700"
+                            : "text-blue-main"
                         }`}
                       >
                         {value.text}
@@ -219,10 +143,12 @@ export default function Header({ variant = "default" }: HeaderProps) {
                 ))}
               </div>
             </div>
+
             <div className="hidden lg:flex">
               <SearchInput />
             </div>
-            <div className="col-span-3 ml-auto self-center lg:hidden ">
+
+            <div className="col-span-3 mr-[50px] self-center lg:hidden ">
               <button
                 type="button"
                 className="flex h-12 w-12 items-center justify-center rounded-lg bg-gray-100"
@@ -234,6 +160,76 @@ export default function Header({ variant = "default" }: HeaderProps) {
             </div>
           </>
         )}
+
+        <div
+          // className={`fixed top-0 z-50 w-full bg-white ${mobileMenuOpen ? "visible" : "hidden"} `}
+          className={`fixed left-0 top-0 h-full w-full backdrop-blur-sm backdrop-brightness-75 ${mobileMenuOpen ? "visible" : "hidden"} animate-menu-fade lg:hidden
+        `}
+        >
+          <nav className="fixed z-50 h-full w-full shadow-xl">
+            <div className="min-w-1/4 sticky right-3 top-3 ml-auto h-auto w-[94%] rounded-lg bg-white p-5 sm:w-[30%]">
+              <button
+                type="button"
+                onClick={toggleMobileMenu}
+                className="absolute right-0 top-0 z-50 m-5 flex h-12 w-12 items-center justify-center rounded-lg bg-gray-100 p-1.5"
+              >
+                <span className="sr-only">Close menu</span>
+                <XMarkIcon className="h-6 w-6" />
+              </button>
+              <div className="flow-root">
+                <div className="ml-2 space-y-2">
+                  {Object.entries(NavigationData).map(([key, value], index) => (
+                    <div key={index} className="relative">
+                      {Array.isArray(value) ? (
+                        <div className="group">
+                          <button
+                            type="button"
+                            onClick={() => toggleSubMenu(key)}
+                            className={`px-3 py-1 leading-7 ${
+                              pathname === value[0]?.href
+                                ? "font-bold text-blue-700"
+                                : "font-semibold text-blue-main"
+                            }`}
+                          >
+                            {key}{" "}
+                            <span className="text-xs">
+                              {showSubMenu === key ? "▲" : "▼"}
+                            </span>
+                          </button>
+                          {showSubMenu === key && (
+                            <div className="w-fulls mt-1 flex flex-col gap-3 pl-5">
+                              {value.map((item, index) => (
+                                <Link
+                                  key={index}
+                                  href={item.href}
+                                  onClick={toggleMobileMenu}
+                                  className={`text-nowrap hover:text-cyan-700 ${
+                                    pathname === item.href
+                                      ? "font-semibold text-blue-700"
+                                      : "text-blue-main"
+                                  }`}
+                                >
+                                  {item.text}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ) : (
+                        <Link
+                          href={value.href}
+                          className={`block w-full px-3 py-1 leading-7 ${pathname === value.href ? "font-bold text-blue-700" : "font-semibold text-blue-main"}`}
+                        >
+                          {value.text}
+                        </Link>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
       </header>
     </>
   );

@@ -1,11 +1,13 @@
 import LandingPage from "~/app/_components/landing-page";
 
-export default function ManutencaoDeJardim() {
+export default function MaoObraEspecializada() {
   return (
     <LandingPage
+      mainTitle="Mão de Obra Especializada"
       backgroundImg="services-mao-de-obra"
       title="Mão de Obra Especializada"
-      text="Delegar à nossa empresa algumas das suas atividades é a melhor forma de entregar bons resultados aos seus clientes. Nossa equipe administrativa possui experiência e capacidade técnica para dar o suporte que a sua organização precisa. Nosso serviço flexível e adaptável é um ponto positivo no mercado atual, oferecemos mão de obra especializada fixa, pontual e/ou temporária."
+      text="Cuidamos de cada detalhe para que você possa desfrutar do seu novo espaço –
+      Limpeza pós-obra de excelência, feita por profissionais dedicados. Solicite um orçamento"
     />
   );
 }

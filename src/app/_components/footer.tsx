@@ -42,7 +42,7 @@ export default function Footer() {
 function FooterText(props: FooterBodyProps) {
   return (
     <div className="flex flex-col gap-4">
-      <p className="text-lg font-light text-gray-50">{props.title}</p>
+      <p className="text-lg font-bold text-gray-50 ">{props.title}</p>
       <div className="flex flex-col gap-3">
         {props.data.map((data) => (
           <Link
