@@ -8,20 +8,18 @@ import Title from "~/app/_components/title";
 import {
   FeedbackData,
   HomeLogoData,
-  HomePersonData,
   LandingPageIconData,
   LandingPageWhyData,
 } from "~/data";
 import IconCard from "~/app/_components/cards/icon";
 import { LandingPageFeedbackCard } from "~/app/_components/cards/lp-feedback";
-import BudgetWithIcon from "~/app/_components/budget-with-icon";
+
 import LandingPageForm from "./forms/landing-page";
 
 import { Fragment } from "react";
 import SolucaoSection from "./lp-solucao";
 import OrcamentoCTA from "./cta-orcamento";
 import AnimatedSubtitle from "./cards/animated-subtitle";
-import { PersonCard } from "./cards/person";
 
 import Image from "next/image";
 

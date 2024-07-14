@@ -4,7 +4,7 @@
 import { buttonVariants } from "~/components/ui/button";
 import { cn } from "~/lib/utils";
 import Marquee from "~/components/magicui/marquee";
-import { ChevronLeft, ChevronRight, HeartHandshake } from "lucide-react";
+import { ChevronLeft, HeartHandshake } from "lucide-react";
 import Container from "~/app/_components/container";
 import Link from "next/link";
 
@@ -152,87 +152,5 @@ const ReviewCard = ({
     </figure>
   );
 };
-
-export function CallToAction() {
-  return (
-    <section id="cta">
-      <div className="py-14">
-        <div className="container flex w-full flex-col items-center justify-center p-4">
-          <div className="relative flex w-full max-w-[1000px] flex-col items-center justify-center overflow-hidden rounded-[2rem] border p-10 py-14">
-            <div className="absolute rotate-[35deg]">
-              <Marquee pauseOnHover className="[--duration:20s]" repeat={3}>
-                {firstRow.map((review) => (
-                  <ReviewCard key={review.username} {...review} />
-                ))}
-              </Marquee>
-              <Marquee
-                reverse
-                pauseOnHover
-                className="[--duration:20s]"
-                repeat={3}
-              >
-                {secondRow.map((review) => (
-                  <ReviewCard key={review.username} {...review} />
-                ))}
-              </Marquee>
-              <Marquee pauseOnHover className="[--duration:20s]" repeat={3}>
-                {firstRow.map((review) => (
-                  <ReviewCard key={review.username} {...review} />
-                ))}
-              </Marquee>
-              <Marquee
-                reverse
-                pauseOnHover
-                className="[--duration:20s]"
-                repeat={3}
-              >
-                {secondRow.map((review) => (
-                  <ReviewCard key={review.username} {...review} />
-                ))}
-              </Marquee>
-              <Marquee pauseOnHover className="[--duration:20s]" repeat={3}>
-                {firstRow.map((review) => (
-                  <ReviewCard key={review.username} {...review} />
-                ))}
-              </Marquee>
-              <Marquee
-                reverse
-                pauseOnHover
-                className="[--duration:20s]"
-                repeat={3}
-              >
-                {secondRow.map((review) => (
-                  <ReviewCard key={review.username} {...review} />
-                ))}
-              </Marquee>
-            </div>
-            <div className="z-10 mx-auto size-24 rounded-[2rem] border bg-white/10 p-3 shadow-2xl backdrop-blur-md lg:size-32 dark:bg-black/10">
-              <HeartHandshake className="mx-auto size-16 text-black lg:size-24 dark:text-white" />
-            </div>
-            <div className="z-10 mt-4 flex flex-col items-center text-center text-black dark:text-white">
-              <h1 className="text-3xl font-bold lg:text-4xl">
-                Stop wasting time on design.
-              </h1>
-              <p className="mt-2">
-                Start your 7-day free trial. No credit card required.
-              </p>
-              <a
-                href="/"
-                className={`group mt-4 rounded-[2rem] px-6 ${buttonVariants({
-                  size: "lg",
-                  variant: "outline",
-                })}`}
-              >
-                Get Started
-                <ChevronRight className="ml-1 size-4 transition-all duration-300 ease-out group-hover:translate-x-1" />
-              </a>
-            </div>
-            <div className="absolute inset-x-0 bottom-0 h-full bg-gradient-to-b from-transparent to-white to-70% dark:to-black" />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 export default ThankYouPage;
