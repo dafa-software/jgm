@@ -1,8 +1,8 @@
-import LandingPage from "~/app/_components/landing-page";
+import LandingPageGeneral from "~/app/_components/landing-page-general";
 
 export default function LimpezaDeEstofadosCarpetes() {
   return (
-    <LandingPage
+    <LandingPageGeneral
       mainTitle="Transforme Seus Estofados com Nossa Higienização Especializada!"
       backgroundImg="services-estofados-e-carpetes"
       title="Limpeza de Estofados e Carpetes"

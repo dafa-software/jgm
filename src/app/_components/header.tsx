@@ -112,6 +112,9 @@ export default function Header({ variant = "default" }: HeaderProps) {
                               <Link
                                 key={index}
                                 href={item.href}
+                                target={
+                                  item.href.startsWith("/") ? "_self" : "_blank"
+                                }
                                 onClick={toggleMobileMenu}
                                 className={`text-nowrap hover:text-blue-500 ${
                                   header
@@ -135,6 +138,7 @@ export default function Header({ variant = "default" }: HeaderProps) {
                             ? "font-bold text-blue-700"
                             : "text-blue-main"
                         }`}
+                        target={value.href.startsWith("/") ? "_self" : "_blank"}
                       >
                         {value.text}
                       </Link>

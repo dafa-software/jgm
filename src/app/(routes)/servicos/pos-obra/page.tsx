@@ -1,8 +1,8 @@
-import LandingPage from "~/app/_components/landing-page";
+import LandingPageGeneral from "~/app/_components/landing-page-general";
 
 export default function LimpezaPosObra() {
   return (
-    <LandingPage
+    <LandingPageGeneral
       mainTitle="Procurando uma empresa de limpeza pós-obra de qualidade e com profissionais
     especializados?"
       backgroundImg="services-pos-obra"

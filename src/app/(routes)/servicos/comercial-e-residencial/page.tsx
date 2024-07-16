@@ -1,8 +1,8 @@
-import LandingPage from "~/app/_components/landing-page";
+import LandingPageGeneral from "~/app/_components/landing-page-general";
 
 export default function LimpezaComercialResidencial() {
   return (
-    <LandingPage
+    <LandingPageGeneral
       mainTitle="Limpeza Comercial e Residencial"
       backgroundImg="services-comercial-e-residencial"
       title="Limpeza Comercial e Residencial"

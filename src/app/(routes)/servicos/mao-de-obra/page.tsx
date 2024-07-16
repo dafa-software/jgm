@@ -1,8 +1,8 @@
-import LandingPage from "~/app/_components/landing-page";
+import LandingPageGeneral from "~/app/_components/landing-page-general";
 
 export default function MaoObraEspecializada() {
   return (
-    <LandingPage
+    <LandingPageGeneral
       mainTitle="Mão de Obra Especializada"
       backgroundImg="services-mao-de-obra"
       title="Mão de Obra Especializada"

@@ -6,9 +6,18 @@ await import("./src/env.js");
 
 /** @type {import("next").NextConfig} */
 const config = {
-images: {
-  domains: ['i0.wp.com'],
-},
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "i0.wp.com",
+      },
+      {
+        protocol: "http",
+        hostname: "i0.wp.com",
+      },
+    ],
+  },
 };
 
 export default config;

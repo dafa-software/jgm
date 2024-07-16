@@ -21,14 +21,13 @@ import SolucaoSection from "./lp-solucao";
 import OrcamentoCTA from "./cta-orcamento";
 import AnimatedSubtitle from "./cards/animated-subtitle";
 
-import Image from "next/image";
-
 interface LandingPageProps {
   slug?: string;
   title: string;
   text: string;
   backgroundImg: string;
   mainTitle: string;
+  fontColor?: string;
 }
 
 export const solutions = [
@@ -40,7 +39,7 @@ export const solutions = [
   {
     title: "Limpeza e Conservação",
     text: "Serviços de limpeza e conservação, com profissionais experientes e bem treinados.",
-    image: "/assets/lp-staff-terceirizacao2.png",
+    image: "/assets/lp-staff-4.png",
   },
   {
     title: "Portaria",
@@ -50,7 +49,7 @@ export const solutions = [
   {
     title: "Outros facilities",
     text: "Oferecemos outros serviços, como manutenção de jardins, piscinas, jardins e outros.",
-    image: "/assets/lp-staff-terceirizacao4.png",
+    image: "/assets/lp-staff-terceirizacao6.png",
   },
 ];
 
@@ -64,6 +63,7 @@ export default function LandingPage(props: LandingPageProps) {
         title={props.title}
         text={props.text}
         contentRight={<LandingPageForm variant="thin" title={props.title} />}
+        fontColor={props.fontColor}
       />
 
       <div className="bg-white">
@@ -156,14 +156,16 @@ export default function LandingPage(props: LandingPageProps) {
 
               <div className="mt-6 grid grid-cols-2 items-center justify-center gap-2 border-y p-3 md:flex md:flex-row">
                 {HomeLogoData.map((props, index) => (
-                  <Image
-                    key={index}
-                    src={props.src}
-                    alt={props.alt}
-                    width={100}
-                    height={100}
-                    className="h-fit w-full md:w-10/12"
-                  />
+                  <picture key={index}>
+                    <img
+                      key={index}
+                      src={props.src}
+                      alt={props.alt}
+                      width={100}
+                      height={100}
+                      className="h-fit w-full md:w-10/12"
+                    />
+                  </picture>
                 ))}
               </div>
             </Section>

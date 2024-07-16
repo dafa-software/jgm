@@ -1,8 +1,8 @@
-import LandingPage from "~/app/_components/landing-page";
+import LandingPageGeneral from "~/app/_components/landing-page-general";
 
 export default function ManutencaoDeJardim() {
   return (
-    <LandingPage
+    <LandingPageGeneral
       mainTitle="Profissionais especializados em Jardinagem?"
       backgroundImg="services-jardinagem"
       title="Jardinagem"

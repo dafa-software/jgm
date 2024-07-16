@@ -4,7 +4,6 @@ import "~/styles/globals.css";
 import Container from "../container";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useEffect, useState, useCallback } from "react";
-
 import Image from "next/image";
 
 interface HeroCardProps {
@@ -15,6 +14,7 @@ interface HeroCardProps {
   contentBottom?: React.ReactNode;
   contentRight?: React.ReactNode;
   autoplay?: boolean;
+  fontColor?: string;
   images?: { src: string; subTitle: string }[];
 }
 
@@ -111,7 +111,7 @@ export function HeroCard(props: HeroCardProps) {
               className={`flex flex-col justify-center gap-3 py-20 md:py-2 ${!props.contentRight && "md:w-2/3"}`}
             >
               <h1
-                className={`py-2 text-3xl font-bold ${props.mainTitle?.length >= 25 ? "md:text-5xl" : "md:text-6xl"} `}
+                className={`py-2 text-3xl font-bold ${props.mainTitle?.length >= 25 ? "md:text-5xl" : "md:text-6xl"} ${props.fontColor && props.fontColor + " bg-white bg-opacity-10"}`}
               >
                 {/* <TypewriterEffectSmooth
                   words={
@@ -158,9 +158,8 @@ export function HeroCard(props: HeroCardProps) {
             alt="Wave"
             width={1280}
             height={720}
-            className="absolute left-0 top-0 -z-50 h-full w-full bg-black object-cover"
-            priority
-            unoptimized={true}
+            className="absolute left-0 top-0 -z-50 h-full w-full bg-black bg-opacity-50 object-cover"
+            priority={true}
           />
         </>
       )}

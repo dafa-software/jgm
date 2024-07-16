@@ -1,7 +1,6 @@
 "use client";
 
 import { ChevronDoubleRightIcon } from "@heroicons/react/20/solid";
-import Image from "next/image";
 import Link from "next/link";
 import React, { Fragment } from "react";
 
@@ -29,13 +28,15 @@ export function ServicesCard(props: ServicesCardProps) {
             <div className="absolute inset-10 flex items-center justify-center">
               <ChevronDoubleRightIcon className="blue-main h-12 w-12 animate-pulse fill-white" />
             </div>
-            <Image
-              src={`/assets/${props.img}.png`}
-              className="animate-fade-in block h-full w-full scale-100 transform object-cover object-center transition duration-300 group-hover:scale-125 group-hover:opacity-30"
-              alt=""
-              width={1920}
-              height={1080}
-            />
+            <picture>
+              <img
+                src={`/assets/${props.img}.png`}
+                className="animate-fade-in block h-full w-full scale-100 transform object-cover object-center transition duration-300 group-hover:scale-125 group-hover:opacity-30"
+                alt=""
+                width={1920}
+                height={1080}
+              />
+            </picture>
 
             {props.title && (
               <div

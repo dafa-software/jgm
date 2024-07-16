@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { HeroCard } from "../_components/cards/hero";
 import Container from "../_components/container";
 import Section from "../_components/section";
@@ -159,7 +158,7 @@ export default async function Home() {
                 <div className="flex flex-col items-center justify-center gap-3 text-xl font-bold text-blue-main">
                   <BigNumbers
                     title={"Funcionarios"}
-                    number={500}
+                    number={800}
                     variant={"secondary"}
                     kind="number"
                     className="text-4xl text-white"
@@ -212,14 +211,15 @@ export default async function Home() {
             </div>
             <div className="mt-6 grid grid-cols-2 items-center justify-center gap-2 border-y p-3 md:flex md:flex-row">
               {HomeLogoData.map((props, index) => (
-                <Image
-                  key={index}
-                  src={props.src}
-                  alt={props.alt}
-                  width={100}
-                  height={100}
-                  className="h-fit w-full md:w-10/12"
-                />
+                <picture key={index}>
+                  <img
+                    src={props.src}
+                    alt={props.alt}
+                    width={100}
+                    height={100}
+                    className="h-fit w-full md:w-10/12"
+                  />
+                </picture>
               ))}
             </div>
           </Section>
