@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { HeroCard } from "../_components/cards/hero";
 import Container from "../_components/container";
 import Section from "../_components/section";
@@ -145,11 +146,14 @@ export default async function Home() {
                   <Carousel slides={1}>
                     {images.map((props, index) => (
                       <div key={index} className="keen-slider__slide">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
+                        <Image
                           src={props.src}
                           alt="bg"
                           className="h-96 w-fit rounded-md object-cover shadow-lg"
+                          width={720}
+                          height={400}
+                          priority
+                          quality={100}
                         />
                       </div>
                     ))}
@@ -211,15 +215,16 @@ export default async function Home() {
             </div>
             <div className="mt-6 grid grid-cols-2 items-center justify-center gap-2 border-y p-3 md:flex md:flex-row">
               {HomeLogoData.map((props, index) => (
-                <picture key={index}>
-                  <img
-                    src={props.src}
-                    alt={props.alt}
-                    width={100}
-                    height={100}
-                    className="h-fit w-full md:w-10/12"
-                  />
-                </picture>
+                <Image
+                  key={index}
+                  src={props.src}
+                  alt={props.alt}
+                  width={100}
+                  height={100}
+                  className="h-fit w-full md:w-10/12"
+                  priority
+                  quality={75}
+                />
               ))}
             </div>
           </Section>

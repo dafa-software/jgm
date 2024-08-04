@@ -3,6 +3,7 @@
 import { ChevronDoubleRightIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import React, { Fragment } from "react";
+import Image from "next/image";
 
 export interface ServicesCardProps {
   title?: string;
@@ -28,15 +29,15 @@ export function ServicesCard(props: ServicesCardProps) {
             <div className="absolute inset-10 flex items-center justify-center">
               <ChevronDoubleRightIcon className="blue-main h-12 w-12 animate-pulse fill-white" />
             </div>
-            <picture>
-              <img
-                src={`/assets/${props.img}.png`}
-                className="animate-fade-in block h-full w-full scale-100 transform object-cover object-center transition duration-300 group-hover:scale-125 group-hover:opacity-30"
-                alt=""
-                width={1920}
-                height={1080}
-              />
-            </picture>
+            <Image
+              src={`/assets/${props.img}.png`}
+              className="animate-fade-in block h-full w-full scale-100 transform object-cover object-center transition duration-300 group-hover:scale-125 group-hover:opacity-30"
+              alt=""
+              width={1920}
+              height={1080}
+              priority
+              quality={100}
+            />
 
             {props.title && (
               <div

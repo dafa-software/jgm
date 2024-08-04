@@ -14,6 +14,8 @@ import BudgetWithIcon from "~/app/_components/budget-with-icon";
 import LandingPageForm from "./forms/landing-page";
 import WhyCardWithText from "./cards/why-with-text";
 
+import Image from "next/image";
+
 interface LandingPageProps {
   slug?: string;
   title: string;
@@ -73,15 +75,16 @@ export default function LandingPageGeneral(props: LandingPageProps) {
             />
             <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
               {[1, 2, 3, 4, 5, 6].map((index) => (
-                <picture key={index}>
-                  <img
-                    src={`${props.slug ? `/assets/lp-staff-${slug}${index}.png` : `/assets/lp-staff-${index}.png`}`}
-                    alt="Placeholder"
-                    width={350}
-                    height={350}
-                    className=""
-                  />
-                </picture>
+                <Image
+                  key={index}
+                  src={`${props.slug ? `/assets/lp-staff-${slug}${index}.png` : `/assets/lp-staff-${index}.png`}`}
+                  alt="Placeholder"
+                  width={350}
+                  height={350}
+                  className=""
+                  priority
+                  quality={100}
+                />
               ))}
             </div>
           </Section>

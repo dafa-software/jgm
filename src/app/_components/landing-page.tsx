@@ -20,6 +20,7 @@ import { Fragment } from "react";
 import SolucaoSection from "./lp-solucao";
 import OrcamentoCTA from "./cta-orcamento";
 import AnimatedSubtitle from "./cards/animated-subtitle";
+import Image from "next/image";
 
 interface LandingPageProps {
   slug?: string;
@@ -156,16 +157,16 @@ export default function LandingPage(props: LandingPageProps) {
 
               <div className="mt-6 grid grid-cols-2 items-center justify-center gap-2 border-y p-3 md:flex md:flex-row">
                 {HomeLogoData.map((props, index) => (
-                  <picture key={index}>
-                    <img
-                      key={index}
-                      src={props.src}
-                      alt={props.alt}
-                      width={100}
-                      height={100}
-                      className="h-fit w-full md:w-10/12"
-                    />
-                  </picture>
+                  <Image
+                    key={index}
+                    src={props.src}
+                    alt={props.alt}
+                    width={100}
+                    height={100}
+                    className="h-fit w-full md:w-10/12"
+                    priority
+                    quality={100}
+                  />
                 ))}
               </div>
             </Section>

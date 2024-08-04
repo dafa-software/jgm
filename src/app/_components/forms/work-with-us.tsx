@@ -36,7 +36,7 @@ export default function WorkWithUsForm() {
         </label>
         <input
           type="text"
-          placeholder="Exemplo: John Doe"
+          placeholder="Exemplo: Francisco da Silva"
           value={name}
           onChange={(e) => setName(e.target.value)}
           className="w-full rounded-md border bg-gray-100 px-4 py-2 text-black"
@@ -48,7 +48,7 @@ export default function WorkWithUsForm() {
         </label>
         <input
           type="email"
-          placeholder="Exemplo: john@doe.com"
+          placeholder="Exemplo: seuemail@gmail.com"
           value={mail}
           onChange={(e) => setMail(e.target.value)}
           className="w-full rounded-md border bg-gray-100 px-4 py-2 text-black"
@@ -60,7 +60,7 @@ export default function WorkWithUsForm() {
         </label>
         <input
           type="text"
-          placeholder="Exemplo: (11) 99999-9999"
+          placeholder="Exemplo: (21) 99876-5432"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
           className="w-full rounded-md border bg-gray-100 px-4 py-2 text-black"

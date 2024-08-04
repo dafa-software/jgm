@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 "use client";
 
+import Image from "next/image";
 import { buttonVariants } from "~/components/ui/button";
 import { cn } from "~/lib/utils";
 import Marquee from "~/components/magicui/marquee";
@@ -78,8 +79,8 @@ const ThankYouPage = () => {
                 ))}
               </Marquee>
             </div>
-            <div className="z-10 mx-auto size-24 rounded-[2rem] border bg-white/10 p-3 shadow-2xl backdrop-blur-md lg:size-32 dark:bg-black/10">
-              <HeartHandshake className="mx-auto size-16 text-black lg:size-24 dark:text-white" />
+            <div className="z-10 mx-auto size-24 rounded-[2rem] border bg-white/10 p-3 shadow-2xl backdrop-blur-md dark:bg-black/10 lg:size-32">
+              <HeartHandshake className="mx-auto size-16 text-black dark:text-white lg:size-24" />
             </div>
             <div className="z-10 mt-4 flex flex-col items-center gap-6 text-center text-black dark:text-white">
               <h1 className="text-2xl font-bold lg:text-4xl">
@@ -131,15 +132,14 @@ const ReviewCard = ({
     >
       <div className="flex flex-row items-center gap-2">
         {img && (
-          <picture>
-            <img
-              className="rounded-full"
-              width="32"
-              height="32"
-              alt=""
-              src={img}
-            />
-          </picture>
+          <Image
+            className="rounded-full"
+            width={32}
+            height={32}
+            alt=""
+            src={img}
+            priority
+          />
         )}
         <div className="flex flex-col">
           <figcaption className="text-sm font-medium dark:text-white">

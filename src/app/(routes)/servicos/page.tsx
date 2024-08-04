@@ -7,8 +7,8 @@ import { HomeServicesData } from "~/data";
 export default function ServicesPage() {
   return (
     <main className="bg-blue-main bg-[url(/assets/bg-wave.svg)] bg-cover bg-center bg-no-repeat">
-      <Container>
-        <Section>
+      <Container >
+        <Section >
           <Title
             title="Nossos serviços"
             text="Oferecemos uma gama abrangente de serviços de limpeza e manutenção, tanto para ambientes comerciais quanto residenciais."
