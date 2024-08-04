@@ -1,11 +1,8 @@
 "use client";
 
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { FormEvent, Fragment, useCallback, useState } from "react";
-import { set } from "zod";
+import { useState } from "react";
 
-import { api } from "~/trpc/react";
+// import { api } from "~/trpc/react";
 
 export default function LandingPageForm({
   variant,
@@ -21,12 +18,12 @@ export default function LandingPageForm({
   const [message, setMessage] = useState("");
   const [submitMessage, setSubmitMessage] = useState("");
 
-  const createForm = api.LandingForm.create.useMutation({
-    onSuccess: () => {
-      console.log("🚀🚀🚀 success");
-      setSubmitMessage("Sucesso ao enviar o formulário!");
-    },
-  });
+  // const createForm = api.LandingForm.create.useMutation({
+  //   onSuccess: () => {
+  //     console.log("🚀🚀🚀 success");
+  //     setSubmitMessage("Sucesso ao enviar o formulário!");
+  //   },
+  // });
 
   // const handleFormSubmit = useCallback(
   //   (event: FormEvent<HTMLFormElement>) => {
@@ -158,7 +155,7 @@ export default function LandingPageForm({
           <button
             type="button"
             className={`${variant === "wide" && "md:w-1/2"} rounded-md bg-blue-main px-6 py-3 font-semibold transition hover:bg-blue-900`}
-            disabled={createForm.isPending}
+            // disabled={createForm.isPending}
             onClick={() => {
               if (name && mail && phone && service && message) {
                 window.open(
@@ -174,14 +171,15 @@ export default function LandingPageForm({
               }
             }}
           >
-            {createForm.isPending
+            {/* {createForm.isPending
               ? "Enviando..."
-              : "Receber esse orçamento via e-mail"}
+              : "Receber esse orçamento via e-mail"} */}
+            Receber esse orçamento via e-mail
           </button>
           <button
             type="button"
             className={`${variant === "wide" && "md:w-1/2"} rounded-md bg-green-500 px-6 py-3 font-semibold transition hover:bg-green-600`}
-            disabled={createForm.isPending}
+            // disabled={createForm.isPending}
             onClick={() => {
               if (name && phone && service && message) {
                 window.open(
@@ -197,9 +195,10 @@ export default function LandingPageForm({
               }
             }}
           >
-            {createForm.isPending
+            {/* {createForm.isPending
               ? "Enviando..."
-              : "Receber esse orçamento via WhatsApp"}
+              : "Receber esse orçamento via WhatsApp"} */}
+            Receber esse orçamento via WhatsApp
           </button>
         </div>
         {/* <span className="text-center text-sm font-bold text-red-500">
