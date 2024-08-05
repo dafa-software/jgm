@@ -13,7 +13,7 @@ export default function TrabalheConosco() {
           <div className="flex flex-col gap-6 md:flex-row">
             <div>
               <p className="font-bold">WhatsApp</p>
-              <p>(21)97737-8854</p>
+              <p>(21)964127226</p>
             </div>
             <div>
               <p className="font-bold">E-mail</p>

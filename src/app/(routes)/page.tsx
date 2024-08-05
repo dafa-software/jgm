@@ -50,7 +50,7 @@ export default async function Home() {
         contentBottom={
           <div className="flex flex-col gap-4 py-8 md:flex-row">
             <Link
-              href="https://wa.me/5521977378854"
+              href="https://wa.me/5521964127226"
               className="duration-400 transform rounded-md bg-sky-500 px-8 py-4 font-bold  tracking-widest text-white shadow-sm transition  duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:cursor-pointer hover:bg-blue-600 hover:text-white"
             >
               Solicite um orçamento →
