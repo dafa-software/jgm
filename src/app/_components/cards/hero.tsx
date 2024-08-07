@@ -111,7 +111,7 @@ export function HeroCard(props: HeroCardProps) {
               className={`flex flex-col justify-center gap-3 py-20 md:py-2 ${!props.contentRight && "md:w-2/3"}`}
             >
               <h1
-                className={`py-2 text-3xl font-bold ${props.mainTitle?.length >= 25 ? "md:text-5xl" : "md:text-6xl"} ${props.fontColor && props.fontColor + "  bg-opacity-10 shadow-lg"}`}
+                className={`py-2 text-3xl font-bold ${props.mainTitle?.length >= 25 ? "md:text-5xl" : "md:text-6xl"} ${props.fontColor && props.fontColor + "  bg-opacity-10"}`}
               >
                 {/* <TypewriterEffectSmooth
                   words={
@@ -141,33 +141,33 @@ export function HeroCard(props: HeroCardProps) {
               <div className="md:w-1/2">{props.contentRight}</div>
             )}
           </div>
+
+          {props.images ? (
+            <AnimatePresence>
+              <motion.img
+                key={currentIndex}
+                src={loadedImages[currentIndex]?.src}
+                initial="initial"
+                animate="visible"
+                variants={slideVariants}
+                className="absolute left-0 top-0 -z-50 h-full w-full overflow-hidden bg-black bg-no-repeat object-cover opacity-50"
+              />
+            </AnimatePresence>
+          ) : (
+            <>
+              <Image
+                src={`/assets/${props.backgroundImg}.png`}
+                alt="Wave"
+                width={1280}
+                height={720}
+                className="absolute left-0 top-0 -z-50 h-full w-full bg-black bg-opacity-50 object-cover"
+                priority={true}
+                quality={100}
+              />
+            </>
+          )}
         </Container>
       </div>
-
-      {props.images ? (
-        <AnimatePresence>
-          <motion.img
-            key={currentIndex}
-            src={loadedImages[currentIndex]?.src}
-            initial="initial"
-            animate="visible"
-            variants={slideVariants}
-            className="absolute left-0 top-0 -z-50 h-full w-full overflow-hidden bg-black bg-no-repeat object-cover opacity-50"
-          />
-        </AnimatePresence>
-      ) : (
-        <>
-          <Image
-            src={`/assets/${props.backgroundImg}.png`}
-            alt="Wave"
-            width={1280}
-            height={720}
-            className="absolute left-0 top-0 -z-50 h-full w-full bg-black bg-opacity-50 object-cover"
-            priority={true}
-            quality={100}
-          />
-        </>
-      )}
     </div>
   );
 }
