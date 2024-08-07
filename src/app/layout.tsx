@@ -5,7 +5,7 @@ import { Analytics } from "@vercel/analytics/react";
 
 import { TRPCReactProvider } from "~/trpc/react";
 import Whatsapp from "./_components/whatsapp";
-// import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 export const runtime = "edge";
 
@@ -30,7 +30,7 @@ export default function RootLayout({
     <html lang="pt-br" className={inter.className}>
       <body className={`font-sans ${inter.variable}`}>
         {/* <GoogleAnalytics gaId="G-2ZVEPQKJ990" /> */}
-        {/* <GoogleTagManager gtmId="GTM-2ZVEPQKJ990" /> */}
+        <GoogleTagManager gtmId="GTM-5BCGJ7RT" />
         <Whatsapp />
         <TRPCReactProvider>{children}</TRPCReactProvider>
         <Analytics />

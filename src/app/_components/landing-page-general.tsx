@@ -15,6 +15,7 @@ import LandingPageForm from "./forms/landing-page";
 import WhyCardWithText from "./cards/why-with-text";
 
 import Image from "next/image";
+import Link from "next/link";
 
 interface LandingPageProps {
   slug?: string;
@@ -61,9 +62,13 @@ export default function LandingPageGeneral(props: LandingPageProps) {
       </div>
       <div className="flex flex-col items-center justify-center gap-2 bg-blue-main p-6 font-bold md:flex-row md:gap-6">
         <h2 className="text-xl text-white">Pronto para começar?</h2>
-        <button className="rounded-md bg-white p-3 px-6 text-blue-main transition duration-300 hover:bg-blue-100">
+        <Link
+          className="rounded-md bg-white p-3 px-6 text-blue-main transition duration-300 hover:bg-blue-100"
+          href="https://wa.me/5521964127226"
+          target="_blank"
+        >
           Solicite um orçamento
-        </button>
+        </Link>
       </div>
       <div className="bg-white">
         <Container>

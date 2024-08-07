@@ -111,7 +111,7 @@ export function HeroCard(props: HeroCardProps) {
               className={`flex flex-col justify-center gap-3 py-20 md:py-2 ${!props.contentRight && "md:w-2/3"}`}
             >
               <h1
-                className={`py-2 text-3xl font-bold ${props.mainTitle?.length >= 25 ? "md:text-5xl" : "md:text-6xl"} ${props.fontColor && props.fontColor + " bg-white bg-opacity-10"}`}
+                className={`py-2 text-3xl font-bold ${props.mainTitle?.length >= 25 ? "md:text-5xl" : "md:text-6xl"} ${props.fontColor && props.fontColor + "  bg-opacity-10 shadow-lg"}`}
               >
                 {/* <TypewriterEffectSmooth
                   words={
@@ -130,7 +130,11 @@ export function HeroCard(props: HeroCardProps) {
                 /> */}
                 {props.mainTitle}
               </h1>
-              <p className="text-base md:text-xl">{props.text}</p>
+              <p
+                className={`bg-opacity-10 text-base md:text-xl ${props.fontColor && props.fontColor}`}
+              >
+                {props.text}
+              </p>
               {props.contentBottom && <>{props.contentBottom}</>}
             </div>
             {props.contentRight && (

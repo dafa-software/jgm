@@ -3,7 +3,8 @@ import LandingPage from "~/app/_components/landing-page";
 export default function Terceirizacao() {
   return (
     <LandingPage
-      backgroundImg="services-mao-de-obra"
+      // backgroundImg="services-mao-de-obra"
+      backgroundImg="services-terceirizacao-new"
       // backgroundImg="lp-staff-terceirizacao6"
       // backgroundImg="card-mao-de-obra"
       mainTitle="Maximize o Potencial da Sua Empresa com Nossos Serviços de Terceirização"
@@ -12,7 +13,7 @@ export default function Terceirizacao() {
       de Terceirização personalizados para atender às suas necessidades específicas,
       solicite uma cotação."
       slug="terceirizacao"
-      // fontColor="text-black"
+      fontColor="text-black"
     />
   );
 }

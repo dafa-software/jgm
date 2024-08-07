@@ -181,10 +181,10 @@ export default function LandingPageForm({
             className={`${variant === "wide" && "md:w-1/2"} rounded-md bg-green-500 px-6 py-3 font-semibold transition hover:bg-green-600`}
             // disabled={createForm.isPending}
             onClick={() => {
-              if (name && phone && service && message) {
+              if (service) {
                 window.open(
                   `https://api.whatsapp.com/send/?phone=5521964127226&text=${encodeURIComponent(
-                    formattedMessage({ name, phone, message, service }),
+                    `Olá, vim do site e gostaria de um orçamento para o serviço de ${service}. Obrigado.`,
                   )}`,
                   "_blank",
                 );
@@ -198,7 +198,7 @@ export default function LandingPageForm({
             {/* {createForm.isPending
               ? "Enviando..."
               : "Receber esse orçamento via WhatsApp"} */}
-            Receber esse orçamento via WhatsApp
+            Pedir orçamento via WhatsApp
           </button>
         </div>
         {/* <span className="text-center text-sm font-bold text-red-500">
