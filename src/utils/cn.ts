@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export default function getBaseURL() {
-  if (typeof window !== "undefined") return "";
+  if (typeof window !== "undefined") return "https://jgmservicos.com.br";
   if (process.env.VERCEL_URL) return `https://${process.env.DOMAIN_URL}`;
   return "http://localhost:3000";
 }
