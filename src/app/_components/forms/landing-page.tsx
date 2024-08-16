@@ -1,15 +1,25 @@
 "use client";
 
+import { MailIcon } from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
+
+import {
+  sendConfirmationEmailToClient,
+  sendInternalEmailToSales,
+} from "~/server/api/email";
+import Image from "next/image";
 
 // import { api } from "~/trpc/react";
 
 export default function LandingPageForm({
   variant,
-  title = "Nome do serviço",
+  title = "",
+  forceService = false,
 }: {
   variant: "thin" | "wide";
   title?: string;
+  forceService?: boolean;
 }) {
   const [name, setName] = useState("");
   const [mail, setMail] = useState("");
@@ -17,57 +27,7 @@ export default function LandingPageForm({
   const [service, setService] = useState(title);
   const [message, setMessage] = useState("");
   const [submitMessage, setSubmitMessage] = useState("");
-
-  // const createForm = api.LandingForm.create.useMutation({
-  //   onSuccess: () => {
-  //     console.log("🚀🚀🚀 success");
-  //     setSubmitMessage("Sucesso ao enviar o formulário!");
-  //   },
-  // });
-
-  // const handleFormSubmit = useCallback(
-  //   (event: FormEvent<HTMLFormElement>) => {
-  //     event.preventDefault();
-
-  //     const data = new FormData(event.currentTarget);
-
-  //     console.log("Olhar aqui", data);
-
-  //     const name = data.get("name") as string;
-  //     const mail = data.get("mail") as string;
-  //     const phone = data.get("phone") as string;
-  //     const service = data.get("service") as string;
-  //     const message = data.get("message") as string;
-
-  //     console.log("🚀🚀🚀 submit", { name, mail, phone, service, message });
-
-  //     createForm.mutate({ name, mail, phone, service, message });
-  //   },
-  //   [createForm],
-  // );
-
-  // const handleWhatsappClick = useCallback(
-  //   (event: FormEvent<HTMLFormElement>) => {
-  //     event.preventDefault();
-
-  //     const data = new FormData(event.currentTarget);
-
-  //     console.log("Olhar aqui", data);
-
-  //     const name = data.get("name") as string;
-  //     const phone = data.get("phone") as string;
-  //     const service = data.get("service") as string;
-  //     const message = data.get("message") as string;
-
-  //     router.push(
-  //       "https://api.whatsapp.com/send/?phone=5521964127226&text=" +
-  //         encodeURIComponent(
-  //           whatsappMessage({ name, phone, message, service }),
-  //         ),
-  //     );
-  //   },
-  //   [router],
-  // );
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   return (
     <>
@@ -130,8 +90,8 @@ export default function LandingPageForm({
           </label>
           <input
             type="text"
-            placeholder={`Exemplo: ${title}`}
-            value={title}
+            placeholder={`Exemplo: ${forceService ? title : ""}`}
+            value={forceService ? title : service}
             name="service"
             onChange={(e) => setService(e.target.value)}
             className="w-full rounded-md border bg-gray-100 px-4 py-2 text-black"
@@ -154,34 +114,62 @@ export default function LandingPageForm({
         >
           <button
             type="button"
-            className={`${variant === "wide" && "md:w-1/2"} rounded-md bg-blue-main px-6 py-3 font-semibold transition hover:bg-blue-900`}
+            className={`${variant === "wide" && "md:w-1/2"} flex items-center justify-center rounded-md bg-blue-main px-6 py-3 font-semibold transition hover:bg-blue-900`}
             // disabled={createForm.isPending}
-            onClick={() => {
+            onClick={async () => {
+              setSubmitMessage("");
               if (name && mail && phone && service && message) {
-                window.open(
-                  `mailto:comercial@jgmservicos.com.br?subject=Site%20-Or%C3%A7amento%20de%20servi%C3%A7o%20-%20${service}&body=${encodeURIComponent(
-                    formattedMessage({ name, phone, message, service }),
-                  )}`,
-                  "_blank",
+                setIsSubmitting(true);
+                const id = toast.loading("Enviando informações...");
+                // window.open(
+                //   `mailto:comercial@jgmservicos.com.br?subject=Site%20-Or%C3%A7amento%20de%20servi%C3%A7o%20-%20${service}&body=${encodeURIComponent(
+                //     formattedMessage({ name, phone, message, service }),
+                //   )}`,
+                //   "_blank",
+                // );
+
+                const data = await sendConfirmationEmailToClient(
+                  mail,
+                  name,
+                  service ?? title,
                 );
+
+                await new Promise((resolve) => setTimeout(resolve, 5000));
+
+                await sendInternalEmailToSales(
+                  "comercial@jgmservicos.com.br",
+                  name,
+                  phone,
+                  message,
+                  service ?? title,
+                );
+
+                if (!data) {
+                  setSubmitMessage("Erro ao enviar e-mail!");
+                  return;
+                }
+
+                setSubmitMessage("E-mail enviado com sucesso!");
+                toast.success("E-mail enviado com sucesso!", {
+                  id,
+                });
               } else {
                 setSubmitMessage(
                   "Por favor, preencha todos os campos antes de enviar.",
                 );
               }
+              setIsSubmitting(false);
             }}
+            disabled={isSubmitting}
           >
-            {/* {createForm.isPending
-              ? "Enviando..."
-              : "Receber esse orçamento via e-mail"} */}
-            Receber esse orçamento via e-mail
+            <MailIcon className="mr-2 h-5 w-5" />
+            {isSubmitting ? "Enviando..." : "Receber esse orçamento via e-mail"}
           </button>
           <button
             type="button"
-            className={`${variant === "wide" && "md:w-1/2"} rounded-md bg-green-500 px-6 py-3 font-semibold transition hover:bg-green-600`}
-            // disabled={createForm.isPending}
+            className={`${variant === "wide" && "md:w-1/2"} flex items-center justify-center rounded-md bg-green-500 px-6 py-3 font-semibold transition hover:bg-green-600`}
             onClick={() => {
-              if (service) {
+              if (service || !forceService) {
                 window.open(
                   `https://api.whatsapp.com/send/?phone=5521964127226&text=${encodeURIComponent(
                     `Olá, vim do site e gostaria de um orçamento para o serviço de ${service}. Obrigado.`,
@@ -198,6 +186,13 @@ export default function LandingPageForm({
             {/* {createForm.isPending
               ? "Enviando..."
               : "Receber esse orçamento via WhatsApp"} */}
+            <Image
+              src="/logos/whatsapp.svg"
+              alt=""
+              width={20}
+              height={20}
+              className="mr-2"
+            />
             Pedir orçamento via WhatsApp
           </button>
         </div>

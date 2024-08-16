@@ -313,10 +313,6 @@ export const FeedbackData = [
     person: "Pierre",
   },
   {
-    text: "“Excelente atenção e educação. Serviço realizado com sucesso.”",
-    person: "Orliane Rangel",
-  },
-  {
     text: "Profissionais eficientes e educados!",
     person: "Carla",
   },
@@ -431,7 +427,7 @@ export const HomeSearchData = [
   },
   {
     title: "Bimer",
-    href: "http://p2-jgm.snmssp.com:8082/#/",
+    href: "https://bimer.jgmservicos.com.br",
   },
   {
     title: "Termos de Uso",

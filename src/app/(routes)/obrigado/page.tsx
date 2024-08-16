@@ -23,12 +23,6 @@ const reviews = [
     img: "https://avatar.vercel.sh/pierre",
   },
   {
-    name: "Orliane Rangel",
-    body: "“Excelente atenção e educação. Serviço realizado com sucesso.”",
-    username: "@orliane",
-    img: "https://avatar.vercel.sh/orliane",
-  },
-  {
     name: "Carla",
     body: "Profissionais eficientes e educados!",
     username: "@carla",
