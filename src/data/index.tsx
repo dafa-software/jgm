@@ -189,7 +189,7 @@ export const NavigationData = {
       text: "Contracheques",
     },
     {
-      href: "http://p2-jgm.snmssp.com:8082/#/",
+      href: "https://bimer.jgmservicos.com.br",
       text: "Bimer",
     },
   ],
