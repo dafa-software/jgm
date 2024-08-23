@@ -118,9 +118,8 @@ export function HeroCard(props: HeroCardProps) {
                   className={classNames(
                     `py-2 text-3xl font-bold ${props.mainTitle?.length >= 25 ? "md:text-5xl" : "md:text-6xl"}`,
                     {
-                      [`${props.fontColor}`]: props.fontColor,
-                      ["backdrop-contrast-10 rounded-xl bg-white bg-opacity-50 shadow-lg md:rounded-xl md:bg-opacity-0 md:shadow-none"]:
-                        true,
+                      [`${props.fontColor} backdrop-contrast-10 rounded-xl bg-white bg-opacity-50 shadow-lg md:rounded-xl md:bg-opacity-0 md:shadow-none`]:
+                        props.fontColor,
                     },
                   )}
                 >
@@ -143,9 +142,8 @@ export function HeroCard(props: HeroCardProps) {
                 </h1>
                 <p
                   className={classNames(`bg-opacity-10 text-base md:text-xl`, {
-                    [`${props.fontColor}`]: props.fontColor,
-                    ["backdrop-contrast-10 mb-[-80px] rounded-xl bg-white bg-opacity-50 shadow-lg md:rounded-xl md:bg-opacity-0 md:shadow-none"]:
-                      true,
+                    [`${props.fontColor} backdrop-contrast-10 rounded-xl bg-white bg-opacity-50 shadow-lg md:rounded-xl md:bg-opacity-0 md:shadow-none`]:
+                      props.fontColor,
                   })}
                 >
                   {props.text}
