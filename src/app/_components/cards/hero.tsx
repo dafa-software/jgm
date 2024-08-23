@@ -5,6 +5,8 @@ import Container from "../container";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
+import useIsMobile from "~/utils/use-is-mobile";
+import classNames from "clsx";
 
 interface HeroCardProps {
   mainTitle: string;
@@ -20,6 +22,7 @@ interface HeroCardProps {
 
 export function HeroCard(props: HeroCardProps) {
   const { autoplay = true } = props;
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loadedImages, setLoadedImages] = useState<
     {
@@ -101,19 +104,27 @@ export function HeroCard(props: HeroCardProps) {
   // const textToShow = loadedImages[currentIndex]?.subTitle ?? props.title;
 
   return (
-    <div
-      className={`clip-rounded-triangle flex items-center justify-center border-b-[10px] border-[#F1F5F9] bg-cover bg-clip-content bg-center bg-no-repeat text-white md:min-h-[890px]`}
-    >
-      <div className="z-50 flex flex-col items-center justify-center">
-        <Container>
-          <div className="flex flex-col gap-12 p-6 md:flex-row">
-            <div
-              className={`flex flex-col justify-center gap-3 py-20 md:py-2 ${!props.contentRight && "md:w-2/3"}`}
-            >
-              <h1
-                className={`py-2 text-3xl font-bold ${props.mainTitle?.length >= 25 ? "md:text-5xl" : "md:text-6xl"} ${props.fontColor && props.fontColor + "  bg-opacity-10"}`}
+    <>
+      <div
+        className={`clip-rounded-triangle flex items-center justify-center border-b-[10px] border-[#F1F5F9] bg-cover bg-clip-content bg-center bg-no-repeat text-white md:min-h-[890px]`}
+      >
+        <div className="z-50 flex flex-col items-center justify-center">
+          <Container>
+            <div className="flex flex-col gap-12 p-6 md:flex-row">
+              <div
+                className={`flex flex-col justify-center gap-3 py-20 md:py-2 ${!props.contentRight && "md:w-2/3"}`}
               >
-                {/* <TypewriterEffectSmooth
+                <h1
+                  className={classNames(
+                    `py-2 text-3xl font-bold ${props.mainTitle?.length >= 25 ? "md:text-5xl" : "md:text-6xl"}`,
+                    {
+                      [`${props.fontColor}`]: props.fontColor,
+                      ["backdrop-contrast-10 rounded-xl bg-white bg-opacity-50 shadow-lg md:rounded-xl md:bg-opacity-0 md:shadow-none"]:
+                        true,
+                    },
+                  )}
+                >
+                  {/* <TypewriterEffectSmooth
                   words={
                     textToShow.split(" ").map((word) => {
                       return {
@@ -128,46 +139,51 @@ export function HeroCard(props: HeroCardProps) {
                   }
                   key={currentIndex}
                 /> */}
-                {props.mainTitle}
-              </h1>
-              <p
-                className={`bg-opacity-10 text-base md:text-xl ${props.fontColor && props.fontColor}`}
-              >
-                {props.text}
-              </p>
-              {props.contentBottom && <>{props.contentBottom}</>}
+                  {props.mainTitle}
+                </h1>
+                <p
+                  className={classNames(`bg-opacity-10 text-base md:text-xl`, {
+                    [`${props.fontColor}`]: props.fontColor,
+                    ["backdrop-contrast-10 mb-[-80px] rounded-xl bg-white bg-opacity-50 shadow-lg md:rounded-xl md:bg-opacity-0 md:shadow-none"]:
+                      true,
+                  })}
+                >
+                  {props.text}
+                </p>
+                {props.contentBottom && <>{props.contentBottom}</>}
+              </div>
+              {props.contentRight && (
+                <div className="md:w-1/2">{props.contentRight}</div>
+              )}
             </div>
-            {props.contentRight && (
-              <div className="md:w-1/2">{props.contentRight}</div>
-            )}
-          </div>
 
-          {props.images ? (
-            <AnimatePresence>
-              <motion.img
-                key={currentIndex}
-                src={loadedImages[currentIndex]?.src}
-                initial="initial"
-                animate="visible"
-                variants={slideVariants}
-                className="absolute left-0 top-0 -z-50 h-full w-full overflow-hidden bg-black bg-no-repeat object-cover opacity-50"
-              />
-            </AnimatePresence>
-          ) : (
-            <>
-              <Image
-                src={`/assets/${props.backgroundImg}.png`}
-                alt="Wave"
-                width={1280}
-                height={720}
-                className="absolute left-0 top-0 -z-50 h-full w-full bg-black bg-opacity-50 object-cover"
-                priority={true}
-                quality={100}
-              />
-            </>
-          )}
-        </Container>
+            {props.images ? (
+              <AnimatePresence>
+                <motion.img
+                  key={currentIndex}
+                  src={loadedImages[currentIndex]?.src}
+                  initial="initial"
+                  animate="visible"
+                  variants={slideVariants}
+                  className="absolute left-0 top-0 -z-50 h-full w-full overflow-hidden bg-black bg-no-repeat object-cover opacity-50"
+                />
+              </AnimatePresence>
+            ) : (
+              <>
+                <Image
+                  src={`/assets/${props.backgroundImg}.png`}
+                  alt="Wave"
+                  width={1280}
+                  height={720}
+                  className="absolute left-0 top-0 -z-50 h-full w-full bg-black bg-opacity-50 object-cover"
+                  priority={true}
+                  quality={100}
+                />
+              </>
+            )}
+          </Container>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

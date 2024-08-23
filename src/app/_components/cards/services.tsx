@@ -17,17 +17,17 @@ export function ServicesCard(props: ServicesCardProps) {
   return (
     <Fragment>
       <div
-        className="relative flex flex-col justify-center overflow-hidden"
+        className="relative flex flex-col items-center justify-center overflow-hidden"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         <Link
           href={props.href ?? ""}
-          className={`group relative m-0 flex h-full min-h-96 min-w-60 rounded-xl opacity-[-2000px] shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg `}
+          className={`group relative m-0 flex h-full min-h-96 min-w-60 justify-center rounded-xl opacity-[-2000px] shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg `}
         >
           <div className="z-10 h-full w-full overflow-hidden rounded-xl border  border-gray-200 transition duration-300 ease-in-out ">
             <div className="absolute inset-10 flex items-center justify-center">
-              <ChevronDoubleRightIcon className="blue-main h-12 w-12 animate-pulse fill-white" />
+              <ChevronDoubleRightIcon className="h-12 w-12 animate-pulse fill-white" />
             </div>
             <Image
               src={`/assets/${props.img}.png`}
@@ -35,8 +35,8 @@ export function ServicesCard(props: ServicesCardProps) {
               alt=""
               width={1920}
               height={1080}
-              priority
               quality={100}
+              priority
             />
 
             {props.title && (

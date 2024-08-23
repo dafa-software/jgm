@@ -208,22 +208,22 @@ export default function LandingPageForm({
   );
 }
 
-function formattedMessage({
-  name,
-  phone,
-  message,
-  service,
-}: {
-  name: string;
-  phone: string;
-  message: string;
-  service: string;
-}) {
-  return `Olá JGM, gostaria de saber mais sobre o serviço ${service} e gostaria de saber se você pode me ajudar.
-  
-  Meu nome é ${name} e meu telefone é ${phone}.
-  
-  Mensagem:
-  ${message}
-  `;
-}
+// function formattedMessage({
+//   name,
+//   phone,
+//   message,
+//   service,
+// }: {
+//   name: string;
+//   phone: string;
+//   message: string;
+//   service: string;
+// }) {
+//   return `Olá JGM, gostaria de saber mais sobre o serviço ${service} e gostaria de saber se você pode me ajudar.
+
+//   Meu nome é ${name} e meu telefone é ${phone}.
+
+//   Mensagem:
+//   ${message}
+//   `;
+// }

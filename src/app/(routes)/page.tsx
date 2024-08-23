@@ -12,7 +12,7 @@ import {
 } from "~/data";
 import { ServicesCard } from "../_components/cards/services";
 import Carousel from "../_components/carousel";
-import { PlayCircleIcon } from "@heroicons/react/16/solid";
+// import { PlayCircleIcon } from "@heroicons/react/16/solid";
 import Title from "../_components/title";
 import FeedbackCard from "../_components/cards/feedback";
 import { Fragment, Suspense } from "react";
@@ -70,7 +70,7 @@ export default async function Home() {
           <Section>
             <div className="flex flex-col justify-between gap-3 pb-8 md:flex-row md:items-end md:px-14">
               <div className="flex flex-col gap-3 md:w-1/2">
-                <h2 className="text-3xl font-bold  text-blue-main">
+                <h2 className="text-2xl font-bold text-blue-main  md:text-3xl">
                   Nossos serviços
                 </h2>
                 <p className="py-4 text-xl text-blue-main">
@@ -81,14 +81,18 @@ export default async function Home() {
               </div>
               <Link
                 href="/servicos"
-                className="text-blue-700 hover:cursor-pointer hover:underline"
+                className="text-center text-blue-700 hover:cursor-pointer hover:underline"
               >
                 Visualizar todos os serviços →
               </Link>
             </div>
+
             <Carousel>
               {HomeServicesData.map((props, index) => (
-                <div key={index} className="keen-slider__slide flex">
+                <div
+                  key={index}
+                  className="keen-slider__slide flex justify-center"
+                >
                   <ServicesCard key={index} {...props} />
                 </div>
               ))}
@@ -96,7 +100,8 @@ export default async function Home() {
           </Section>
         </Container>
       </section>
-      <section className="flex items-center justify-center gap-2 bg-[#FFEDD5] p-4 text-blue-main">
+
+      {/* <section className="flex items-center justify-center gap-2 bg-[#FFEDD5] p-4 text-blue-main">
         <PlayCircleIcon className="h-6 w-6" />
         <p>
           Interessado em saber como nossas soluções funcionam para você? Assista
@@ -109,7 +114,7 @@ export default async function Home() {
             vídeo de apresentação.
           </Link>
         </p>
-      </section>
+      </section> */}
 
       <section className="bg-blue-main">
         <Container>
