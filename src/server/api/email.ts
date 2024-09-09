@@ -68,7 +68,7 @@ export const sendInternalEmailToSales = async (
   const { data, error } = await resend.emails.send({
     from: sender,
     to: email,
-    bcc: "diegoafaguiar@gmail.com",
+    // bcc: "diegoafaguiar@gmail.com",
     subject: `JGM Serviços - Solicitação de orçamento - ${name}`,
     html: htmlContent,
   });
@@ -207,7 +207,7 @@ export const sendConfirmationEmailToClient = async (
   const { data, error } = await resend.emails.send({
     from: sender,
     to: email,
-    bcc: "diegoafaguiar@gmail.com",
+    // bcc: "diegoafaguiar@gmail.com",
     subject: `JGM Serviços - Confirmação de Solicitação de Orçamento`,
     html: htmlContent,
   });
