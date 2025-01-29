@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { SafeImage } from "~/components/SafeImage";
 import { api } from "~/trpc/server";
 
 export default async function BlogCard({ type }: { type: "some" | "all" }) {
@@ -20,12 +21,13 @@ export default async function BlogCard({ type }: { type: "some" | "all" }) {
             className="overflow-hidden rounded-lg bg-white shadow-md transition duration-300 hover:scale-105 hover:shadow-lg md:w-[32%]"
             href={`/blog/${post.slug}?id=${post.id}`}
           >
-            <Image
+            <SafeImage
               className="h-56 w-full object-cover object-center"
               src={post.image ?? "/logo.png"}
               alt={post.title.rendered ?? ""}
               width={720}
               height={400}
+              unoptimized
             />
             <div className="p-4">
               <h2 className="text-xl font-semibold text-gray-800">

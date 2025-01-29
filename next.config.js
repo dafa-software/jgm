@@ -11,10 +11,22 @@ const config = {
       {
         protocol: "https",
         hostname: "i0.wp.com",
+        pathname: "/**",
       },
       {
         protocol: "http",
         hostname: "i0.wp.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "jgmservicos.com.br",
+        pathname: "/wp-content/uploads/**",
+      },
+      {
+        protocol: "http",
+        hostname: "jgmservicos.com.br",
+        pathname: "/wp-content/uploads/**",
       },
     ],
   },
