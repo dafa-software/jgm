@@ -5,7 +5,6 @@ import Container from "../container";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
-import useIsMobile from "~/utils/use-is-mobile";
 import classNames from "clsx";
 
 interface HeroCardProps {
@@ -24,7 +23,7 @@ export function HeroCard(props: HeroCardProps) {
   const { autoplay = true } = props;
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [loadedImages, setLoadedImages] = useState<
+  const [loadedImages] = useState<
     {
       src: string;
       subTitle: string;

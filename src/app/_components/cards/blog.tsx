@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { SafeImage } from "~/components/SafeImage";
 import { api } from "~/trpc/server";
